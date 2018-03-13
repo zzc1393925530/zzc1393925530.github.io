@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript语句 | Hexo</title>
+  <title>JavaScript对象1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。声明语句：var用来声明一个或多个对象；         function定义函数。条件语句：if/else、else if(代码中有多条分支)         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。循环：while、do/while(关键字do标识循环开始，用while来">
-<meta name="keywords" content="日志,JavaScript笔记">
+  <meta name="description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript语句">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/JavaScript语句/index.html">
+<meta property="og:title" content="JavaScript对象1">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。声明语句：var用来声明一个或多个对象；         function定义函数。条件语句：if/else、else if(代码中有多条分支)         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。循环：while、do/while(关键字do标识循环开始，用while来">
-<meta property="og:updated_time" content="2018-03-13T01:56:46.064Z">
+<meta property="og:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta property="og:updated_time" content="2018-03-13T11:51:37.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript语句">
-<meta name="twitter:description" content="复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。声明语句：var用来声明一个或多个对象；         function定义函数。条件语句：if/else、else if(代码中有多条分支)         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。循环：while、do/while(关键字do标识循环开始，用while来">
+<meta name="twitter:title" content="JavaScript对象1">
+<meta name="twitter:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript语句" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/12/JavaScript语句/" class="article-date">
-  <time datetime="2018-03-12T12:45:08.000Z" itemprop="datePublished">2018-03-12</time>
+    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
+  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript语句
+      JavaScript对象1
     </h1>
   
 
@@ -86,20 +86,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。<br>声明语句：var用来声明一个或多个对象；<br>         function定义函数。<br>条件语句：if/else、else if(代码中有多条分支)<br>         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。<br>循环：while、do/while(关键字do标识循环开始，用while来标识循环的结尾并进入循环条件判断)、<br>    for、for/in(不会遍历对象的所有属性，只有“可枚举”的属性才会遍历到)。<br>跳转：break(跳转到循环或者其他语句的结束，达到break条件立即退出整个循环)<br>    continue(中止本次循环的执行并开始下一次循环的执行)<br>    return(解释器跳出函数体的执行，并提供调用的返回值)<br>    throw(触发或“抛出”一个异常)<br>标签语句：标识符和冒号组成 给一个语句加标签，在程序其他地方可以使用这个名字标记任何语句。<br>throw语句：抛出异常时立即停止当前正在执行的逻辑，跳转至就近的异常处理程序。<br>try/catch/finally语句：语句块都需要使用花括号，catch从句跟在try从句之后，try块内某处发生异常调用catch内的代码逻辑。catch从句后跟随finally块，后者中放置清理代码，不管try块中是否异常，finally内逻辑总是执行。<br>e.g function trycatch () {<br>    var array = [234],<br>        newdate = new Date(),<br>        fun = function(){},<br>        is = 12.22,<br>        call;<br>    try{<br>        throw array + ‘\n’ + newdate.toLocaleString() + ‘ \n’ + fun.prototype.constructor +<br>        ‘\n’ + (typeof is == ‘number’) +’ \n’ + call ; //小心local后面还有一个’e’<br>    }<br>    catch(e){<br>        console.log(e);<br>    }<br>    finally{<br>        console.log(‘err finally’);<br>    }<br>}<br>trycatch ()<br>//  输出：</p>
-<p>// 234</p>
-<p>// 2018/3/13 上午9:55:02 </p>
-<p>// function (){}</p>
-<p>// true </p>
-<p>// undefined</p>
+        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjepln3zm0008xcv2lmf4d2zj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjepln3yb0000xcv26pc4u1hc" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
 
     </footer>
   </div>
@@ -107,19 +102,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/13/JavaScript对象1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          JavaScript对象1
+          JavaScript对象2
         
       </div>
     </a>
   
   
-    <a href="/2018/03/12/JavaScript简介/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/12/JavaScript语句/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript简介</div>
+      <div class="article-nav-title">JavaScript语句</div>
     </a>
   
 </nav>
