@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript对象3 | Hexo</title>
+  <title>JavaScript数组2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
+  <meta name="description" content="数组方法： ////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。e.g. var a = [1,2,3];     a.join(); //“1,2,3”     a.join(“ “); //“1 2 3”     a.join(“”); //">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象3">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象3/index.html">
+<meta property="og:title" content="JavaScript数组2">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/JavaScript数组2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
-<meta property="og:updated_time" content="2018-03-13T11:54:09.240Z">
+<meta property="og:description" content="数组方法： ////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。e.g. var a = [1,2,3];     a.join(); //“1,2,3”     a.join(“ “); //“1 2 3”     a.join(“”); //">
+<meta property="og:updated_time" content="2018-03-14T11:05:56.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象3">
-<meta name="twitter:description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
+<meta name="twitter:title" content="JavaScript数组2">
+<meta name="twitter:description" content="数组方法： ////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。e.g. var a = [1,2,3];     a.join(); //“1,2,3”     a.join(“ “); //“1 2 3”     a.join(“”); //">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript数组2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象3/" class="article-date">
-  <time datetime="2018-03-13T11:52:42.000Z" itemprop="datePublished">2018-03-13</time>
+    <a href="/2018/03/14/JavaScript数组2/" class="article-date">
+  <time datetime="2018-03-14T11:04:32.000Z" itemprop="datePublished">2018-03-14</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript对象3
+      JavaScript数组2
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>枚举属性：e.g.var o = {x:1,y:2,z:3};<br>             o.propertyIsEnumerable(“toString”);<br>             for(p in o)<br>             console.log(p);<br>             // x<br>             // y<br>             // z 不会输出toString<br>    =&gt; 避免上述情况 过滤返回的属性<br>       for(p in o) {<br>           if(!o.hasOwnProperty(p)) continue; //跳过继承的属性<br>       }<br>       for(p in o) {<br>           if(typeof o[p] === “function”) continue; //跳过方法<br>       }<br>属性getter和setter：由getter和setter定义的属性称做“存取器属性”，不同于数据属性。不可写性。只有getter方法只读，只有setter属性只写，读取只写属性总是返回undefined。<br>属性的特征：数据属性特性：值、可写性、可枚举性、可配置性<br>           存取器属性不具有值和可写性，它们的可写性是由setter存在与否决定的。特性：读取、写入、可枚举性、可配置性。<br>对象的三个属性：原型、类、可扩展性。<br>原型属性：用来继承属性检测一个对象是否是另一个对象的原型，使用isProtptypeOf()方法。<br>可扩展性：表示是否可以给对象添加新属性。所有内置对象和自定义对象都是可扩展的，宿主对象的可扩展性是由JavaScript引擎决定的。<br>序列化对象：将对象的状态转换为字符串，也可将字符串还原为对象。ECMAScript5提供内置函数JSON.stringify()和JSON.parse()用来序列号和还原JavaScript对象。JSON JavaScript Object Notation JavaScript对象表示法。<br>对象方法： toString()方法返回表示调用这个方法的对象值的字符串<br>          e.g. var s = { x:1, y:1 }.toString();<br>               console.log(s);<br>               // [object Object]<br>          toLocaleString()方法返回这个对象的本地化字符串</p>
+        <p>数组方法： <br><br>////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。<br>e.g. var a = [1,2,3];<br>     a.join(); //“1,2,3”<br>     a.join(“ “); //“1 2 3”<br>     a.join(“”); //“123”<br>     var b = new Array(10);<br>     b.join(‘-‘); //‘———‘<br>////reverse()方法将数组中的元素颠倒顺序返回逆序的数组。替换<br>e.g. var a = [1,2,3];<br>     a.reverse().join(); //=&gt;”3,2,1”,现在的a是[3,2,1]<br>////sort()方法将数组中的元素排列并返回排列后的数组,不带参数调用该方法时以字母表顺序排序<br>e.g. var a = new Array(“bananan”,”apple”,”cherry”);<br>     a.sort();<br>     var s = a.join(“, “);<br>     console.log(s); //apple, bananan, cherry若包含undefined元素会被排到数组尾部<br>     为了按照其他方法而非字母表顺序排列 ，sort()方法传递一个比较函数。第一个参数在前，比较函数返回值小于0.<br>////concat()方法创建并返回一个新数组，元素包括调用concat()的原始数组的元素和concat()的每个参数。<br>e.g. var a = [1,2,3];<br>     a.concat(4,5); //[1,2,3,4,5]<br>     a.concat([4,5]); //[1,2,3,4,5]<br>     a.concat([4,5],[6,7]); //[1,2,3,4,5,6,7]<br>     a.concat(4,[5,[6,7]]); //[1,2,3,4,5,[6,7]]<br>////slice()方法返回指定数组的一个片段或子数组。返回的数组包含第一个参数指定的位置和所有到但不含第二个参数指定的位置之间的所有数组元素。<br>e.g. var a = [1,2,3,4,5]<br>     a.slice(1,-1); //[2,3,4]负数表示倒数第几个元素<br>////splice()方法在数组中插入或删除元素的通用方法。会更改调用的数组。<br>第一个参数指定插入和（或）删除的起始位置。第二个参数指定了应该从数组中删除元素的个数。若被省略，从起始点到数组结尾的所有元素都被删除。返回被删除的元素。<br>e.g. var a = [1,2,3,4,5,6,7,8];<br>     a.splice(4); //返回[5,6,7,8],a是[1,2,3,4]<br>     a.splice(1,2); //返回[2,3],a是[1,4]<br>     a.splice(1,1); //返回[4],a是[1]<br>    前两个参数指定需要删除的数组元素，紧随其后的任意个数的参数指定插入到数组中的元素，从第一个参数指定的位置开始插入。<br>e.g. var a = [1,2,3,4,5];<br>     a.splice(2,0,’a’,’b’); //返回[];a是[1,2,’a’,’b’,3,4,5]<br>     a.splice(2,2,[1,2],3); //返回[‘a’,’b’];a是[1,2,[1,2],3,3,4,5]<br>toString()和toLocaleString()方法： <br><br>////toString()：每个元素转化为字符串，输出带逗号分隔的字符串列表，不包括分隔符。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjeqzdaoy000nowv2w3ye2khx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjeqzdalx0001owv2haajhm7u" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +102,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/14/JavaScript数组1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/14/JavaScript数组3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          JavaScript数组1
+          JavaScript数组3
         
       </div>
     </a>
   
   
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/14/JavaScript数组1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">JavaScript对象2</div>
+      <div class="article-nav-title">JavaScript数组1</div>
     </a>
   
 </nav>
