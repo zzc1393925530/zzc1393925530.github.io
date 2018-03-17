@@ -5,18 +5,19 @@
   
 
   
-  <title>Hello World | Hexo</title>
+  <title>浏览器中的JavaScript | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代">
+<meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/hello-world/index.html">
+<meta property="og:title" content="浏览器中的JavaScript">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/浏览器中的JavaScript/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-03-12T04:14:30.670Z">
+<meta property="og:description" content="////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代">
+<meta property="og:updated_time" content="2018-03-17T07:36:54.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="浏览器中的JavaScript">
+<meta name="twitter:description" content="////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-浏览器中的JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/12/hello-world/" class="article-date">
-  <time datetime="2018-03-12T04:14:30.670Z" itemprop="datePublished">2018-03-12</time>
+    <a href="/2018/03/17/浏览器中的JavaScript/" class="article-date">
+  <time datetime="2018-03-17T02:34:53.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
     
   </div>
@@ -77,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      浏览器中的JavaScript
     </h1>
   
 
@@ -85,37 +86,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。<br>////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。<br>////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代码和文档来自不同的源 有重要的安全隐患。<br>////javascript:URL能识别的资源是转换成字符串的执行代码的返回值。alert返回undefined.JavaScript:URL在文档之外确实有重要角色，但应该避免在HTML中使用。<br>/////JavaScript:URL应用:书签<br>////客户端JavaScript线程模型：严格的单线程，HTML5定义了一个并发控制方式WEB WORKER：执行计算密集任务而不冻结用户界面的后台线程。<br>。<br>////兼容性和互用性<br>/////检测渲染模式document.compatMode,值为”CSS1Compat”标准模式，值为”BackCompat”或undefined则为怪异模式。<br>////IE里的条件注释<br>/////   /<em>@cc_on<br>          @</em>/<br>////可访问性<br>/////应该尽可能支持独立于设备的事件<br>////安全性<br>/////JavaScript不支持某些功能。例如不能删除数据或植入病毒。<br>/////在自己支持的某些功能上施加限制。<br>////同源策略 脚本只能读取和所属文档来源相同的窗口和文档的属性，文档的来源包括协议、主机，以及载入文档的URL端口。<br>////不严格的同源策略<br>/////1.document.domain属性设置为一个源<br>/////2.跨域资源共享：允许服务器用头信息显式地列出源，或使用通配符匹配所有源并允许由任何地址请求文件。<br>/////3.跨文档消息：允许来自一个文档的脚本可以传递文本消息到另一个文档里的脚本。调用Window对象上的postMessage()方法，可以异步传递消息事件到窗口的文档里。<br>////跨站脚本<br>/////防止XSS攻击的方式是，在使用任何不可信的数据来动态的创建文档内容之前，从中移除HTML标签。<br>     e.g. name = name.replace(/&lt;/g,”&lt;”).replace(/&gt;/g,”&gt;”);<br>     html5为<iframe>元素定义了sandbox属性，在实现之后，允许显示不可信内容并自动禁用脚本。<br>////客户端框架</iframe></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjev27yef001b7wv2ebp047mz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjev27ydq000j7wv2162549nc" class="article-share-link">Teilen</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/03/12/TEST/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          TEST
-        
-      </div>
-    </a>
   
+    <a href="/2018/03/17/JavaScript函数4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">JavaScript函数4</div>
+    </a>
   
 </nav>
 
