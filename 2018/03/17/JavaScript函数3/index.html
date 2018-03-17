@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript对象1 | Hexo</title>
+  <title>JavaScript函数3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+  <meta name="description" content="////闭包    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。    作用域    e.g. var scope = “global”;         function f() {             console.log(scope); //输出unde">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象1">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象1/index.html">
+<meta property="og:title" content="JavaScript函数3">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/JavaScript函数3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
-<meta property="og:updated_time" content="2018-03-13T11:51:37.788Z">
+<meta property="og:description" content="////闭包    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。    作用域    e.g. var scope = “global”;         function f() {             console.log(scope); //输出unde">
+<meta property="og:updated_time" content="2018-03-17T02:29:32.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象1">
-<meta name="twitter:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta name="twitter:title" content="JavaScript函数3">
+<meta name="twitter:description" content="////闭包    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。    作用域    e.g. var scope = “global”;         function f() {             console.log(scope); //输出unde">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript函数3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
-  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
+    <a href="/2018/03/17/JavaScript函数3/" class="article-date">
+  <time datetime="2018-03-17T02:27:00.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript对象1
+      JavaScript函数3
     </h1>
   
 
@@ -86,12 +86,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
-
+        <p>////闭包<br>    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。<br>    作用域<br>    e.g. var scope = “global”;<br>         function f() {<br>             console.log(scope); //输出undefined:局部变量在整个函数体始终有定义，局部变量遮盖同名全局变量<br>             var scope = “local”; //变量在这里赋值，但变量本身在函数体内任何地方都有定义<br>             console.log(scope); //输出local<br>         }<br>         var scope = ‘global’;<br>          function fn() {<br>          alert(scope); //未定义直接赋值的变量自动声明为全局作用域，所以上例不适用，这里的scope就是global<br>          scope = ‘local’; //更改了全局变量scope值变为local<br>          alert(scope); //local<br>         }<br>        fn();<br>        alert(scope);//local</p>
+<pre><code>var scope = &apos;global&apos;;
+function fn(scope) { //scope此时是函数的参数
+alert(scope); //为被初始化
+scope = &apos;local&apos;; //局部变量
+alert(scope);
+}
+fn();
+alert(scope); //全局变量
+</code></pre><p><strong>不使用var保留字声明变量, 变量提升为全局变量, 而不论变量处于哪种作用域;<br>如果不使用var声明, 该变量便可配置, 即可被 delete 保留字删除, 删除后该变量便不可访问; 如果使用var声明, 该变量便不可配置, 即不能被 delete 保留字删除;<br>只要是全局变量都可以直接访问, 也可使用 “window.变量名” 来访问, 不管该变量是不是通过var来声明的;</strong><br><strong>闭包 // 如果一个函数访问了它的外部变量，那么它就是闭包。当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。</strong><br>        闭包 e.g. var scope = “global scope”;<br>                 function checkscope() {<br>                 var scope = “local scope”;<br>                 function f() {return scope;}<br>                 return f();<br>                }<br>                checkscope(); //“local scope”</p>
+<pre><code>        var scope = &quot;global scope&quot;;
+        function checkscope() {
+        var scope = &quot;local scope&quot;;
+        function f() {return scope;}
+        return f;
+        }
+        checkscope()(); //&quot;local scope&quot;
+e.g. function foo(x) {
+    var temp = 3;
+    function bar(y) {
+        alert(x + y + (++temp));
+    }
+    bar(10);
+}
+foo(2); //16:非闭包
+e.g. function foo(x) {
+    var temp = 3;
+    return function (y) {
+        alert(x + y + (++temp));
+    }
+}
+var bar = foo(2);
+bar(10); //16:闭包
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjeur8tr6000qzkv2jpsn10yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjeur8tp00003zkv2wbijxyc0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +134,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数4/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          JavaScript对象2
+          JavaScript函数4
         
       </div>
     </a>
   
   
-    <a href="/2018/03/12/JavaScript语句/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript语句</div>
+      <div class="article-nav-title">JavaScript函数2</div>
     </a>
   
 </nav>

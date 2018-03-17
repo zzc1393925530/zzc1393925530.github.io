@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript对象1 | Hexo</title>
+  <title>JavaScript函数2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+  <meta name="description" content="////函数的实参和形参    1.可选形参      当调用函数的时候传入的实参比函数声明时指定的参数个数要少，剩下的形参都设置为undefined值。保持适应性(合理默认值)。    2.可变长的实参列表：实参对象      函数体内，标识符arguments是指向实参对象的引用，实参对象是一个类数组对象，可以通过数字下标访问传入函数的实参，只具有数字索引属性。通过实参名字修改实参值，通过ar">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象1">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象1/index.html">
+<meta property="og:title" content="JavaScript函数2">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/JavaScript函数2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
-<meta property="og:updated_time" content="2018-03-13T11:51:37.788Z">
+<meta property="og:description" content="////函数的实参和形参    1.可选形参      当调用函数的时候传入的实参比函数声明时指定的参数个数要少，剩下的形参都设置为undefined值。保持适应性(合理默认值)。    2.可变长的实参列表：实参对象      函数体内，标识符arguments是指向实参对象的引用，实参对象是一个类数组对象，可以通过数字下标访问传入函数的实参，只具有数字索引属性。通过实参名字修改实参值，通过ar">
+<meta property="og:updated_time" content="2018-03-17T02:29:06.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象1">
-<meta name="twitter:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta name="twitter:title" content="JavaScript函数2">
+<meta name="twitter:description" content="////函数的实参和形参    1.可选形参      当调用函数的时候传入的实参比函数声明时指定的参数个数要少，剩下的形参都设置为undefined值。保持适应性(合理默认值)。    2.可变长的实参列表：实参对象      函数体内，标识符arguments是指向实参对象的引用，实参对象是一个类数组对象，可以通过数字下标访问传入函数的实参，只具有数字索引属性。通过实参名字修改实参值，通过ar">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript函数2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
-  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
+    <a href="/2018/03/17/JavaScript函数2/" class="article-date">
+  <time datetime="2018-03-17T02:26:44.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript对象1
+      JavaScript函数2
     </h1>
   
 
@@ -86,12 +86,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
+        <p>////函数的实参和形参<br>    1.可选形参<br>      当调用函数的时候传入的实参比函数声明时指定的参数个数要少，剩下的形参都设置为undefined值。保持适应性(合理默认值)。<br>    2.可变长的实参列表：实参对象<br>      函数体内，标识符arguments是指向实参对象的引用，实参对象是一个类数组对象，可以通过数字下标访问传入函数的实参，只具有数字索引属性。通过实参名字修改实参值，通过arguments[]数组也可以获取到更改后的值。<br>    3.callee和caller属性<br>      严格模式下对着两个属性读写产生类型错误。非严格模式下，callee属性指代调用当前正在执行的函数的函数。通过caller属性访问调用栈。<br>      e.g. 通过callee递归调用自身<br>           var factorial = function(x) {<br>               if(x &lt;= 1) return 1;<br>               return x <em> arguments.callee(x-1);<br>           };<br>           console.log(factorial(4)); //24<br>    4.对象属性用作实参<br>      通过名/值对的形式传入参数。<br>      如果函数期望接收一个字符串参数，而调用函数时传入其他类型的值，所传入的值会在函数体内将其用做字符串的地方转换为字符串类型。<br>////作为值的函数<br>    在JavaScript中，函数不仅是一种语法，也是值。<br>    e.g. var a = [function(x) {return x</em>x},20];<br>         a<a href="a[1]">0</a>; //=&gt;400<br>         function add(x,y){ return x + y; }<br>         function subtract(x,y){ return x - y; }<br>         function multiply(x,y){ return x <em> y; }<br>         function divide(x,y){ return x / y; }<br>        //以上面的某个函数作为参数，并传入两个操作数调用<br>         function operate(operator,operand1,operand2) {<br>             return operator(operand1,operand2);<br>         }<br>         var i = operate(add,operate(add,2,3),operate(multiply,4,5)); //(2+3)+(4</em>5)<br>////自定义函数属性<br>    当函数需要一个“静态”变量来在调用时保持某个值不变，最方便的是给函数定义属性。<br>    e.g. uniqueInteger.counter = 0;<br>         function uniqueInteger() {<br>             return uniqueInteger.counter++;<br>         } // 0 先返回计数器的值然后计数器自增1</p>
+<pre><code>function factorial(n) {
+    if(isFinite(n) &amp;&amp; n&gt;0 &amp;&amp; n==Math.round(n)) {
+        if(!(n in factorial)) //in 一个字符串类型或者 symbol 类型的属性名或者数组索引（非symbol类型将会强制转为字符串）。
+        factorial[n] = n * factorial(n-1);
+    }
+    else return NaN;
+}
+factorial[1] = 1;
+</code></pre><p>////作为命名空间的函数<br>    定义一个函数用作临时命名空间，在这个命名空间内定义的变量不会污染到全局命名空间。<br>    (function() {<br>        //模块代码<br>    }()); //结束函数定义并立即调用它 PAGE：182</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjeur8tr6000qzkv2jpsn10yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjeur8tol0001zkv2c3ssj1ih" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +111,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          JavaScript对象2
+          JavaScript函数3
         
       </div>
     </a>
   
   
-    <a href="/2018/03/12/JavaScript语句/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript语句</div>
+      <div class="article-nav-title">JavaScript函数1</div>
     </a>
   
 </nav>

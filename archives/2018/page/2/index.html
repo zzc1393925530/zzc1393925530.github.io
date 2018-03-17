@@ -5,19 +5,14 @@
   
 
   
-  <title>JavaScript对象3 | Hexo</title>
+  <title>Archives: 2018 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
-<meta name="keywords" content="日志,JavaScript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象3">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象3/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
-<meta property="og:updated_time" content="2018-03-13T11:54:09.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象3">
-<meta name="twitter:description" content="枚举属性：e.g.var o = {x:1,y:2,z:3};             o.propertyIsEnumerable(“toString”);             for(p in o)             console.log(p);             // x             // y             // z 不会输出toString    =">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,63 +59,102 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象3/" class="article-date">
-  <time datetime="2018-03-13T11:52:42.000Z" itemprop="datePublished">2018-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      JavaScript对象3
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/03/12/JavaScript语句/" class="archive-article-date">
+  <time datetime="2018-03-12T12:45:08.000Z" itemprop="datePublished">Mar 12</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/12/JavaScript语句/">JavaScript语句</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>枚举属性：e.g.var o = {x:1,y:2,z:3};<br>             o.propertyIsEnumerable(“toString”);<br>             for(p in o)<br>             console.log(p);<br>             // x<br>             // y<br>             // z 不会输出toString<br>    =&gt; 避免上述情况 过滤返回的属性<br>       for(p in o) {<br>           if(!o.hasOwnProperty(p)) continue; //跳过继承的属性<br>       }<br>       for(p in o) {<br>           if(typeof o[p] === “function”) continue; //跳过方法<br>       }<br>属性getter和setter：由getter和setter定义的属性称做“存取器属性”，不同于数据属性。不可写性。只有getter方法只读，只有setter属性只写，读取只写属性总是返回undefined。<br>属性的特征：数据属性特性：值、可写性、可枚举性、可配置性<br>           存取器属性不具有值和可写性，它们的可写性是由setter存在与否决定的。特性：读取、写入、可枚举性、可配置性。<br>对象的三个属性：原型、类、可扩展性。<br>原型属性：用来继承属性检测一个对象是否是另一个对象的原型，使用isProtptypeOf()方法。<br>可扩展性：表示是否可以给对象添加新属性。所有内置对象和自定义对象都是可扩展的，宿主对象的可扩展性是由JavaScript引擎决定的。<br>序列化对象：将对象的状态转换为字符串，也可将字符串还原为对象。ECMAScript5提供内置函数JSON.stringify()和JSON.parse()用来序列号和还原JavaScript对象。JSON JavaScript Object Notation JavaScript对象表示法。<br>对象方法： toString()方法返回表示调用这个方法的对象值的字符串<br>          e.g. var s = { x:1, y:1 }.toString();<br>               console.log(s);<br>               // [object Object]<br>          toLocaleString()方法返回这个对象的本地化字符串</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjeur8tqr000ozkv23rjwdmcl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/03/12/JavaScript简介/" class="archive-article-date">
+  <time datetime="2018-03-12T10:32:30.000Z" itemprop="datePublished">Mar 12</time>
+</a>
+      
   
-    <a href="/2018/03/14/JavaScript数组1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript数组1
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/12/JavaScript简介/">JavaScript简介</a>
+    </h1>
   
-  
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript对象2</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/03/12/TEST/" class="archive-article-date">
+  <time datetime="2018-03-12T04:40:27.000Z" itemprop="datePublished">Mar 12</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/12/TEST/">TEST</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/03/12/hello-world/" class="archive-article-date">
+  <time datetime="2018-03-12T04:14:30.670Z" itemprop="datePublished">Mar 12</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/12/hello-world/">Hello World</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         

@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript对象1 | Hexo</title>
+  <title>JavaScript函数1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+  <meta name="description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象1">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象1/index.html">
+<meta property="og:title" content="JavaScript函数1">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/JavaScript函数1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
-<meta property="og:updated_time" content="2018-03-13T11:51:37.788Z">
+<meta property="og:description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
+<meta property="og:updated_time" content="2018-03-17T02:28:36.234Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象1">
-<meta name="twitter:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta name="twitter:title" content="JavaScript函数1">
+<meta name="twitter:description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript函数1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
-  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
+    <a href="/2018/03/17/JavaScript函数1/" class="article-date">
+  <time datetime="2018-03-17T02:26:26.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript对象1
+      JavaScript函数1
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
+        <p>////函数调用：<br>    1.普通函数调用 printprops({x:1});<br>    2.方法调用 o.m = f;//函数f，对象o，m()方法<br>    <strong>关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。</strong><br>    全局对象：<br>    全局作用域下，this指向全局对象。浏览器中全局对象就是window对象。<br>    e.g. function test(){<br>        return this;<br>    }<br>    test(); //window{}:this关键字没有处于一个声明的对象内部，默认指向全局window对象。<br>    声明的对象：<br>    当this关键字在一个声明对象内部使用，其值会被绑定到该this的函数的最近的父对象。<br>    e.g. var person = {<br>        first : ‘John’,<br>        last : ‘Smith’,<br>        full: function() {<br>            console.log(this.first + ‘ ‘ + this.last);<br>        }<br>        };<br>        person.full(); //在被声明的对象person中的full函数使用this，那么调用this的full函数的最近的父对象就是person，因此，this指向person。<br>        var person = {<br>            first : ‘John’,<br>            last : ‘Smith’,<br>            full: function() {<br>                console.log(this.first + ‘ ‘ + this.last);<br>            },<br>            personTwo : {<br>                first : ‘Allison’,<br>                last : ‘Jones’,<br>                full : function() {<br>                    console.log(this.first + ‘ ‘ + this.last);<br>                }<br>            }<br>        };<br>        person.full(); //John Smith<br>        person.personTwo.full(); //Allison Jones:调用this的full函数最近的父对象是personTwo，this指向personTwo。<br>    当使用new关键字构建一个新的对象，this会绑定到这个新对象。<br>    e.g. function Car(make,model) {<br>        this.make = make;<br>        this.model = model;<br>    };<br>    var myCar = new Car(‘Ford’,’Escape’);<br>    console.log(myCar); //Car {make: “Ford”, model: “Escape”}:使用new关键字来声明一个新的变量，Car函数中的this将会绑定一个新的空对象，然后初始化this.make和this.model的值。<br>    3.构造函数调用<br>    函数或方法调用之前带有关键字new，就构成构造函数调用。<br>    4.间接调用<br>    call() apply()方法间接调用</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjeur8tr6000qzkv2jpsn10yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjeur8to50000zkv2mov27hwe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +102,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数2/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          JavaScript对象2
+          JavaScript函数2
         
       </div>
     </a>
   
   
-    <a href="/2018/03/12/JavaScript语句/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/14/JavaScript数组3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript语句</div>
+      <div class="article-nav-title">JavaScript数组3</div>
     </a>
   
 </nav>

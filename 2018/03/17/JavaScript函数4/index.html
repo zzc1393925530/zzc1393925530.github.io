@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript对象1 | Hexo</title>
+  <title>JavaScript函数4 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+  <meta name="description" content="///函数属性、方法和构造函数   length属性 arguments.length表示传入函数的实参的个数。函数的length属性只读，代表函数实参的数量，参数指的是形参而非实参，就是函数定义时给出的实参个数。   prototype属性 每个函数都包含一个prototype属性，指向一个对象的引用，原型对象。将函数用作构造函数时，新创建的对象会从原型对象继承属性。   call()和appl">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象1">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JavaScript对象1/index.html">
+<meta property="og:title" content="JavaScript函数4">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/JavaScript函数4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
-<meta property="og:updated_time" content="2018-03-13T11:51:37.788Z">
+<meta property="og:description" content="///函数属性、方法和构造函数   length属性 arguments.length表示传入函数的实参的个数。函数的length属性只读，代表函数实参的数量，参数指的是形参而非实参，就是函数定义时给出的实参个数。   prototype属性 每个函数都包含一个prototype属性，指向一个对象的引用，原型对象。将函数用作构造函数时，新创建的对象会从原型对象继承属性。   call()和appl">
+<meta property="og:updated_time" content="2018-03-17T02:29:55.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象1">
-<meta name="twitter:description" content="内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。自定义对象：由运行中的JavaScript代码创建的对象。自有属性：直接在对象中定">
+<meta name="twitter:title" content="JavaScript函数4">
+<meta name="twitter:description" content="///函数属性、方法和构造函数   length属性 arguments.length表示传入函数的实参的个数。函数的length属性只读，代表函数实参的数量，参数指的是形参而非实参，就是函数定义时给出的实参个数。   prototype属性 每个函数都包含一个prototype属性，指向一个对象的引用，原型对象。将函数用作构造函数时，新创建的对象会从原型对象继承属性。   call()和appl">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript函数4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
-  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
+    <a href="/2018/03/17/JavaScript函数4/" class="article-date">
+  <time datetime="2018-03-17T02:28:09.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript对象1
+      JavaScript函数4
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
+        <p>///函数属性、方法和构造函数<br>   length属性 arguments.length表示传入函数的实参的个数。函数的length属性只读，代表函数实参的数量，参数指的是形参而非实参，就是函数定义时给出的实参个数。<br>   prototype属性 每个函数都包含一个prototype属性，指向一个对象的引用，原型对象。将函数用作构造函数时，新创建的对象会从原型对象继承属性。<br>   call()和apply()方法 看作某个对象的方法，通过调用方法的形式间接调用。call()和apply()方法的第一个实参调用函数的母对象，调用上下文，在函数体内通过this获得对它的引用。继承自function.prototype<br>   e.g. f.call(o);<br>        f.apply(o); //以对象o的方法调用函数f()<br>    call() 第一个参数是指定函数内部中this的指向(函数执行时所在作用域)，第二个参数是函数调用时需要传递的参数。可以指定该函数内部this的指向，即函数执行时所在的作用域，然后在所指定的作用域中，调用该函数，并且会立即执行该函数。e.g. f.call(0,1,2)<br>    e.g. var keith = {<br>        rascal: 123<br>    };<br>         var rascal = 456;<br>         function a() {<br>             console.log(this.rascal);<br>         }<br>         a();  //456<br>         a.call(); //456<br>         a.call(null); //456<br>         a.call(undefined); //456<br>         a.call(this); //456:以上作用域均为a()函数<br>         a.call(keith); //123：作用域keith对象<br>    e.g. function keith(a,b) {<br>        console.log(a + b);<br>    }<br>    keith.call(null,1,2); //3:第一个参数为null，undefined，this表明函数此时处于全局作用域。apply必须以数组的形式添加。<br>bind()方法 用于指定函数内部的this指向(执行时所在的作用域)，然后返回一个新函数。传递参数时和call()方法相同。<br>toString()方法 返回字符串<br>Function()构造函数 该函数创建的函数并不是使用词法作用域，函数体代码的编译总是会在顶层函数执行。<br>e.g. var scope = “global”;<br>     function constructFunction() {<br>         var scope = “local”;<br>         return new Function (“return scope”); //无法捕获局部作用域<br>     }<br>     //因为通过Function()构造函数<br>     //所返回的函数使用的不是局部作用域<br>     constructFunction()(); //=&gt;”global”<br>可调用对象 RegExp对象<br>////函数式编程<br>高阶函数：接受一个或多个函数作为参数返回一个新函数。<br>不完全函数：把一次完整的函数调用拆成多次函数调用，每次传入的参数都是完整实参的一部分。<br>记忆：memorize()函数创建一个新对象，这个对象被当做缓存并赋值给一个局部变量。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjeur8tr6000qzkv2jpsn10yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjeur8tpg0004zkv2hcxujyql" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +102,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/13/JavaScript对象2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript对象2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/12/JavaScript语句/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/17/JavaScript函数3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript语句</div>
+      <div class="article-nav-title">JavaScript函数3</div>
     </a>
   
 </nav>

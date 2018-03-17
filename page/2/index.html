@@ -5,18 +5,14 @@
   
 
   
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/hello-world/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-03-12T04:14:30.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,7 +59,139 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-JavaScript语句" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/12/JavaScript语句/" class="article-date">
+  <time datetime="2018-03-12T12:45:08.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/JavaScript语句/">JavaScript语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。<br>声明语句：var用来声明一个或多个对象；<br>         function定义函数。<br>条件语句：if/else、else if(代码中有多条分支)<br>         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。<br>循环：while、do/while(关键字do标识循环开始，用while来标识循环的结尾并进入循环条件判断)、<br>    for、for/in(不会遍历对象的所有属性，只有“可枚举”的属性才会遍历到)。<br>跳转：break(跳转到循环或者其他语句的结束，达到break条件立即退出整个循环)<br>    continue(中止本次循环的执行并开始下一次循环的执行)<br>    return(解释器跳出函数体的执行，并提供调用的返回值)<br>    throw(触发或“抛出”一个异常)<br>标签语句：标识符和冒号组成 给一个语句加标签，在程序其他地方可以使用这个名字标记任何语句。<br>throw语句：抛出异常时立即停止当前正在执行的逻辑，跳转至就近的异常处理程序。<br>try/catch/finally语句：语句块都需要使用花括号，catch从句跟在try从句之后，try块内某处发生异常调用catch内的代码逻辑。catch从句后跟随finally块，后者中放置清理代码，不管try块中是否异常，finally内逻辑总是执行。<br>e.g function trycatch () {<br>    var array = [234],<br>        newdate = new Date(),<br>        fun = function(){},<br>        is = 12.22,<br>        call;<br>    try{<br>        throw array + ‘\n’ + newdate.toLocaleString() + ‘ \n’ + fun.prototype.constructor +<br>        ‘\n’ + (typeof is == ‘number’) +’ \n’ + call ; //小心local后面还有一个’e’<br>    }<br>    catch(e){<br>        console.log(e);<br>    }<br>    finally{<br>        console.log(‘err finally’);<br>    }<br>}<br>trycatch ()<br>//  输出：</p>
+<p>// 234</p>
+<p>// 2018/3/13 上午9:55:02 </p>
+<p>// function (){}</p>
+<p>// true </p>
+<p>// undefined</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjeur8tts0016zkv23gzc49em" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/12/JavaScript简介/" class="article-date">
+  <time datetime="2018-03-12T10:32:30.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript笔记/">JavaScript笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/JavaScript简介/">JavaScript简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript发明者布兰登 艾奇(Brendan Eich)<br>JavaScript组成：核心(ECMAscript) 提供核心语言功能<br>                文档对象模型(DOM) 提供访问和操作网页内容的方法和接口<br>                浏览器对象模(BOM) 提供与浏览器交互的方法和接口<br>在HTML用 script 元素插入JavaScript<br>所有 script 元素都会按照先后顺序依此被解析。(在不使用 defer 和 async 的情况下)<br>async：可选 立即下载脚本，不妨碍页面中的操作。只对外部脚本文件有效。<br>charset：可选 src属性指定的代码的字符集。<br>defer：可选 脚本可延迟到文档完全被解析和显示之后再执行。只对外部文件有效。IE7及更早版本对嵌入脚本也支持这个属性。<br>src：可选 执行代码的外部文件。<br>type： text/JavaScript<br>现代WEB应用程序一般把全部JavaScript引入放在 body 元素中的内容后面。<br>延迟脚本：延迟脚本会按照出现顺序执行，最好只包含一个脚本。放在页面底部最佳。<br>异步脚本：不保证按照指定它们的顺序执行。<br>嵌入文件与外部文件：尽可能使用外部文件。可维护性、可缓存、适应未来。<br>noscript 元素：浏览器不支持脚本/支持脚本被禁用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjeur8tts0018zkv23srvk80m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TEST" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/12/TEST/" class="article-date">
+  <time datetime="2018-03-12T04:40:27.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/日志/">日志</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/TEST/">TEST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hello World ! HEXO !</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjeur8trm000uzkv2l7asxbo8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/12/hello-world/" class="article-date">
   <time datetime="2018-03-12T04:14:30.670Z" itemprop="datePublished">2018-03-12</time>
@@ -76,8 +204,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Hello World
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/hello-world/">Hello World</a>
     </h1>
   
 
@@ -104,23 +232,16 @@
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2018/03/12/TEST/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TEST
-        
-      </div>
-    </a>
-  
-  
-</nav>
+</article>
+
 
   
-</article>
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
