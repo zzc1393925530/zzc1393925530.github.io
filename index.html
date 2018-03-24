@@ -61,6 +61,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-FLEX布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/24/FLEX布局/" class="article-date">
+  <time datetime="2018-03-24T09:53:44.000Z" itemprop="datePublished">2018-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/24/FLEX布局/">FLEX布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。<br>容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间叫cross size.</p>
+<p></p><h3>flex属性</h3><br>flex-direction:决定主轴的方向，即项目的排列方向。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-direction: row | row-reverse | column | column reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;row: 水平方向，起点左端；<br>&emsp;row-reverse:水平方向，起点右端；<br>&emsp;column:垂直方向，起点上沿；<br>&emsp;column-reverse:垂直方向，起点下沿。<br>flex-wrap:定义若一条轴线排不下，如何换行。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;nowrap: 默认，不换行;<br>&emsp;wrap:换行，第一行在上方;<br>&emsp;wrap-reverse:换行，第一行在下方。<br>flex-flow:是flex-direction和flex-wrap属性的简写形式。默认值是row nowrap.<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>justify-content:定义了项目在主轴上的对齐方式。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start:左对齐；<br>&emsp;flex-end:右对齐；<br>&emsp;center:居中；<br>&emsp;space-between:两端对齐，项目之间间隔相等；<br>&emsp;space-around:每个项目两侧的间隔相等，所以，项目之间的间隔比项目与边框的间隔大一倍。<br>align-items:定义项目在交叉轴如何对齐。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start：交叉轴的起点对齐;<br>&emsp;flex-end：交叉轴的终点对齐;<br>&emsp;center：交叉轴的中点对齐;<br>&emsp;baseline: 项目的第一行文字的基线对齐;<br>&emsp;stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。<br>具体详见<a href="http://static.vgee.cn/static/index.html" target="_blank" rel="noopener">FLEX布局实例</a></p>
+<p></p><h3>如何通过flex实现垂直居中</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;display:flex;justify-content:center;align-items:center;&#125;</span><br><span class="line">作者： GD_SeHun </span><br><span class="line">链接：https://www.imooc.com/article/2235</span><br><span class="line">来源：慕课网</span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf5881t400019wv2h8kc5dfn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-DIV-CSS1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/24/DIV-CSS1/" class="article-date">
@@ -113,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf54b6k70003x4v2z6ddvrs6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf5881tk00039wv2w6t50455" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -167,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf54b6jr0001x4v2g2ngphqs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf5881t400009wv2kk0fy2aq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -218,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf54b6jb0000x4v2zwfyy73s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf5881tk00049wv2wsul77ie" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -270,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf54b6s20025x4v2gftrwzaq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf5881uv001f9wv2i3ue8y0o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -310,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf54b6pu001ax4v2pkvht6d8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf5881uv001d9wv2722pivv2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -350,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjf54b6oj0011x4v2yakg8ifs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjf5881uf00139wv2bjsyhgdf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -389,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjf54b6pe0017x4v2y0z3gydn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjf5881uf00199wv280ruanme" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -428,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjf54b6oj0014x4v2kzrdjbrt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjf5881uf00179wv2mwkk0rud" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -467,78 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjf54b6l20008x4v2yjo2c45a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript函数3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/17/JavaScript函数3/" class="article-date">
-  <time datetime="2018-03-17T02:27:00.000Z" itemprop="datePublished">2018-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/17/JavaScript函数3/">JavaScript函数3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>////闭包<br>    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。<br>    作用域<br>    e.g. var scope = “global”;<br>         function f() {<br>             console.log(scope); //输出undefined:局部变量在整个函数体始终有定义，局部变量遮盖同名全局变量<br>             var scope = “local”; //变量在这里赋值，但变量本身在函数体内任何地方都有定义<br>             console.log(scope); //输出local<br>         }<br>         var scope = ‘global’;<br>          function fn() {<br>          alert(scope); //未定义直接赋值的变量自动声明为全局作用域，所以上例不适用，这里的scope就是global<br>          scope = ‘local’; //更改了全局变量scope值变为local<br>          alert(scope); //local<br>         }<br>        fn();<br>        alert(scope);//local</p>
-<pre><code>var scope = &apos;global&apos;;
-function fn(scope) { //scope此时是函数的参数
-alert(scope); //为被初始化
-scope = &apos;local&apos;; //局部变量
-alert(scope);
-}
-fn();
-alert(scope); //全局变量
-</code></pre><p><strong>不使用var保留字声明变量, 变量提升为全局变量, 而不论变量处于哪种作用域;<br>如果不使用var声明, 该变量便可配置, 即可被 delete 保留字删除, 删除后该变量便不可访问; 如果使用var声明, 该变量便不可配置, 即不能被 delete 保留字删除;<br>只要是全局变量都可以直接访问, 也可使用 “window.变量名” 来访问, 不管该变量是不是通过var来声明的;</strong><br><strong>闭包 // 如果一个函数访问了它的外部变量，那么它就是闭包。当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。</strong><br>        闭包 e.g. var scope = “global scope”;<br>                 function checkscope() {<br>                 var scope = “local scope”;<br>                 function f() {return scope;}<br>                 return f();<br>                }<br>                checkscope(); //“local scope”</p>
-<pre><code>        var scope = &quot;global scope&quot;;
-        function checkscope() {
-        var scope = &quot;local scope&quot;;
-        function f() {return scope;}
-        return f;
-        }
-        checkscope()(); //&quot;local scope&quot;
-e.g. function foo(x) {
-    var temp = 3;
-    function bar(y) {
-        alert(x + y + (++temp));
-    }
-    bar(10);
-}
-foo(2); //16:非闭包
-e.g. function foo(x) {
-    var temp = 3;
-    return function (y) {
-        alert(x + y + (++temp));
-    }
-}
-var bar = foo(2);
-bar(10); //16:闭包
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjf54b6km0007x4v21hhcpnlc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjf5881u0000b9wv2t6wcbvxv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -585,7 +560,7 @@ bar(10); //16:闭包
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML-CSS/" style="font-size: 10px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
@@ -607,6 +582,10 @@ bar(10); //16:闭包
       <ul>
         
           <li>
+            <a href="/2018/03/24/FLEX布局/">FLEX布局</a>
+          </li>
+        
+          <li>
             <a href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
           </li>
         
@@ -620,10 +599,6 @@ bar(10); //16:闭包
         
           <li>
             <a href="/2018/03/23/闭包/">闭包</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/递归/">递归</a>
           </li>
         
       </ul>

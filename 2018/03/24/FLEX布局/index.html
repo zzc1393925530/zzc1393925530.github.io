@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>FLEX布局 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间">
+<meta name="keywords" content="日志,HTML&#x2F;CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FLEX布局">
+<meta property="og:url" content="http://yoursite.com/2018/03/24/FLEX布局/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间">
+<meta property="og:updated_time" content="2018-03-24T10:22:11.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FLEX布局">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-FLEX布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/24/FLEX布局/" class="article-date">
+  <time datetime="2018-03-24T09:53:44.000Z" itemprop="datePublished">2018-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FLEX布局
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。<br>容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间叫cross size.</p>
+<p></p><h3>flex属性</h3><br>flex-direction:决定主轴的方向，即项目的排列方向。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-direction: row | row-reverse | column | column reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;row: 水平方向，起点左端；<br>&emsp;row-reverse:水平方向，起点右端；<br>&emsp;column:垂直方向，起点上沿；<br>&emsp;column-reverse:垂直方向，起点下沿。<br>flex-wrap:定义若一条轴线排不下，如何换行。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;nowrap: 默认，不换行;<br>&emsp;wrap:换行，第一行在上方;<br>&emsp;wrap-reverse:换行，第一行在下方。<br>flex-flow:是flex-direction和flex-wrap属性的简写形式。默认值是row nowrap.<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>justify-content:定义了项目在主轴上的对齐方式。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start:左对齐；<br>&emsp;flex-end:右对齐；<br>&emsp;center:居中；<br>&emsp;space-between:两端对齐，项目之间间隔相等；<br>&emsp;space-around:每个项目两侧的间隔相等，所以，项目之间的间隔比项目与边框的间隔大一倍。<br>align-items:定义项目在交叉轴如何对齐。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start：交叉轴的起点对齐;<br>&emsp;flex-end：交叉轴的终点对齐;<br>&emsp;center：交叉轴的中点对齐;<br>&emsp;baseline: 项目的第一行文字的基线对齐;<br>&emsp;stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。<br>具体详见<a href="http://static.vgee.cn/static/index.html" target="_blank" rel="noopener">FLEX布局实例</a></p>
+<p></p><h3>如何通过flex实现垂直居中</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;display:flex;justify-content:center;align-items:center;&#125;</span><br><span class="line">作者： GD_SeHun </span><br><span class="line">链接：https://www.imooc.com/article/2235</span><br><span class="line">来源：慕课网</span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf5881t400019wv2h8kc5dfn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/24/DIV-CSS1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">DIV/CSS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/24/FLEX布局/">FLEX布局</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/23/AJAX/">AJAX</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/23/JSON/">JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/23/闭包/">闭包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
