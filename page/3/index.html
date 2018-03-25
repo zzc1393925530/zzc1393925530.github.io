@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,84 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript对象2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/13/JavaScript对象2/" class="article-date">
+  <time datetime="2018-03-13T11:52:25.000Z" itemprop="datePublished">2018-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/13/JavaScript对象2/">JavaScript对象2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属性的查询和设置：e.g. var author = book.author;<br>                     var title = book[“main title”]; //注意空格。ECMAScript3如果一个对象的属性名是保留字则必须用方括号的形式访问。ECMAScrit5放宽了限制，可以在点运算符后直接使用保留字。<br>作为关联数组的对象：object[“property”]通过字符串索引 -&gt; 关联数组<br>                  JavaScript对象都是关联数组。<br>                  当通过点运算符访问对象的属性时，属性名用一个标识符来表示。标识符必须直接出现在JavaScript程序中，它们不是数据类型，所以程序无法修改他们。<br>                  当通过[]来访问对象属性时，属性名通过字符串来显示。字符串是JavaScript的数据类型在程序运行时和修改和创建。<strong>字符串值是动态的。</strong><br>                  function getvalue(portfolio){<br>                  var total = 0.0;<br>                  for(stock in portfolio){ //遍历portfolio中的每只股票<br>                  var shares = portfolio[stock]; //得到每只股票的份额<br>                  var price = getquote(stock); //查找股票价格<br>                  total += shares * price;<br>                  }<br>                  return total;<br>                  }<br>继承：JavaScript对象具有自有属性，也有属性是从原型对象继承而来的。<br> e.g. var o = {}; //o从Object.prototype继承对象的方法<br>      o.x = 1; //给o定义一个熟悉x<br>      var p = inherit(0); //p继承o和Object.prototype<br>      p.y = 2; //给p定义一个熟悉y<br>      var q = inherit(p); //q继承p、o和Object.prototype<br>      q.z = 3; //给q定义一个熟悉z<br>      var s = q.toString(); //toString继承Object.prototype<br>      q.x + q.y; //=&gt;3:x和y分别继承自o和p<br>     如果o继承自一个只读属性x，那么赋值操作不允许。只有在查询属性时才会体验到继承的存在，设置属性和继承无关。<br>     var unitcircle = { r:1}; //一个用来继承的对象<br>     var c = inherit(unitcircle); //c继承属性r<br>     c.x = 1; c.y =1;  //c定义两个属性<br>     c.r = 2; //c覆盖继承来的属性<br>     unitcircle.r; //=&gt;,原型对象没有修改<br>     对象o设置属性p会失败：1 o的属性p是只读的：不能给只读属性重新赋值<br>                        2 o中的属性p是继承属性，且它是只读的<br>                        3 o中不存在的自有属性p<br>删除属性：delete运算符可以删除对象的属性。不会操作属性中的属性。<br>         <strong>只能删除自有属性，不能删除继承属性。</strong><br>         delete不能删除那些可配置性(意味着能修改属性的行为，让该对象的属性都是不可迭代的、不可修改的和不可配置的)为false的属性，某些内置对象的属性是不可配置的，比如通过变量声明和函数声明创建的全局对象的属性。<br>检测属性：判断某个属性是否存在于某个对象中。可通过in运算符、hasOwnProperty()和propertyIsEnumerable()方法来完成这个工作。<br>in运算符的左侧是属性名，右侧是对象。若对象的自有属性或继承属性包含这个属性则返回true。<br>e.g. var o = { x:1 };<br>     “x” in o; //true: “x”是o的属性<br>     “y” in o; //false： “y”不是o的属性<br>     “toString” in o; //true：o继承toString属性<br>hasOwnProperty()检测给定的名字是否是对象的自有属性。对于继承属性将返回false。<br>e.g. var 0 = { x:1 };<br>     o.hasOwnProperty(“x”); //true:o有一个自有属性x<br>     o.hasOwnProperty(“y”); //false:o中不存在属性y<br>     o.hasOwnProperty(“toString”); //false:toString是继承属性<br>propertyIsEnumerable()是hasOwnProperty()的增强版，只有检测到是自有属性且属性的可枚举性为true时才返回true。某些内置属性不可枚举。<br>!== 判断一个属性是否是undefined。<br>e.g. var o = { x:1 };<br>     o.x !== undefined; // true:o中有属性x<br>     o.y !== undefined; //false:o中没有属性y<br>     o.toString !== undefined; //true:o继承toString属性<br>有一种场景只能使用in运算符而不能使用上述属性访问的方式。in可以区分不存在的属性和存在但是值为undefined的属性。<br>e.g. var o = { x:undefined }; //属性被显式赋值为undefined<br>     o.x !== undefined; //false:属性存在，但值为undefined<br>     o.y !== undefined; //false:属性不存在<br>     “x” in o; //true:属性存在<br>     “y” in o; //false:属性不存在<br>     delete 0.x; //删除了属性x<br>     “x” in o; //false:属性不再存在</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjf6ejlmo000jd4v2tmitrhn0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript对象1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/13/JavaScript对象1/" class="article-date">
+  <time datetime="2018-03-13T11:50:38.000Z" itemprop="datePublished">2018-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/13/JavaScript对象1/">JavaScript对象1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjf6ejlmq000ld4v2hsfjjrek" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript语句" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -93,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf5bjoo3000wesv2odntk0ca" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf6ejlng0019d4v2odyrlexc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -136,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf5bjoo0000tesv2g90wcgct" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf6ejln80011d4v20nckx2ur" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
@@ -179,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf5bjony000qesv2pr84bdvd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf6ejln2000vd4v2cvv416r5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -226,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf5bjoo70011esv2hrppt894" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf6ejlnc0015d4v2xco1ol2u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,7 +318,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </section>
@@ -249,7 +327,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -261,7 +339,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
   </div>
 
@@ -271,14 +349,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -288,9 +366,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/24/JavaScript事件/">JavaScript事件</a>
+          </li>
         
           <li>
             <a href="/2018/03/24/布局实例/">布局实例</a>
@@ -302,14 +388,6 @@
         
           <li>
             <a href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/AJAX/">AJAX</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/JSON/">JSON</a>
           </li>
         
       </ul>

@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,103 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-bootstrap栅格" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/25/bootstrap栅格/" class="article-date">
+  <time datetime="2018-03-25T05:28:18.000Z" itemprop="datePublished">2018-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>HTML5文档类型</h3><br>Bootstrap用到的某些HTML元素和CSS元素需要将页面设置为HTML5文档类型。格式如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span> = <span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h3>移动设备优先</h3><br>为了确定适当的绘制和触屏缩放，需要在 head 之间添加viewport元数据标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span> = <span class="string">"viewport"</span> <span class="attr">content</span> = <span class="string">"width = device-width, initial-scale = 1"</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p>在移动设备浏览器上设置meta属性为 user-scalable = no 可以禁用缩放功能。视情况而定。</p>
+<p></p><h3>布局容器</h3><br>Bootstrap需要为页面内容和栅格系统包裹一个 .container 容器。提供了两个作此用处的类。不能相互嵌套。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = "container"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt; //用于固定宽度并支持响应式布局的容器</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = "container-fluid"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt; //用于100%宽度，占据全部viewport的容器</span><br></pre></td></tr></table></figure>
+<p></p><h3>栅格系统</h3><p></p>
+<ol>
+<li>row 必须包含在 .container 或 .container-fluid 中。内容放置于 column 内，只有 column 可以作为 row 的直接子元素。</li>
+<li>通过为 column 设置 padding 属性，创建列与列之间的间隔；通过为 row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding ,间接为 row 所包含的 column 抵消掉了 padding .</li>
+<li>如果一 row 包含的  column 大于12，多余的 column 所在元素将另起一行排列。</li>
+<li>在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备，并针对小屏幕设备覆盖栅格类。 .col-lg-</em>不存在，影响大屏幕设备。<br><h3>媒体查询</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 小屏幕（平板，大于等于 768px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-sm-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 中等屏幕（桌面显示器，大于等于 992px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-md-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 大屏幕（大桌面显示器，大于等于 1200px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-lg-min) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p></p><h3>栅格参数</h3><br>超小屏幕: 类前缀 -col-xs ; 水平排列<br>小屏幕: 类前缀 -col-sm ;<br>中等屏幕: 类前缀 -col-md ;<br>大屏幕: 类前缀 -col-lg . //开始是堆叠在一起的，当大于这些阈值时将变为水平排列C。<p></p>
+<p></p><h3>堆叠到水平排列</h3><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8"</span>&gt;</span>.col-md-8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h3>移动设备和桌面屏幕</h3><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-12 col-md-8"</span>&gt;</span>.col-xs-12 .col-md-8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6"</span>&gt;</span>.col-xs-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6"</span>&gt;</span>.col-xs-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjf6ejln5000xd4v25p9hl8q7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/24/JavaScript事件/" class="article-date">
+  <time datetime="2018-03-24T12:34:37.000Z" itemprop="datePublished">2018-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/24/JavaScript事件/">JavaScript事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>事件冒泡</h2><br>&emsp;&emsp;IE中的事件流叫事件冒泡，即事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Event Bubbling Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"myDiv"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p>这个click事件会按照1div 2body 3html 4document顺序传播。所有现代浏览器都支持事件冒泡。</p>
+<p></p><h3>事件捕获</h3><br>&emsp;&emsp;很少有人使用事件捕获。<p></p>
+<p></p><h3>DOM事件流</h3><br>&emsp;&emsp;DOM2级规定的事件流包括事件捕获阶段、处于目标阶段和事件冒泡三阶段.<p></p>
+<p></p><h3>事件处理程序</h3><br>&emsp;&emsp;诸如click,load和mouseover，都是事件的名字。响应某个事件的函数就是事件处理程序。事件处理程序名字以”on”开头，因此click事件的事件处理程序就是onclick,load事件处理程序就是onload.<p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjf6ejlm10006d4v2v3zc4w84" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-布局实例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -105,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf5bjoo5000zesv2xglux6zg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf6ejlna0013d4v2414mnfry" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -151,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf5bjomn0000esv26ek3ynnh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf6ejllw0005d4v2us64czy0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -215,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf5bjon20003esv2gd7pu1y6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf6ejlm60008d4v29l1h1m0r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -269,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf5bjomu0001esv2kx3c5n0x" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf6ejlm9000ad4v22eu97h16" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -320,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf5bjona0007esv2xjnc2ip8" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf6ejlkv0000d4v2rqcd09dj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -372,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf5bjoog001desv2s2vhrr89" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf6ejlo4002bd4v29gfq3i40" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -412,7 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf5bjooe001besv2trfsvhtw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf6ejlo7002cd4v2bd44so4j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -452,85 +549,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjf5bjooa0015esv2up7rxqcq" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-脚本化文档" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/17/脚本化文档/" class="article-date">
-  <time datetime="2018-03-17T07:41:44.000Z" itemprop="datePublished">2018-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/17/脚本化文档/">脚本化文档</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>通过id选取元素：document.getElementsById() id属性必须唯一<br>通过名字选取元素：document.getElementsByName() name属性不必唯一，该方法定义在HTMLDocument类中，而不在Document类中，所以只针对HTML文档可用，在xml文档中不可用。返回nodeList集合，只在少数DOM元素中有效。<strong>在IE中该方法也返回id属性匹配指定值的元素。</strong><br>通过标签名选取元素：document.getElementsByTagName() 返回nodeList集合<br>e.g. 查找文档中第一个 p 元素里面的所有 span 元素<br>     var firstpara = document.getElementsByTagName(“p”)[0];<br>     var firstParaSpans = firstpara.getElementsByTagName(“span”);<br>e.g. 引用命名(或有ID的)表单<br>     document.form.shipping_address;<br>通过CSS类选取元素：document.getElementsByClassName()<br>返回nodeList集合，只能选取调用该方法的元素的后代元素。IE8及其以下版本的浏览器未实现。<br>通过CSS选择器选取元素：可以通过ID、名字、标签名、类名选取元素。document.querySelectorAll(“selector”) 返回值是nodeLIst集合 IE8及其以下版本的浏览器只支持CSS2标准的选择器语法。<br>document.all[]表示所有文档中的元素，除了Text节点。<br>////文档结构和遍历<br>parentNode 该节点的父节点 Document没有父节点<br>childNode 只读的类数组对象(NodeList对象)<br>firstChild、lastChild 该节点的第一个和最后一个，没有子节点则null<br>nextSibling、previoursSibling该节点的兄弟节点中的前一个和下一个。具有相同父节点的两个节点为兄弟节点。顺序反映了在文档中的出现顺序。<br>nodeType 节点类型。9代表Document节点，1代表Element节点，3代表Text节点，8代表Comment节点，11代表DocumentFragment节点。<br>nodeValue Text节点或Comment节点的文本内容<br>nodeName 元素的标签名，以大写形式表示。<br>////作为元素树的文档<br>API第一部分是Element对象的children属性。NodeList对象，但只包含Element对象。Text和Comment节点没有children属性，上述Node.parentNode属性不可能返回Text或Comment节点。<br>基于元素的文档遍历api第二部分是Element属性。<br>////属性<br>HTMLElement定义了通用的HTTP属性(id、标题lang和dir)属性，以及事件处理程序属性(onclick)。HTML属性名不区分大小写，从HTML属性名转到JavaScript属性名应小写。属性名不止一个单词则除首单词以外的单词首字母大写。HTML属性名在JavaScript中是保留字则在属性名前加html。<br>////设置和获取非标准的HTML属性<br>getAttribute()和setAttribute()方法，查询和设置非标准的HTML属性。Element属性还设置了hasAttribute()检测属性是否存在，removeAttribute()删除属性。<br>////元素的内容<br>查询纯文本形式的元素内容，或在文档中插入纯文本。作为纯文本的元素内容 Node的textContent属性<br>e.g. var para = document.getElementByTagName(“p”)[0];<br>     var text = para.textContent;<br>     para.textContent = “Hello World!”;<br>作为Text节点的元素内容<br>e.g. 查找元素的后代中节点的所有Text节点】】<br>    function textContent(e) {<br>    var child,type,s = “”;<br>    for(child = e.firstChild;child != null; child = child.nextSibling){<br>        type = child.nodeType;<br>        if(type === 3 || type === 4 )<br>        s += child.nodeValue;<br>        else if (type === 1)<br>        s += textConetent(child);<br>    }<br>    return s;<br>}<br>////创建、插入和删除节点<br>创建节点 text节点 var newnode = document.createTextNode(“text node content”);<br>每个节点有一个cloneNode()方法返回该节点的一个全新副本。参数true能递归的复制所有后代节点，false执行浅复制。<br>插入节点 appendChild()(插入的节点使其成为那个节点的最后一个子节点)或insertBefore()(接受两个参数 1待插入的节点2已存在的节点)<br>删除和替换节点 removeChild()从文档树删除一个节点，在其父节点上调用，并将需要删除的子节点作为方法参数传递(两个参数1新节点2需要代替的节点)。n.parentNode.removeChild(n);</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjf5bjop1002fesv23atdy8bz" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-浏览器中的JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/17/浏览器中的JavaScript/" class="article-date">
-  <time datetime="2018-03-17T02:34:53.000Z" itemprop="datePublished">2018-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/17/浏览器中的JavaScript/">浏览器中的JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。<br>////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。<br>////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代码和文档来自不同的源 有重要的安全隐患。<br>////javascript:URL能识别的资源是转换成字符串的执行代码的返回值。alert返回undefined.JavaScript:URL在文档之外确实有重要角色，但应该避免在HTML中使用。<br>/////JavaScript:URL应用:书签<br>////客户端JavaScript线程模型：严格的单线程，HTML5定义了一个并发控制方式WEB WORKER：执行计算密集任务而不冻结用户界面的后台线程。<br>。<br>////兼容性和互用性<br>/////检测渲染模式document.compatMode,值为”CSS1Compat”标准模式，值为”BackCompat”或undefined则为怪异模式。<br>////IE里的条件注释<br>/////   /<em>@cc_on<br>          @</em>/<br>////可访问性<br>/////应该尽可能支持独立于设备的事件<br>////安全性<br>/////JavaScript不支持某些功能。例如不能删除数据或植入病毒。<br>/////在自己支持的某些功能上施加限制。<br>////同源策略 脚本只能读取和所属文档来源相同的窗口和文档的属性，文档的来源包括协议、主机，以及载入文档的URL端口。<br>////不严格的同源策略<br>/////1.document.domain属性设置为一个源<br>/////2.跨域资源共享：允许服务器用头信息显式地列出源，或使用通配符匹配所有源并允许由任何地址请求文件。<br>/////3.跨文档消息：允许来自一个文档的脚本可以传递文本消息到另一个文档里的脚本。调用Window对象上的postMessage()方法，可以异步传递消息事件到窗口的文档里。<br>////跨站脚本<br>/////防止XSS攻击的方式是，在使用任何不可信的数据来动态的创建文档内容之前，从中移除HTML标签。<br>     e.g. name = name.replace(/&lt;/g,”&lt;”).replace(/&gt;/g,”&gt;”);<br>     html5为iframe元素定义了sandbox属性，在实现之后，允许显示不可信内容并自动禁用脚本。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjf5bjooc0017esv27l3otk3d" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjf6ejlnm001hd4v2izb7rl0d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -546,7 +565,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -555,7 +574,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -567,7 +586,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
   </div>
 
@@ -577,14 +596,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -594,9 +613,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/24/JavaScript事件/">JavaScript事件</a>
+          </li>
         
           <li>
             <a href="/2018/03/24/布局实例/">布局实例</a>
@@ -608,14 +635,6 @@
         
           <li>
             <a href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/AJAX/">AJAX</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/JSON/">JSON</a>
           </li>
         
       </ul>
