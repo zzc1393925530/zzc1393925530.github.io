@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript数组1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/14/JavaScript数组1/" class="article-date">
+  <time datetime="2018-03-14T11:04:18.000Z" itemprop="datePublished">2018-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/14/JavaScript数组1/">JavaScript数组1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数组元素的读写： <br><br>////可以使用附属或非整数来索引数组。此情况，数值转换为字符串，字符串作为属性名使用。只能被当作常规的对象属性，而非数组的索引。若凑巧使用了非负整数的字符串，当作数组索引非对象属性。<br>稀疏数组： <br><br>////<strong>包含从0开始的不连续索引的数组。此时length属性值大于元素的个数。</strong><br>e.g. a[1000] = 0; //赋值添加一个元素，但是设置length为1001<br><strong>注意</strong>当在数组直接量中省略值时不会创建稀疏数组。省略的元素在数组中是存在的，值是undefined。<br>e.g. var a1 = [,,,]; //数组是[udnefined,undefined,undefined]<br>     var a2 = new Array(3); //该数组根本没有元素<br>     o in a1; //true:a1在索引0处有一个元素<br>     o in a2; //false:a2在索引0处没有元素<br>数组长度： <br><br>////若为一个数组元素赋值，它的索引i大于或等于现有数组的长度时，length属性的值将设置为i+1;设置length的属性为一个小于当前长度的非负整数n时，当前数组中那些索引值大于或等于n的元素将删除。若数组元素不能配置则不能删除。<br>数组元素的添加和删除： <br><br>////push()方法在末尾添加一个或多个元素。返回数组新的长度。<br>e.g. a = []; //空数组<br>     a.push(“zero”); //a = [“zero”]<br>     a.push(“one”,”two”); a = [“zero”,”one”,”two”]<br>////delete运算符删除数组元素。<br>e.g. a = [1,2,3];<br>     delete a[1]; //删除索引为1的元素<br>     1 in a; //=&gt;false:数组索引1并未定义<br>     a.length; //3:delete操作不会影响数组长度<br>////unshift()方法在数组首部插入元素。返回数组长度<br>e.g. a = [1,2,3];<br>     a.unshift(“one”); //[one,1,2,3]<br>     a.unshift(“two”,”three”); //[“two”, “three”, “one”, 1, 2, 3]<br>////pop()方法使减少长度为1并返回被删除元素的值。<br>e.g. a = [1,2,3];<br>     a.pop(); //3:删除末尾的元素并返回被删除的元素3<br>////shift()方法从数组头部删除一个元素并将所有元素下移到比当前索引低1的地方。<br>e.g. a = [1,2,3];<br>     consolelog(a.shift()); //1:头部元素被删除<br>     console.log(a[1]); //3:所有元素的索引下移1<br>数组遍历： <br><br>////for循环<br>////forEach()方法 按照索引的顺序按个传递给定义的一个函数<br>e.g. var data = [1,2,3,4,5];<br>     var sumOfSquares = 0;<br>     data.forEach(<br>         function(x){ //把每个元素传递给此函数<br>             sumOfSquares += x<em>x;<br>         }<br>     );<br>     console.log(sumOfSquares);  //55<br>多维数组： <br><br>////e.g. var table = new Array(10);<br>         for(var i = 0; i &lt; table.length; i++)<br>         var table[i] = new Array(10);<br>         for(var row = 0; row &lt; table.length; row++){<br>             for(col = 0; col &lt; table[i].length; col++){<br>                 table[row][col] = row</em>col;<br>             }<br>         };<br>         var product = table[5][7];</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjf82ovcy000qrov2qgkvlm0r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript对象3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjf7t1yzs000iogv2kkdmt47e" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjf82ovcy000nrov24xvodes5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -127,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjf7t1yzd000cogv21y2fhvrl" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjf82ovcj000lrov28kiuq8pp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -166,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjf7t1yzd000aogv291hj4xtz" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjf82ovcj000irov2dxak9n66" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -210,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf7t1z080011ogv2ekc1tdbs" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf82ovcy0013rov2o200ah7r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -253,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf7t1yzs000nogv2esqz6dsj" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf82ovcy000xrov2foyzt80o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
@@ -296,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf7t1z08000yogv2r3a8djmf" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf82ovcy0016rov25rvt5m4z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -343,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf7t1z0n0015ogv2iq4fqb3w" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf82ovdf0018rov2hmjb2bru" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,7 +396,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </section>
@@ -366,7 +405,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -386,7 +425,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -395,7 +434,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -405,9 +444,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
+          </li>
         
           <li>
             <a href="/2018/03/25/HTML5/">HTML5</a>
@@ -425,10 +468,6 @@
             <a href="/2018/03/24/布局实例/">布局实例</a>
           </li>
         
-          <li>
-            <a href="/2018/03/24/FLEX布局/">FLEX布局</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -442,7 +481,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

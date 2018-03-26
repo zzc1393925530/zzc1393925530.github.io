@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,48 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript练习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/26/JavaScript练习/" class="article-date">
+  <time datetime="2018-03-26T06:34:06.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>99乘法表<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">1</span>;j &lt;= <span class="number">10</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">var</span> a = i * j;</span><br><span class="line">        <span class="built_in">console</span>.log(i + <span class="string">" * "</span> + j + <span class="string">" = "</span> + a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>斐波那契数列<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">return</span> a(n<span class="number">-1</span>) + a(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(a(<span class="number">8</span>)); <span class="comment">//21</span></span><br></pre></td></tr></table></figure></p>
+<p>阶乘<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span>(n * <span class="built_in">arguments</span>.callee(n - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> anotherFactorial = factorial;</span><br><span class="line">factorial = <span class="literal">null</span>;</span><br><span class="line">alert(anotherFactorial(<span class="number">6</span>));</span><br></pre></td></tr></table></figure></p>
+<p>冒泡排序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt; arr.length;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt;= arr.length - i;j++) &#123;</span><br><span class="line">            <span class="keyword">var</span> temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line">bubbleSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">8</span>,<span class="number">9</span>]); <span class="comment">//[4, 5, 8, 9, 12]</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjf82ovcy0010rov22ipgklll" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-HTML5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -116,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjf7t1yyh0000ogv2qhnttys9" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjf82ovc30004rov2j2p2kph5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -170,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjf7t1z08000togv23bew1yay" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjf82ovdg001brov2hktn10lx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -213,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjf7t1yyx0003ogv2b366nacm" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjf82ovc30007rov2dtzdy51b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -269,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf7t1z08000wogv24m3ajl9e" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf82ovdg001hrov2897kqf74" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -315,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf7t1yzd0007ogv243tz7fi7" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf82ovbn0001rov2jtxyzr41" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -379,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf7t1yyx0001ogv2s2aj8cye" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf82ovc30003rov29dmk9kxc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -433,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf7t1yyx0004ogv20ustz60c" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf82ovbn0000rov2067r3fui" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -484,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf7t1yzd0008ogv2qi52ruhx" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf82ovc30005rov2hcvvxmpd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -536,47 +578,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf7t1z0n001fogv2q05ylprr" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-递归" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/23/递归/" class="article-date">
-  <time datetime="2018-03-23T02:41:17.000Z" itemprop="datePublished">2018-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/23/递归/">递归</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h1>1.递归函数是在一个函数通过名字调用自身的情况下构成的。</h1><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function factorial(num) &#123;</span><br><span class="line">if(num &lt;= 1)&#123;</span><br><span class="line">return 1;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">return num * factorial(num-1);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var anotherFactorial = factorial;</span><br><span class="line">factorial = null;</span><br><span class="line">alert(anotherFactorial(4));  //Uncaught TypeError: factorial is not a function</span><br></pre></td></tr></table></figure><p></p>
-<p></p><h2>arguments.callee是一个指向正在执行的函数的指针，可以用它实现对函数的递归调用。</h2><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function factorial(num) &#123;</span><br><span class="line">if(num &lt;= 1)&#123;</span><br><span class="line">return 1;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">return num * arguments.callee(num-1);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var anotherFactorial = factorial;</span><br><span class="line">factorial = null;</span><br><span class="line">alert(anotherFactorial(4)); //24</span><br></pre></td></tr></table></figure><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf7t1z1y002togv2oo53wrsv" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf82ovdg001srov2vvtkf1q0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -592,7 +594,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -601,7 +603,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -621,7 +623,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -630,7 +632,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -640,9 +642,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
+          </li>
         
           <li>
             <a href="/2018/03/25/HTML5/">HTML5</a>
@@ -660,10 +666,6 @@
             <a href="/2018/03/24/布局实例/">布局实例</a>
           </li>
         
-          <li>
-            <a href="/2018/03/24/FLEX布局/">FLEX布局</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -677,7 +679,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
