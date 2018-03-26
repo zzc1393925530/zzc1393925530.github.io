@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,73 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-HTML5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/25/HTML5/" class="article-date">
+  <time datetime="2018-03-25T11:30:52.000Z" itemprop="datePublished">2018-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/25/HTML5/">HTML5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;HTML5新特性:用于绘画的 canvas 元素;用于媒介回放的 video 和 audio 元素;对离线储存的更好支持;新的特殊内容元素: artical , footer , header , nav , section ;新的表单控件: calendar , date , time , email , url , ,search.</p>
+<p></p><h3>HTML5视频</h3><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span> = <span class="string">"movie.ogg"</span> <span class="attr">width</span> = <span class="string">"320"</span> <span class="attr">height</span> = <span class="string">"240"</span> <span class="attr">controls</span> = <span class="string">"controls"</span>&gt;</span></span><br><span class="line">    Your browser does not support the video tag.</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p> video 元素之间插入的内容是供不支持 video 元素的浏览器显示的.<br> video 元素同样拥有方法、属性和事件.<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;!DOCTYPE html&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"playPause()"</span>&gt;</span>播放/暂停<span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"makeBig()"</span>&gt;</span>大<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"makeNormal()"</span>&gt;</span>中<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"makeSmall()"</span>&gt;</span>小<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"video1"</span> <span class="attr">width</span>=<span class="string">"420"</span> <span class="attr">style</span>=<span class="string">"margin-top:15px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"/example/html5/mov_bbb.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"/example/html5/mov_bbb.ogg"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span> /&gt;</span></span><br><span class="line">    Your browser does not support HTML5 video.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">var myVideo=document.getElementById("video1");</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">function playPause()</span></span><br><span class="line"><span class="undefined">&#123; </span></span><br><span class="line"><span class="undefined">if (myVideo.paused) </span></span><br><span class="line"><span class="undefined">  myVideo.play(); </span></span><br><span class="line"><span class="undefined">else </span></span><br><span class="line"><span class="undefined">  myVideo.pause(); </span></span><br><span class="line"><span class="undefined">&#125; </span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">function makeBig()</span></span><br><span class="line"><span class="undefined">&#123; </span></span><br><span class="line"><span class="undefined">myVideo.width=560; </span></span><br><span class="line"><span class="undefined">&#125; </span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">function makeSmall()</span></span><br><span class="line"><span class="undefined">&#123; </span></span><br><span class="line"><span class="undefined">myVideo.width=320; </span></span><br><span class="line"><span class="undefined">&#125; </span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">function makeNormal()</span></span><br><span class="line"><span class="undefined">&#123; </span></span><br><span class="line"><span class="undefined">myVideo.width=420; </span></span><br><span class="line"><span class="undefined">&#125; </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p> audio 元素和 video 元素类似.</p>
+<p></p><h3>HTML5拖放</h3><br>&emsp;&emsp;在HTML5中,拖放是标准的一部分,任何元素都能被拖放.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span> = <span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        function allowDrop(ev) &#123;</span></span><br><span class="line"><span class="undefined">            ev.preventDefault(); //避免浏览器对数据的默认处理</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        function drag(ev) &#123;</span></span><br><span class="line"><span class="undefined">            ev.dataTransfer.setData("Text",ev.target.id);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        function drop(ev) &#123;</span></span><br><span class="line"><span class="undefined">            ev.preventDefault();</span></span><br><span class="line"><span class="undefined">            var data = ev.dataTransfer.getData("Text");//获得被拖放元素的数据</span></span><br><span class="line"><span class="undefined">            ev.target.appendChild(document.getElementById(data));//把被拖数据追加到放置元素中</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"div1"</span> <span class="attr">ondrop</span> = <span class="string">"drop(event)"</span> <span class="attr">ondropover</span> = <span class="string">"allowDrop(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span> = <span class="string">"drag1"</span> <span class="attr">src</span> = <span class="string">"img_logo.gif"</span> <span class="attr">draggable</span> = <span class="string">"true"</span> <span class="attr">ondragstart</span> = <span class="string">"drag(event)"</span> <span class="attr">width</span> = <span class="string">"336"</span> <span class="attr">height</span> = <span class="string">"69"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h3>HTML5 Canvas</h3><br>&emsp;&emsp; canvas 元素被用来在网页上绘制图形.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span> = <span class="string">"myCanvas"</span> <span class="attr">width</span>= <span class="string">"200"</span> <span class="attr">height</span> = <span class="string">"100"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p> canvas本身没有绘图能力;需要在JavaScript内完成.<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);  <span class="comment">//使用id寻找元素</span></span><br><span class="line"><span class="keyword">var</span> ctx = c.getContent(<span class="string">"2d"</span>);  <span class="comment">//创建context对象;getContent("2d")是H5内建对象,拥有多种绘制图形方法</span></span><br><span class="line">ctx.fillStyle = <span class="string">"#C40000"</span>;  <span class="comment">//颜色</span></span><br><span class="line">ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">150</span>,<span class="number">75</span>);  <span class="comment">//规定性状、位置、尺寸</span></span><br></pre></td></tr></table></figure></p>
+<p> 实例:鼠标悬停在矩形上可以看到坐标<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"coordiv"</span> <span class="attr">style</span> = <span class="string">"float: left;width: 199px;height: 99px border: 1px solid #c3c3c3"</span> <span class="attr">onmousemove</span> = <span class="string">"cnvs_getCoordinates(event)"</span> <span class="attr">onmouseout</span> = <span class="string">"cnvs_clearCoordinates()"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"xycoordinates"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cnvs_getCoordinates</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    x = e.clientX;</span><br><span class="line">    y = e.clientY;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"xycoordinates"</span>).innerHTML = <span class="string">"Coordinates: ("</span> + x + <span class="string">","</span> + y + <span class="string">")"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cnvs_clearCoordinates</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"xycoordinates"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> </p><h3>HTML5内敛SVG</h3><br> &emsp;&emsp;SVG;Scalable Vector Graphics.可伸缩矢量图形.用于网格的基于矢量的图像.使用XML格式定义图像.放大或改变尺寸下质量不会有损失.万维网联盟标准.<br> 与其他图像格式相比，SVG优势:可通过文本编辑器创建修改;可被搜索、索引、脚本化或压缩;可伸缩;任何分辨率下高质量打印;质量不下降的情况下被放大.<br> <h3>Canvas VS SVG</h3><br> SVG: 使用XML描述2D图形;SVG DOM中的每个元素都可用,可附加JavaScript事件处理器;SVG对象的属性变化，浏览器能自动重现图像.<br> Canvas: 通过JavaScript绘制2D图像;逐像素渲染;位置发生变化，整个场景需要重新绘制.<br> <h3>HTML5 地理定位</h3><br> 使用getCurrentPosition()获得用户位置.<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(showPosition);</span><br></pre></td></tr></table></figure><p></p>
+<p> </p><h3>HTML5 Web存储</h3><br> &emsp;&emsp;HTML5提供了两种在客户端存储数据的方法:localStorage(没有时间限制的数据存储),sessionStorage(针对一个session的数据存储).<br> localStorage<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.lastname = <span class="string">"Smith"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(localStorage.lastname);</span><br></pre></td></tr></table></figure><p></p>
+<p> sessionStorage:用户关闭浏览器窗口后，数据会被删除.<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.lastname = <span class="string">"Smith"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(sessionStorage.lastname);</span><br></pre></td></tr></table></figure></p>
+<p> </p><h3>HTML5 应用程序缓存</h3><br> &emsp;&emsp;H5通过创建cache manifest文件创建web应用的离线版本.<br> 优势:离线浏览;速度;减少服务器负载. 除了InternetExplorer主流浏览器都支持应用程序缓存.<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span> = <span class="string">"demo.appcache"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p> 每个指定了manifest的页面在用户对其访问时都会被缓存。若未指定manifest属性则不会缓存.建议扩展名: .appcache.<br> 完整manifest文件<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"># XXXX-XX-XX V1.0.0</span><br><span class="line">/theme.css</span><br><span class="line">/logo.gif</span><br><span class="line">/main.js</span><br><span class="line">NETWORK:</span><br><span class="line">login.asp</span><br><span class="line">FALLBACK:</span><br><span class="line">/html5/ /404.html</span><br></pre></td></tr></table></figure></p>
+<p> </p><h3>HTML5 Web Workers</h3><br> &emsp;&emsp;web worker是运行在后台的JavaScript，不会影响页面性能.除了IE，所有主流浏览器都支持web worker.<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span>(Worker)!==<span class="string">"undefined"</span>)&#123;</span><br><span class="line">    <span class="comment">//YES!Web worker support!</span></span><br><span class="line">    <span class="comment">//Some code....</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//Sorry!Now web Worker support...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p> 创建web worker文件:<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timedCount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    i = i + <span class="number">1</span>;</span><br><span class="line">    postMessage(i);</span><br><span class="line">    setTimeout(<span class="string">"timedCount()"</span>,<span class="number">500</span>);</span><br><span class="line">&#125;</span><br><span class="line">timedCount();</span><br></pre></td></tr></table></figure></p>
+<p> postMessage()方法用于向HTML页面传回一段消息.<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Count number: <span class="tag">&lt;<span class="name">output</span> <span class="attr">id</span> = <span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span> = <span class="string">"startWorker()"</span>&gt;</span>Start Worker<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span> = <span class="string">"stopWorker()"</span>&gt;</span>Stop Worker<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> w;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startWorker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(Worker)!==<span class="string">"undefined"</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span>(w)==<span class="string">"undefined"</span>)&#123;</span><br><span class="line">            w = <span class="keyword">new</span> Worker(<span class="string">"demo_workers.js"</span>); <span class="comment">//不存在web worker,创建新的web worker对象</span></span><br><span class="line">        &#125;</span><br><span class="line">        w.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = event.data;</span><br><span class="line">        &#125;; <span class="comment">//添加一个onmessage事件监听器</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"Sorry,your brower does not support Web Workers..."</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopWorker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    w.terminate(); <span class="comment">//中止web worker</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> web worker无法访问：window对象、document对象、parent对象.<br> </p><h3>HTML5 服务器发送事件</h3><br> &emsp;&emsp;HTML5服务器发送事件(server-sent event)允许网页获得来自服务器的更新.单向消息传递.除了IE所有主流浏览器都支持服务器发送事件.<br> EventSource对象用于接收服务器发送事件通知<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source = <span class="keyword">new</span> EventSource(<span class="string">"demo_sse.php"</span>);</span><br><span class="line">source.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML += event.data + <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p></p>
+<p> 创建一个新的EventSource对象，规定发送更新的页面的URL;每接到一次更新，发生onmessage事件;onmessage事件发生，把已接收的数据推入id为 “result” 的元素中.</p>
+<p></p><h3>HTML5 Input</h3><br>1.email:自动验证email域的值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"email"</span> <span class="attr">name</span> = <span class="string">"user_email"</span> /&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p>2.url:自动验证url域的值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Homepage: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"url"</span> <span class="attr">name</span> = <span class="string">"user_url"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3.number:设定所接受的数字的限定<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Point: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"number"</span> <span class="attr">name</span> = <span class="string">"points"</span> <span class="attr">min</span> = <span class="string">"1"</span> <span class="attr">max</span> = <span class="string">"10"</span> /&gt;</span> <span class="comment">&lt;!--step 规定合法的数字间隔;value 默认值--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>4.range:包含一定范围内数字值的输入域<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"range"</span> <span class="attr">name</span> = <span class="string">"points"</span> <span class="attr">min</span> = <span class="string">"1"</span> <span class="attr">max</span> = <span class="string">"10"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>5.Date Pickers:date,month,week,time,datetime,datetime-local.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"date"</span> <span class="attr">name</span> = <span class="string">"user_date"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>6.search:搜索域，显示为常规文本域</p>
+<p></p><h3>HTML5 表单元素</h3><br>1.datalist:规定输入域的选项列表，通过datalist内的option元素创建,如需把datalist绑定到输入域，输入域的list属性引用datalist的id.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"url"</span> <span class="attr">list</span> = <span class="string">"url_list"</span> <span class="attr">name</span> = <span class="string">"link"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span> = <span class="string">"url_list"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span> = <span class="string">"W3SCHOOL"</span> <span class="attr">value</span> = <span class="string">"example.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span> = <span class="string">"Google"</span> <span class="attr">value</span> = <span class="string">"example.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span> = <span class="string">"Microsoft"</span> <span class="attr">value</span> = <span class="string">"example.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p>2.output:用于不同类型的输出<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">output</span> <span class="attr">id</span> = <span class="string">"result"</span> <span class="attr">onforminput</span> = <span class="string">"resCalc()"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>HTML5表单属性</h3><br>新的form属性:autocomplete novalidate<br>新的input属性:autocomplete,autofocus,form,form overrides,height和width,list,min\max和step,multiple,pattern,placeholder,required.<br>HTML5前的HTML版本是4.01;H5中组合标题元素是 hgroup;不再支持 font ;不再支持 acronym ;不再支持 script 元素的 type 属性;contextmenu和spellcheck是HTML属性;能直接将SVG元素插入到HTML中;week 用于定义周和年控件; meter 用于显示已知范围内的标量测量.<p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjf7t1yyh0000ogv2qhnttys9" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-bootstrap栅格" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -103,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjf6ejln5000xd4v25p9hl8q7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjf7t1z08000togv23bew1yay" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -146,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjf6ejlm10006d4v2v3zc4w84" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjf7t1yyx0003ogv2b366nacm" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -202,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf6ejlna0013d4v2414mnfry" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjf7t1z08000wogv24m3ajl9e" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -248,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf6ejllw0005d4v2us64czy0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjf7t1yzd0007ogv243tz7fi7" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -312,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf6ejlm60008d4v29l1h1m0r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjf7t1yyx0001ogv2s2aj8cye" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -366,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf6ejlm9000ad4v22eu97h16" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/AJAX/" data-id="cjf7t1yyx0004ogv20ustz60c" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -417,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf6ejlkv0000d4v2rqcd09dj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjf7t1yzd0008ogv2qi52ruhx" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -469,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf6ejlo4002bd4v29gfq3i40" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjf7t1z0n001fogv2q05ylprr" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -509,47 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf6ejlo7002cd4v2bd44so4j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jQuery类库" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/18/jQuery类库/" class="article-date">
-  <time datetime="2018-03-18T07:18:54.000Z" itemprop="datePublished">2018-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/18/jQuery类库/">jQuery类库</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>////jQuery基础<br>jQuery类库定义了一个全局函数:jQuery()，快捷别名$.<br>e.g. var divs = $(“div”); 返回的值表示零个或多个DOM元素，这就是jQuery对象。 jQuery()是工厂函数，不是构造函数，返回一个新创建的对象。<br>////jQuery()函数<br>1、传递CSS选择器(字符串)给$()方法。<br>2、传递一个Element、Document或Window对象给$()方法。被封装成jQuery对象并返回。<br>3、传递HTML文本字符串给$()方法。$()接受可选的第二参数，可以传递Document对象来指定与所创建元素相关联的文档。<br>4、传入一个函数给$()方法。传给jQuery()的函数在被调用时，this指向document对象，唯一的参数指向jQuery函数。<br>////查询与查询结果 $()的返回值是一个jQuery对象，是类数组。<br>e.g. $(“body”).length  //=&gt;1:文档只有唯一一个body元素<br>     $(“body”)[0]   //等于document.body<br>     selector属性是创建jQuery对象时的选择器字符串。context属性是上下文对象，是传递给$()方法的第二参数，默认Document对象。所有jQuery对象都有一个名为jQuery的属性。<br>////想要遍历jQuery对象中的元素时，可以调用each()方法来代替for()循环。但是如果回调函数在任一元素上返回false，遍历在该元素后中止。jQuery的map()方法和Array.prototype.map()方法很接近。元素作为this值和第二参数传入，元素的索引值作为第一参数传入。另一个基础方法是index()。接受一个元素作为参数，返回值是该元素在此jQuery对象中的索引值，找不到返回-1。is()方法接受一个选择器作为参数，如果选中元素中至少有一个匹配该选择器时返回true。<br>jQuery中的getter和setter<br>//获取和设置HTML属性 attr()方法是jQuery中用于HTML属性的setter和getter。处理浏览器的兼容性和一些特殊情况，还让HTML属性名和JavaScript属性名可以等同使用。removeAttr()可用来从所有选中元素中移除某个属性。<br>e.g. $(“form”).attr(“action”);  //获取第一个form元素的action属性<br>     $(“#icon”).attr(“src”,”icon.gif”);  //设置src属性<br>     $(“#banner”).attr({  //一次设置4个属性<br>         src: “banner.gif”,<br>         alt: “Advertisement”,<br>         width: 720, height: 64<br>     });<br>     $(“a”).attr(“target”,”_blank”);  //使所有链接在新窗口中打开<br>     $(“a”).attr(“target”,function() {  //使站内链接在本窗口中打开，并且让<br>         if(this.host == location.host)<br>         return “_self”<br>         else return “_blank”;  //非站内链接在新窗口打开<br>     });<br>     $(“a”).attr({target: function() {  //可以像这样传入函数<br>         …<br>     }});<br>     $(“a”).removeAttr(“target”);  //让所有链接在本窗口中打开<br>//获取和设置CSS属性 css()方法和attr()方法类似，只是css()方法作用于元素的CSS样式，非HTML属性。返回的值是元素的当前样式，不能获取复合样式的值。<br>e.g. $(“h1”).css(“font-weight”);  //获取第一个 h1 的字体重量<br>     $(“h1”).css(“fontWeight”);  //也可采用驼峰格式<br>     $(“h1”).css(“font”);  //错误，不可获取复合样式<br>     $(“h1”).css(“font-variant”,”smallcaps”);  //将样式设置在所有 h1 元素上<br>     $(“div.note”).css(“border”,”solid black 2px”);  //设置复合样式是OK的<br>     $(“h1”).css({<br>         backgroundColor: “black”,<br>         textColor: “white”,<br>         fontVariant: “small-caps”,<br>         padding: “10px 2px 4px 20px”,<br>         border: “dotted black 4px”<br>     });  //一次设置多个样式<br>     $(“h1”).css(“font-size”,function(i,curval) {<br>         return Math.round(1.25 * parseInt(curval));<br>     });  //让所有 h1 的字体大小增加 25%<br>//获取和设置CSS类 addClass()从选中元素添加类 removeClass()删除类 toggleClass()当元素没有某些类时，给元素添加类，反之则删除。hasClass()判断类是否存在，只能接受单个类名作为参数，并且不支持函数参数。<br>e.g. // 添加CSS类<br>     $(“h1”).addClass(“hilite”); //给所有 h1 元素添加一个类<br>     $(“h1+p”).addClass(“hilite first”); //给 h1 后面的 p 添加两个类<br>//获取和设置HTML表单值 val()方法来设置和获取HTML表单元素的value属性，还可用于获取和设置复选框、单选按钮以及 select 元素的选中状态。<br>e.g. $(“#surname”).val();  //获取surname文本域的值<br>     $(“input:radio[name=ship]:checked”).val();  //获取选中的单选按钮的值。<br>     $(“input:checkbox”).val([“opt1”,”opt2”]);  //选中带有这些名字或值的复选框<br>//设置和获取元素内容 text()和html()方法用来获取和设置元素的纯文本或HTML内容。不带参数调用时，text()返回所有匹配元素的所有子孙文本节点的纯文本内容，html()返回第一个匹配元素的HTML内容。传入字符串给text()或html()，该字符串会用作该元素的纯文本或格式化的HTML文本内容，替换掉所有存在的内容。<br>e.g. var title = $(“head title”).text();  //获取文档标题<br>     var headline = $(“h1”).html();  //获取第一个 h1 元素的html<br>     $(“h1”).text(function(n,current){  //给每个标题添加章节号<br>         return “#” + (n+1) + “: “ + current<br>     });</p>
-<p>/<br>/<br>/<br>/<br>////jQuery中的Ajax<br>//使用HTTP脚本按需加载数据，而不需要刷新整个页面。jQuery定义了一个高级工具方法和四个高级工具函数，这些工具都基于jQuery.ajax()。<br>//load()方法，向它传入一个url，它会异步加载该url的内容，然后将内容插入每一个选中元素中，替换掉已存在的任何内容。<br>e.g.  setInterval(function(){<br>    $(‘#status’).load(“status_report.html”);<br>},6000);<br>只想显示被加载文档的一部分，可以在URL后面添加一个空格和一个jQuery选择器。当URL加载完成后，jQuery会用指定的选择器来从加载好的html中选取需要显示的部分。<br>e.g.  $(‘#temp’).load(“wheater_report.html #temperature”);<br>除了必须的URL参数，load()方法接受两个可选参数。第一个可选参数表示的数据，可以追加到URL后面，或者与请求一起发送。传入的是字符串，则会追加到URL后面(放在”?”或”&amp;”后面)。传入对象，该对象会被转换成一个用”&amp;”分隔的键值对后与请求一起发送。通常情况下，load()方法发送HTTP GET请求，传入数据对象发送POST请求。<br>e.g.  $(‘#temp’).load(“us_weather_report.html”,”zipcode=01234”); //加载特定区号的天气预报<br>      $(‘#temp’).load(“us_weather_report.html”,{ zipcode: 01234,units: ‘f’});  //使用对象作为数据，并指定为华氏温度<br>load()方法的另一个可选参数是回调函数。当Ajax请求成功或未成功，以及(当请求成功时)URL加载完毕并插入选中元素时，会调用该回调函数。未指定任何数据下，回调函数作为第二个参数传入。否则必须是第三个参数。jQuery对象每一个元素上都会调用回调函数，并且每次调用都会调用都会传入三个参数：被加载URL的完整文本内容、状态码字符串，以及用来记载URL的XMLHttpRequest对象。状态码是jQuery的，类似”success”、”error”、”timeout”.<br>//Ajax工具函数 jQuery的其他Ajax高级工具是函数非方法，可通过jQuery或$直接调用。<br>1、jQuery.getScript() 第一个参数是JavaScript代码文件的URL。异步加载文档，加载完成后再全局作用域执行代码。适用于同源和跨源脚本。<br>e.g.  jQuery.getScript(“<a href="http://example.com/js/widget.js&quot;)" target="_blank" rel="noopener">http://example.com/js/widget.js&quot;)</a>;<br>可以传入回调函数作为第二参数，jQuery会在代码加载和执行完成后调用一次该回调函数。<br>e.g.  //加载一个类库，并在加载完成时立刻使用它<br>     jQuery.getScript(“js/jquery.my_plugin.js”,function() {<br>     $(‘div’).my_plugin();  //使用加载的类库<br>    });<br>jQuery.getScript()通常会使用XMLHttpRequest对象获取执行的脚本内容。跨域请求，jQuery使用 script 加载脚本。同源下，回调函数第一个参数是脚本的文本内容，第二参数是”success”状态码，第三参数是用来获取脚本内容的XMLHttpRequest对象，jquery.getScript()函数的返回值也是XMLHttpRequest对象。跨源，不存在XMLHttpRequest对象，无法获取脚本内容。回调函数第一参数和第三参数是undefined,jQuery.getScript()的返回值也是undefined.<br>传递给jQuery.getScript()回调函数在请求成功时才被调用。若需要在发生错误和成功时得到通知则需要底层jQuery.ajax()函数。<br>2、jQuery.getJSON() 获取文本特殊处理，调用指定的回调函数。jQuery.getJSON()获取到文本后解析为JSON。此方法在传入了回调函数时才有用。成功加载URL将内容成功解析成JSON后，解析结果会作为第一个参数传入回调函数中。与jquery.getScript()一样回调函数的第二个和第三个参数是”success”状态码和XMLHttpRequest对象。<br>e.g.  //假设data.json包含文本: ‘{“x”:1,”y”:2}’<br>      jQuery.getJSON(“data.json”,function(data){<br>          //data参数是对象{x:1,y:2}<br>})<br>该方法接受一可选的数据对象参数，和load()方法一样。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjf6ejlnm001hd4v2izb7rl0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjf7t1z1y002togv2oo53wrsv" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -565,7 +592,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -574,7 +601,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -586,7 +613,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
   </div>
 
@@ -594,16 +621,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -613,9 +640,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/25/HTML5/">HTML5</a>
+          </li>
         
           <li>
             <a href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
@@ -633,10 +664,6 @@
             <a href="/2018/03/24/FLEX布局/">FLEX布局</a>
           </li>
         
-          <li>
-            <a href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -650,7 +677,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
