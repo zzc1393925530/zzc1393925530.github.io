@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,84 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript数组3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/14/JavaScript数组3/" class="article-date">
+  <time datetime="2018-03-14T11:04:49.000Z" itemprop="datePublished">2018-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/14/JavaScript数组3/">JavaScript数组3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ECMAScript5中的数组方法： <br><br>////forEach()从头到尾遍历数组没有break语句 提前终止需要将语句放到try块中，并抛出异常。<br>////map()将每个元素传递给制定函数返回<strong>新</strong>数组包含返回值。<br>e.g. a = [1,2,3];<br>     b = a.map(function(x){<br>         return x*x;<br>     }); // b [1,4,9]<br>////filter()调用数组的子集<br>e.g. a = [5,4,3,2,1];<br>    smallvalues = a.filter(function(x){<br>        return x &lt; 3;<br>    }); //[2,1]<br>    everyother = a.filter(function(x,i){ //x为数组元素，i是元素的索引<br>        return i%2 == 0;<br>    }); //[5,3,1]<br>////every()方法针对所有元素调用判定函数都返回true时返回true。<br>    some()方法存在即true。<br>////reduce()方法两个参数，第一个参数是执行化简的函数，第二个参数(可选)是传递给函数的初始值。<br>////reduceRight()方法工作原理与reduce()相同，不同的是按照数组索引从高到低处理。<br>////indexOf()搜索整个数组具有给定值返回找到的第一个元素的索引或没找到返回-1.indexOf()从头至尾，lastIndexOf()反向。不接收函数作为参数。<br>////Array.isArray([]); //=&gt; true</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjf962cqx001efwv2akej88ae" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript数组2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/14/JavaScript数组2/" class="article-date">
+  <time datetime="2018-03-14T11:04:32.000Z" itemprop="datePublished">2018-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/14/JavaScript数组2/">JavaScript数组2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数组方法： <br><br>////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。<br>e.g. var a = [1,2,3];<br>     a.join(); //“1,2,3”<br>     a.join(“ “); //“1 2 3”<br>     a.join(“”); //“123”<br>     var b = new Array(10);<br>     b.join(‘-‘); //‘———‘<br>////reverse()方法将数组中的元素颠倒顺序返回逆序的数组。替换<br>e.g. var a = [1,2,3];<br>     a.reverse().join(); //=&gt;”3,2,1”,现在的a是[3,2,1]<br>////sort()方法将数组中的元素排列并返回排列后的数组,不带参数调用该方法时以字母表顺序排序<br>e.g. var a = new Array(“bananan”,”apple”,”cherry”);<br>     a.sort();<br>     var s = a.join(“, “);<br>     console.log(s); //apple, bananan, cherry若包含undefined元素会被排到数组尾部<br>     为了按照其他方法而非字母表顺序排列 ，sort()方法传递一个比较函数。第一个参数在前，比较函数返回值小于0.<br>////concat()方法创建并返回一个新数组，元素包括调用concat()的原始数组的元素和concat()的每个参数。<br>e.g. var a = [1,2,3];<br>     a.concat(4,5); //[1,2,3,4,5]<br>     a.concat([4,5]); //[1,2,3,4,5]<br>     a.concat([4,5],[6,7]); //[1,2,3,4,5,6,7]<br>     a.concat(4,[5,[6,7]]); //[1,2,3,4,5,[6,7]]<br>////slice()方法返回指定数组的一个片段或子数组。返回的数组包含第一个参数指定的位置和所有到但不含第二个参数指定的位置之间的所有数组元素。<br>e.g. var a = [1,2,3,4,5]<br>     a.slice(1,-1); //[2,3,4]负数表示倒数第几个元素<br>////splice()方法在数组中插入或删除元素的通用方法。会更改调用的数组。<br>第一个参数指定插入和（或）删除的起始位置。第二个参数指定了应该从数组中删除元素的个数。若被省略，从起始点到数组结尾的所有元素都被删除。返回被删除的元素。<br>e.g. var a = [1,2,3,4,5,6,7,8];<br>     a.splice(4); //返回[5,6,7,8],a是[1,2,3,4]<br>     a.splice(1,2); //返回[2,3],a是[1,4]<br>     a.splice(1,1); //返回[4],a是[1]<br>    前两个参数指定需要删除的数组元素，紧随其后的任意个数的参数指定插入到数组中的元素，从第一个参数指定的位置开始插入。<br>e.g. var a = [1,2,3,4,5];<br>     a.splice(2,0,’a’,’b’); //返回[];a是[1,2,’a’,’b’,3,4,5]<br>     a.splice(2,2,[1,2],3); //返回[‘a’,’b’];a是[1,2,[1,2],3,3,4,5]<br>toString()和toLocaleString()方法： <br><br>////toString()：每个元素转化为字符串，输出带逗号分隔的字符串列表，不包括分隔符。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjf962cqf000wfwv2da5g03xl" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript数组1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjf82ovcy000qrov2qgkvlm0r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjf962cqc000ufwv2gbiqgfwp" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -127,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjf82ovcy000nrov24xvodes5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjf962cq8000rfwv2bznhzfi2" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -166,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjf82ovcj000lrov28kiuq8pp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjf962cqu001afwv21g3p6qmw" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -205,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjf82ovcj000irov2dxak9n66" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjf962cq0000nfwv2vtjrn4y4" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -249,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf82ovcy0013rov2o200ah7r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjf962cql0012fwv2k5c4tezm" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -292,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf82ovcy000xrov2foyzt80o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjf962cqk0010fwv2skoz6uw3" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
@@ -335,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf82ovcy0016rov25rvt5m4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjf962cqq0016fwv2nmsj6zvp" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -382,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf82ovdf0018rov2hmjb2bru" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjf962cr2001kfwv2f82pwdnp" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -396,7 +474,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </section>
@@ -405,7 +483,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -417,7 +495,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
   </div>
 
@@ -425,16 +503,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 13.33px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -444,9 +522,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/27/圣杯布局/">圣杯布局</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/26/DOM进阶1/">DOM进阶1</a>
+          </li>
         
           <li>
             <a href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
@@ -458,14 +544,6 @@
         
           <li>
             <a href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/24/JavaScript事件/">JavaScript事件</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/24/布局实例/">布局实例</a>
           </li>
         
       </ul>
@@ -481,7 +559,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
