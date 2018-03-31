@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,49 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript权威指南3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/31/JavaScript权威指南3/" class="article-date">
+  <time datetime="2018-03-31T06:40:07.000Z" itemprop="datePublished">2018-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>跳转</h3><br>&emsp;&emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常.<p></p>
+<p></p><h4>标签语句</h4><br>&emsp;&emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mainloop: <span class="keyword">while</span>(token != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">continue</span> mainloop;  <span class="comment">//跳转到下一次循环</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>break语句</h4><br>&emsp;&emsp;单独使用break语句的作用是立即退出最内层的循环或switch语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//6</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>continue语句</h4><br>&emsp;&emsp;continue语句和break语句类似,但它不是退出循环,而是转而执行下一次循环.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//11</span></span><br></pre></td></tr></table></figure><p></p>
+<p>不赞成使用with语句.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjff1qq5x0015p8v2pvdl8nfn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript权威指南2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -110,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjff0aaa60014g8v2ol29e7eh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjff1qq5v0013p8v25irfyuih" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -156,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjff0aaam001vg8v299c215wn" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjff1qq6i001xp8v2qjrpt692" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -225,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjff0aaa60011g8v21roafko0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjff1qq5t0010p8v2ea5pcxej" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -264,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjff0aa8v0004g8v2qeswpmsx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjff1qq4s0003p8v211fmozze" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -309,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjff0aaam001qg8v2vaf70zfn" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjff1qq6e001sp8v2onlsv8cv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -376,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjff0aa8v0001g8v2vuxq7gua" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjff1qq4v0004p8v221hqwopi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -418,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjff0aaa60018g8v2wwha2avg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjff1qq60001ap8v2katknmo4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -485,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjff0aa9b0007g8v2itk3c2yr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjff1qq500007p8v27fjhlkda" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -539,53 +582,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjff0aaa6001gg8v2j7el3wax" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjff1qq67001jp8v2goewcelb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript事件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/24/JavaScript事件/" class="article-date">
-  <time datetime="2018-03-24T12:34:37.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/JavaScript事件/">JavaScript事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>事件冒泡</h2><br>&emsp;&emsp;IE中的事件流叫事件冒泡，即事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Event Bubbling Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"myDiv"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-<p>这个click事件会按照1div 2body 3html 4document顺序传播。所有现代浏览器都支持事件冒泡。</p>
-<p></p><h3>事件捕获</h3><br>&emsp;&emsp;很少有人使用事件捕获。<p></p>
-<p></p><h3>DOM事件流</h3><br>&emsp;&emsp;DOM2级规定的事件流包括事件捕获阶段、处于目标阶段和事件冒泡三阶段.<p></p>
-<p></p><h3>事件处理程序</h3><br>&emsp;&emsp;诸如click,load和mouseover，都是事件的名字。响应某个事件的函数就是事件处理程序。事件处理程序名字以”on”开头，因此click事件的事件处理程序就是onclick,load事件处理程序就是onload.<p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjff0aa9b0008g8v2upmzsdn8" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
 
     </footer>
   </div>
@@ -598,7 +598,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -607,7 +607,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -636,7 +636,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -646,9 +646,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/JavaScript权威指南2/">JavaScript权威指南2</a>
@@ -664,10 +668,6 @@
         
           <li>
             <a href="/2018/03/28/ECMAScript6/">ECMAScript6</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/27/圣杯布局/">圣杯布局</a>
           </li>
         
       </ul>

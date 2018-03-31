@@ -5,19 +5,19 @@
   
 
   
-  <title>JavaScript函数1 | Hexo</title>
+  <title>JavaScript权威指南3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
+  <meta name="description" content="跳转&amp;emsp;&amp;emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常. 标签语句&amp;emsp;&amp;emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.12345mainloop: while(token !">
 <meta name="keywords" content="日志,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript函数1">
-<meta property="og:url" content="http://yoursite.com/2018/03/17/JavaScript函数1/index.html">
+<meta property="og:title" content="JavaScript权威指南3">
+<meta property="og:url" content="http://yoursite.com/2018/03/31/JavaScript权威指南3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
-<meta property="og:updated_time" content="2018-03-17T02:28:36.234Z">
+<meta property="og:description" content="跳转&amp;emsp;&amp;emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常. 标签语句&amp;emsp;&amp;emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.12345mainloop: while(token !">
+<meta property="og:updated_time" content="2018-03-31T07:19:22.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript函数1">
-<meta name="twitter:description" content="////函数调用：    1.普通函数调用 printprops({x:1});    2.方法调用 o.m = f;//函数f，对象o，m()方法    关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。    全局对象：    全局作用域下，">
+<meta name="twitter:title" content="JavaScript权威指南3">
+<meta name="twitter:description" content="跳转&amp;emsp;&amp;emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常. 标签语句&amp;emsp;&amp;emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.12345mainloop: while(token !">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript函数1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript权威指南3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/17/JavaScript函数1/" class="article-date">
-  <time datetime="2018-03-17T02:26:26.000Z" itemprop="datePublished">2018-03-17</time>
+    <a href="/2018/03/31/JavaScript权威指南3/" class="article-date">
+  <time datetime="2018-03-31T06:40:07.000Z" itemprop="datePublished">2018-03-31</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript函数1
+      JavaScript权威指南3
     </h1>
   
 
@@ -86,12 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>////函数调用：<br>    1.普通函数调用 printprops({x:1});<br>    2.方法调用 o.m = f;//函数f，对象o，m()方法<br>    <strong>关键字this没有作用域限制，嵌套的函数不会从调用它的函数中继承this。如果嵌套函数作为方法调用，其this的值指向调用它的对象。如果嵌套函数作为函数调用，其this不是全局对象就是undefined。</strong><br>    全局对象：<br>    全局作用域下，this指向全局对象。浏览器中全局对象就是window对象。<br>    e.g. function test(){<br>        return this;<br>    }<br>    test(); //window{}:this关键字没有处于一个声明的对象内部，默认指向全局window对象。<br>    声明的对象：<br>    当this关键字在一个声明对象内部使用，其值会被绑定到该this的函数的最近的父对象。<br>    e.g. var person = {<br>        first : ‘John’,<br>        last : ‘Smith’,<br>        full: function() {<br>            console.log(this.first + ‘ ‘ + this.last);<br>        }<br>        };<br>        person.full(); //在被声明的对象person中的full函数使用this，那么调用this的full函数的最近的父对象就是person，因此，this指向person。<br>        var person = {<br>            first : ‘John’,<br>            last : ‘Smith’,<br>            full: function() {<br>                console.log(this.first + ‘ ‘ + this.last);<br>            },<br>            personTwo : {<br>                first : ‘Allison’,<br>                last : ‘Jones’,<br>                full : function() {<br>                    console.log(this.first + ‘ ‘ + this.last);<br>                }<br>            }<br>        };<br>        person.full(); //John Smith<br>        person.personTwo.full(); //Allison Jones:调用this的full函数最近的父对象是personTwo，this指向personTwo。<br>    当使用new关键字构建一个新的对象，this会绑定到这个新对象。<br>    e.g. function Car(make,model) {<br>        this.make = make;<br>        this.model = model;<br>    };<br>    var myCar = new Car(‘Ford’,’Escape’);<br>    console.log(myCar); //Car {make: “Ford”, model: “Escape”}:使用new关键字来声明一个新的变量，Car函数中的this将会绑定一个新的空对象，然后初始化this.make和this.model的值。<br>    3.构造函数调用<br>    函数或方法调用之前带有关键字new，就构成构造函数调用。<br>    4.间接调用<br>    call() apply()方法间接调用</p>
+        <p></p><h3>跳转</h3><br>&emsp;&emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常.<p></p>
+<p></p><h4>标签语句</h4><br>&emsp;&emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mainloop: <span class="keyword">while</span>(token != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">continue</span> mainloop;  <span class="comment">//跳转到下一次循环</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>break语句</h4><br>&emsp;&emsp;单独使用break语句的作用是立即退出最内层的循环或switch语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//6</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>continue语句</h4><br>&emsp;&emsp;continue语句和break语句类似,但它不是退出循环,而是转而执行下一次循环.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//11</span></span><br></pre></td></tr></table></figure><p></p>
+<p>不赞成使用with语句.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjff1qq57000cp8v20vaqd1gu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjff1qq5x0015p8v2pvdl8nfn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -102,19 +106,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/17/JavaScript函数2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript函数2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/14/JavaScript数组3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/31/JavaScript权威指南2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript数组3</div>
+      <div class="article-nav-title">JavaScript权威指南2</div>
     </a>
   
 </nav>
