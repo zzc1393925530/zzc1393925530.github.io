@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,77 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript函数3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/17/JavaScript函数3/" class="article-date">
+  <time datetime="2018-03-17T02:27:00.000Z" itemprop="datePublished">2018-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/17/JavaScript函数3/">JavaScript函数3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>////闭包<br>    JavaScript也采用词法作用域，函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的。函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。<br>    作用域<br>    e.g. var scope = “global”;<br>         function f() {<br>             console.log(scope); //输出undefined:局部变量在整个函数体始终有定义，局部变量遮盖同名全局变量<br>             var scope = “local”; //变量在这里赋值，但变量本身在函数体内任何地方都有定义<br>             console.log(scope); //输出local<br>         }<br>         var scope = ‘global’;<br>          function fn() {<br>          alert(scope); //未定义直接赋值的变量自动声明为全局作用域，所以上例不适用，这里的scope就是global<br>          scope = ‘local’; //更改了全局变量scope值变为local<br>          alert(scope); //local<br>         }<br>        fn();<br>        alert(scope);//local</p>
+<pre><code>var scope = &apos;global&apos;;
+function fn(scope) { //scope此时是函数的参数
+alert(scope); //为被初始化
+scope = &apos;local&apos;; //局部变量
+alert(scope);
+}
+fn();
+alert(scope); //全局变量
+</code></pre><p><strong>不使用var保留字声明变量, 变量提升为全局变量, 而不论变量处于哪种作用域;<br>如果不使用var声明, 该变量便可配置, 即可被 delete 保留字删除, 删除后该变量便不可访问; 如果使用var声明, 该变量便不可配置, 即不能被 delete 保留字删除;<br>只要是全局变量都可以直接访问, 也可使用 “window.变量名” 来访问, 不管该变量是不是通过var来声明的;</strong><br><strong>闭包 // 如果一个函数访问了它的外部变量，那么它就是闭包。当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。</strong><br>        闭包 e.g. var scope = “global scope”;<br>                 function checkscope() {<br>                 var scope = “local scope”;<br>                 function f() {return scope;}<br>                 return f();<br>                }<br>                checkscope(); //“local scope”</p>
+<pre><code>        var scope = &quot;global scope&quot;;
+        function checkscope() {
+        var scope = &quot;local scope&quot;;
+        function f() {return scope;}
+        return f;
+        }
+        checkscope()(); //&quot;local scope&quot;
+e.g. function foo(x) {
+    var temp = 3;
+    function bar(y) {
+        alert(x + y + (++temp));
+    }
+    bar(10);
+}
+foo(2); //16:非闭包
+e.g. function foo(x) {
+    var temp = 3;
+    return function (y) {
+        alert(x + y + (++temp));
+    }
+}
+var bar = foo(2);
+bar(10); //16:闭包
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfepnser000gzov2mip6mlwh" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript函数2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -97,7 +168,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfeozu6h000jssv2x8uoqf9l" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfepnser000fzov20dx1axnz" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -136,7 +207,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfeozu6h000essv2qlrt7hmz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfepnser000czov2ud4ted0u" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -175,7 +246,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfeozu7c0012ssv2ii9cuspo" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfepnsf6000yzov28rbvgbl4" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -214,7 +285,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfeozu7c0010ssv2f1mcs9pp" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfepnsf6000vzov2uiyhgcsx" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -253,7 +324,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjfeozu6x000mssv275gdbx4j" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjfepnsf6000tzov2wti8pw6a" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -292,7 +363,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjfeozu6x000ussv2ci4fwif3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjfepnser000qzov2sd0ql300" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -331,7 +402,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjfeozu6x000wssv29igiye7b" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjfepnser000ozov29mmw8prl" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -370,7 +441,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjfeozu6x000ossv2sgmqtbue" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjfepnser000lzov2dq46ex5q" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -414,53 +485,10 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjfeozu7s001ossv2179h1s0h" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjfepnsf60019zov2ad2794e6" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/12/JavaScript简介/" class="article-date">
-  <time datetime="2018-03-12T10:32:30.000Z" itemprop="datePublished">2018-03-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript笔记/">JavaScript笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/12/JavaScript简介/">JavaScript简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript发明者布兰登 艾奇(Brendan Eich)<br>JavaScript组成：核心(ECMAscript) 提供核心语言功能<br>                文档对象模型(DOM) 提供访问和操作网页内容的方法和接口<br>                浏览器对象模(BOM) 提供与浏览器交互的方法和接口<br>在HTML用 script 元素插入JavaScript<br>所有 script 元素都会按照先后顺序依此被解析。(在不使用 defer 和 async 的情况下)<br>async：可选 立即下载脚本，不妨碍页面中的操作。只对外部脚本文件有效。<br>charset：可选 src属性指定的代码的字符集。<br>defer：可选 脚本可延迟到文档完全被解析和显示之后再执行。只对外部文件有效。IE7及更早版本对嵌入脚本也支持这个属性。<br>src：可选 执行代码的外部文件。<br>type： text/JavaScript<br>现代WEB应用程序一般把全部JavaScript引入放在 body 元素中的内容后面。<br>延迟脚本：延迟脚本会按照出现顺序执行，最好只包含一个脚本。放在页面底部最佳。<br>异步脚本：不保证按照指定它们的顺序执行。<br>嵌入文件与外部文件：尽可能使用外部文件。可维护性、可缓存、适应未来。<br>noscript 元素：浏览器不支持脚本/支持脚本被禁用。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjfeozu7c0014ssv2btwyt37y" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
 
     </footer>
   </div>
@@ -473,7 +501,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -482,7 +510,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -502,7 +530,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -511,7 +539,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -521,9 +549,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
+          </li>
         
           <li>
             <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
@@ -541,10 +573,6 @@ factorial[1] = 1;
             <a href="/2018/03/26/DOM进阶1/">DOM进阶1</a>
           </li>
         
-          <li>
-            <a href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -558,7 +586,7 @@ factorial[1] = 1;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

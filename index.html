@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,56 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-执行上下文与作用域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/31/执行上下文与作用域/" class="article-date">
+  <time datetime="2018-03-31T01:24:53.000Z" itemprop="datePublished">2018-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>执行上下文</h3><br>&emsp;&emsp;JavaScript中有三种代码运行环境:Global Code,Function Code,Eval Code.为了表示不同的运行环境,JavaScript中有一个执行上下文.当JavaScript代码执行时,会进入不同的执行上下文,这些执行上下文构成了一个执行上下文栈(Execution Context Stack,ECS).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"global var"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerFunc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="string">"var in outerFunc"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(b);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerFunc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> c = <span class="string">"var in innerFunc"</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(c);</span><br><span class="line">        foo();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    innerFunc();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">outerFunc()</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;当JavaScript代码执行时,第一个进入的总是默认Global Execution Context,所以它总是在ECS的最底部.对于每个Execution Context都有三个重要的属性,变量对象(VariableObject),作用域链(ScopeChain)和this.还可以有其他附加属性.</p>
+<p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Execution Context</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">VariableObject</td><br>    <td class="tg-j0tj">{vars,function declarations,arguments}</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">ScopeChain</td><br>    <td class="tg-baqh">VariableObject+all parent scopes</td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">thisValue</td><br>    <td class="tg-j0tj">ContextObject</td><br>  </tr><br></table></p>
+<p></p><h3>VO和AO</h3><p></p>
+<p></p><h4>VO</h4><br>&emsp;&emsp;变量对象是与执行上下文相关的数据作用域.存储了在上下文中定义的变量和函数声明.一般VO包含:变量,函数声明,函数形参.<p></p>
+<p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Global VO</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">a</td><br>    <td class="tg-j0tj">“Global Var”</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">foo</td><br>    <td class="tg-baqh"> function </td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">outerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br>  <tr><br>    <th class="tg-baqh" colspan="2"> built-ins </th><br>  </tr><br></table><br><strong>函数表达式不包含在VO之中;没有使用var声明的变量不在VO中.</strong></p>
+<p></p><h4>AO(Activation Object)</h4><br>&emsp;&emsp;只有全局上下文的变量对象允许通过VO的属性名称间接访问;在函数执行上下文中,VO是不能直接访问的,此时由激活对象(Activation Object)扮演VO的角色.激活对象是在进入函数上下文时刻被创建的,通过函数的arguments属性初始化.<br>Arguments Object是函数上下文里的激活对象AO中的内部对象,包括callee(指向当前函数的引用),length(真正传递的参数的个数),properties-indexes(函数的参数值)属性.<p></p>
+<p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Activation Object</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">arguments</td><br>    <td class="tg-j0tj">{}</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">b</td><br>    <td class="tg-baqh">“var in outerFunc”</td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">innerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br></table></p>
+<p></p><h4>细看Execution Context</h4><br>&emsp;&emsp;JavaScript解释器创建Execution Context有两个阶段.<br>创建阶段(函数被调用，但是开始执行函数内部代码之前)<br>创建Scope Chain;创建VO/AO;设置this的值.<br>激活/代码执行阶段<br>设置变量的值;函数的引用;解释/执行代码.<br>&emsp;&emsp;创建VO/AO时,JavaScript主要做了以下事情:<br>根据函数的参数,创建并初始化arguments object;扫描函数内部代码,查找函数声明(对于所有找到的函数声明,将函数名和函数引用存入VO/AO中;如果VO/AO中已经有同名函数,则覆盖);扫描函数内部代码,查找变量声明(对于所有找到的变量声明,将变量名存入VO/AO中，初始化为undefined;如果变量名称跟已经声明的形式参数或函数相同,则变量声明不会干扰已经存在的这类属性).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)(); <span class="comment">//undefined</span></span><br><span class="line">        ƒ baz() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">//bar is not defined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log(bar);</span></span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">//ƒ baz() &#123;</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">       <span class="comment">//20</span></span><br><span class="line">       <span class="comment">//20</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"bar"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)()  <span class="comment">//undefined</span></span><br><span class="line">VM147:<span class="number">3</span> ƒ bar()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"bar"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">VM147:<span class="number">4</span> ƒ baz()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">VM147:<span class="number">13</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjfepnsfm001szov261rtu3x7" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript权威指南1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -118,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjfeozu6x000sssv2ofe1aq8j" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjfepnsf60010zov2685nnv1p" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -157,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfeozu560000ssv2e5ce0qv0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfepnsdv0001zov27h0oo41f" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -202,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfeozu7c001essv2wnhx6u47" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfepnsfm001nzov2kqbars6b" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -269,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfeozu8n002tssv2v3opoy5k" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfepnseb0004zov23rubho9r" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -311,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjfeozu7c001cssv25zpfm0uh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjfepnsf60015zov29yfmwo0d" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -378,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjfeozu6h000hssv2zfpa8hfa" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjfepnseb0007zov2ea7n8mr0" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -432,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjfeozu7s001issv24n0j9thk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjfepnsfm001ezov2w68wz3wj" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -475,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjfeozu6h000cssv23jmuzf4b" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjfepnseb000azov22lo6y4i5" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -531,53 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjfeozu7s001kssv2rpaeg0fx" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-FLEX布局" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/24/FLEX布局/" class="article-date">
-  <time datetime="2018-03-24T09:53:44.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/FLEX布局/">FLEX布局</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。<br>容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间叫cross size.</p>
-<p></p><h3>flex属性</h3><br>flex-direction:决定主轴的方向，即项目的排列方向。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-direction: row | row-reverse | column | column reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>&emsp;row: 水平方向，起点左端；<br>&emsp;row-reverse:水平方向，起点右端；<br>&emsp;column:垂直方向，起点上沿；<br>&emsp;column-reverse:垂直方向，起点下沿。<br>flex-wrap:定义若一条轴线排不下，如何换行。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;nowrap: 默认，不换行;<br>&emsp;wrap:换行，第一行在上方;<br>&emsp;wrap-reverse:换行，第一行在下方。<br>flex-flow:是flex-direction和flex-wrap属性的简写形式。默认值是row nowrap.<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>justify-content:定义了项目在主轴上的对齐方式。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;flex-start:左对齐；<br>&emsp;flex-end:右对齐；<br>&emsp;center:居中；<br>&emsp;space-between:两端对齐，项目之间间隔相等；<br>&emsp;space-around:每个项目两侧的间隔相等，所以，项目之间的间隔比项目与边框的间隔大一倍。<br>align-items:定义项目在交叉轴如何对齐。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;flex-start：交叉轴的起点对齐;<br>&emsp;flex-end：交叉轴的终点对齐;<br>&emsp;center：交叉轴的中点对齐;<br>&emsp;baseline: 项目的第一行文字的基线对齐;<br>&emsp;stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。<br>具体详见<a href="http://static.vgee.cn/static/index.html" target="_blank" rel="noopener">FLEX布局实例</a></p>
-<p></p><h3>如何通过flex实现垂直居中</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;display:flex;justify-content:center;align-items:center;&#125;</span><br><span class="line">作者： GD_SeHun </span><br><span class="line">链接：https://www.imooc.com/article/2235</span><br><span class="line">来源：慕课网</span><br></pre></td></tr></table></figure><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjfeozu620008ssv2vnt77wi7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjfepnsfm001qzov2yvixxpi5" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -593,7 +597,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -602,7 +606,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -622,7 +626,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -631,7 +635,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -641,9 +645,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
+          </li>
         
           <li>
             <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
@@ -661,10 +669,6 @@
             <a href="/2018/03/26/DOM进阶1/">DOM进阶1</a>
           </li>
         
-          <li>
-            <a href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -678,7 +682,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
