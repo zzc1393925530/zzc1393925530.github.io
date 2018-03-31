@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/31/执行上下文与作用域/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="执行上下文&amp;emsp;&amp;emsp;JavaScript中有三种代码运行环境:Global Code,Function Code,Eval Code.为了表示不同的运行环境,JavaScript中有一个执行上下文.当JavaScript代码执行时,会进入不同的执行上下文,这些执行上下文构成了一个执行上下文栈(Execution Context Stack,ECS).12345678910111213">
-<meta property="og:updated_time" content="2018-03-31T02:33:56.162Z">
+<meta property="og:updated_time" content="2018-03-31T02:52:16.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执行上下文与作用域">
 <meta name="twitter:description" content="执行上下文&amp;emsp;&amp;emsp;JavaScript中有三种代码运行环境:Global Code,Function Code,Eval Code.为了表示不同的运行环境,JavaScript中有一个执行上下文.当JavaScript代码执行时,会进入不同的执行上下文,这些执行上下文构成了一个执行上下文栈(Execution Context Stack,ECS).12345678910111213">
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -90,19 +90,15 @@
 <p>&emsp;&emsp;当JavaScript代码执行时,第一个进入的总是默认Global Execution Context,所以它总是在ECS的最底部.对于每个Execution Context都有三个重要的属性,变量对象(VariableObject),作用域链(ScopeChain)和this.还可以有其他附加属性.</p>
 <p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Execution Context</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">VariableObject</td><br>    <td class="tg-j0tj">{vars,function declarations,arguments}</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">ScopeChain</td><br>    <td class="tg-baqh">VariableObject+all parent scopes</td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">thisValue</td><br>    <td class="tg-j0tj">ContextObject</td><br>  </tr><br></table></p>
 <p></p><h3>VO和AO</h3><p></p>
-<p></p><h4>VO</h4><br>&emsp;&emsp;变量对象是与执行上下文相关的数据作用域.存储了在上下文中定义的变量和函数声明.一般VO包含:变量,函数声明,函数形参.<p></p>
-<p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Global VO</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">a</td><br>    <td class="tg-j0tj">“Global Var”</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">foo</td><br>    <td class="tg-baqh"> function </td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">outerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br>  <tr><br>    <th class="tg-baqh" colspan="2"> built-ins </th><br>  </tr><br></table><br><strong>函数表达式不包含在VO之中;没有使用var声明的变量不在VO中.</strong></p>
-<p></p><h4>AO(Activation Object)</h4><br>&emsp;&emsp;只有全局上下文的变量对象允许通过VO的属性名称间接访问;在函数执行上下文中,VO是不能直接访问的,此时由激活对象(Activation Object)扮演VO的角色.激活对象是在进入函数上下文时刻被创建的,通过函数的arguments属性初始化.<br>Arguments Object是函数上下文里的激活对象AO中的内部对象,包括callee(指向当前函数的引用),length(真正传递的参数的个数),properties-indexes(函数的参数值)属性.<p></p>
-<p><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Activation Object</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">arguments</td><br>    <td class="tg-j0tj">{}</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">b</td><br>    <td class="tg-baqh">“var in outerFunc”</td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">innerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br></table></p>
-<p></p><h4>细看Execution Context</h4><br>&emsp;&emsp;JavaScript解释器创建Execution Context有两个阶段.<br>创建阶段(函数被调用，但是开始执行函数内部代码之前)<br>创建Scope Chain;创建VO/AO;设置this的值.<br>激活/代码执行阶段<br>设置变量的值;函数的引用;解释/执行代码.<br>&emsp;&emsp;创建VO/AO时,JavaScript主要做了以下事情:<br>根据函数的参数,创建并初始化arguments object;扫描函数内部代码,查找函数声明(对于所有找到的函数声明,将函数名和函数引用存入VO/AO中;如果VO/AO中已经有同名函数,则覆盖);扫描函数内部代码,查找变量声明(对于所有找到的变量声明,将变量名存入VO/AO中，初始化为undefined;如果变量名称跟已经声明的形式参数或函数相同,则变量声明不会干扰已经存在的这类属性).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)(); <span class="comment">//undefined</span></span><br><span class="line">        ƒ baz() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">//bar is not defined</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log(bar);</span></span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">//ƒ baz() &#123;</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">       <span class="comment">//20</span></span><br><span class="line">       <span class="comment">//20</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"bar"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)()  <span class="comment">//undefined</span></span><br><span class="line">VM147:<span class="number">3</span> ƒ bar()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"bar"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">VM147:<span class="number">4</span> ƒ baz()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">VM147:<span class="number">13</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h4>VO</h4><br>&emsp;&emsp;变量对象是与执行上下文相关的数据作用域.存储了在上下文中定义的变量和函数声明.一般VO包含:变量,函数声明,函数形参.<br><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Global VO</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">a</td><br>    <td class="tg-j0tj">“Global Var”</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">foo</td><br>    <td class="tg-baqh"> function </td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">outerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br>  <tr><br>    <th class="tg-baqh" colspan="2"> built-ins </th><br>  </tr><br></table><br><strong>函数表达式不包含在VO之中;没有使用var声明的变量不在VO中.</strong><br><h4>AO(Activation Object)</h4><br>&emsp;&emsp;只有全局上下文的变量对象允许通过VO的属性名称间接访问;在函数执行上下文中,VO是不能直接访问的,此时由激活对象(Activation Object)扮演VO的角色.激活对象是在进入函数上下文时刻被创建的,通过函数的arguments属性初始化.<br>Arguments Object是函数上下文里的激活对象AO中的内部对象,包括callee(指向当前函数的引用),length(真正传递的参数的个数),properties-indexes(函数的参数值)属性.<br><table class="tg"><br>  <tr><br>    <th class="tg-baqh" colspan="2">Activation Object</th><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">arguments</td><br>    <td class="tg-j0tj">{}</td><br>  </tr><br>  <tr><br>    <td class="tg-baqh">b</td><br>    <td class="tg-baqh">“var in outerFunc”</td><br>  </tr><br>  <tr><br>    <td class="tg-j0tj">innerFunc</td><br>    <td class="tg-j0tj"> function </td><br>  </tr><br></table><br><h4>细看Execution Context</h4><br>&emsp;&emsp;JavaScript解释器创建Execution Context有两个阶段.<br>创建阶段(函数被调用，但是开始执行函数内部代码之前)<br>创建Scope Chain;创建VO/AO;设置this的值.<br>激活/代码执行阶段<br>设置变量的值;函数的引用;解释/执行代码.<br>&emsp;&emsp;创建VO/AO时,JavaScript主要做了以下事情:<br>根据函数的参数,创建并初始化arguments object;扫描函数内部代码,查找函数声明(对于所有找到的函数声明,将函数名和函数引用存入VO/AO中;如果VO/AO中已经有同名函数,则覆盖);扫描函数内部代码,查找变量声明(对于所有找到的变量声明,将变量名存入VO/AO中，初始化为undefined;如果变量名称跟已经声明的形式参数或函数相同,则变量声明不会干扰已经存在的这类属性).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)(); <span class="comment">/*undefined</span></span><br><span class="line"><span class="comment">      ƒ baz() &#123;</span></span><br><span class="line"><span class="comment">        console.log("baz");</span></span><br><span class="line"><span class="comment">      &#125;*/</span></span><br></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">//bar is not defined</span></span><br></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log(bar);</span></span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">window</span>.bar);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();  <span class="comment">/*ƒ baz() &#123;</span></span><br><span class="line"><span class="comment">        console.log("baz");</span></span><br><span class="line"><span class="comment">       &#125;</span></span><br><span class="line"><span class="comment">       20</span></span><br><span class="line"><span class="comment">       20*/</span></span><br></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    <span class="built_in">console</span>.log(baz);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"bar"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> bar = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(bar);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"baz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)();  <span class="comment">/*undefined</span></span><br><span class="line"><span class="comment">         ƒ bar()&#123;</span></span><br><span class="line"><span class="comment">        console.log("bar");</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">        ƒ baz()&#123;</span></span><br><span class="line"><span class="comment">        console.log("baz");</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">         20 */</span></span><br></pre></td></tr></table></figure><br><br><h4>作用域链</h4>
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjfepnsfm001szov261rtu3x7" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjff06tn5001sx0v2syfq8zgf" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -113,9 +109,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2018/03/31/JavaScript权威指南2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript权威指南2
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/03/30/JavaScript权威指南1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">JavaScript权威指南1</div>
     </a>
   
@@ -130,7 +135,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -150,7 +155,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -159,7 +164,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -169,9 +174,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南2/">JavaScript权威指南2</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
@@ -189,10 +198,6 @@
             <a href="/2018/03/27/圣杯布局/">圣杯布局</a>
           </li>
         
-          <li>
-            <a href="/2018/03/26/DOM进阶1/">DOM进阶1</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -206,7 +211,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
