@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,68 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript权威指南4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/31/JavaScript权威指南4/" class="article-date">
+  <time datetime="2018-03-31T07:21:20.000Z" itemprop="datePublished">2018-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;对象是JavaScript的基本数据类型.对象除了可以保持自身的属性,JavaScript对象还可以从一个称为原型的对象继承属性.对象的方法通常是继承的属性.这种”原型式继承”(prototypal inheritance)是JavaScript的核心特征.除了字符串,数字,true,false,,null和undefined外,JavaScript中的值都是对象.<br>&emsp;&emsp;对象有属性和值,属性特征:可写,可枚举,可配置;对象特性:对象的原型,对象的类,对象的扩展标记.</p>
+<p></p><h4>对象直接量</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> empty = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> point = &#123;<span class="attr">x</span>:<span class="number">0</span>,<span class="attr">y</span>:<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    <span class="string">"main title"</span>: <span class="string">"JavaScript"</span>,</span><br><span class="line">    <span class="string">"sub-title"</span>: <span class="string">"The Definitive Guide"</span>,</span><br><span class="line">    <span class="string">"for"</span>: <span class="string">"all audiences"</span>,</span><br><span class="line">    author: &#123;</span><br><span class="line">        firstname: <span class="string">"David"</span>,</span><br><span class="line">        surname: <span class="string">"Flanagan"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>通过new创建对象</h4><br>&emsp;&emsp;new运算符创建并初始化一个新对象.关键字new后面跟随一个函数调用.这里的函数称作构造函数,构造函数用以初始化一个新创建的对象.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();  <span class="comment">//创建空对象</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>();  <span class="comment">//创建空数组</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();  <span class="comment">//创建表示当前时间的Date对象</span></span><br><span class="line"><span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"js"</span>);  <span class="comment">//创建可以进行模式匹配的RegExp对象</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>原型</h4><br>&emsp;&emsp;每一个JavaScript对象(null除外)都和原型相关联.每个对象都从原型继承属性.所有通过对象直接量创建的对象都具有同一个原型对象,并可以通过JavaScript代码Object.prototype获得对原型对象的引用.通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值.通过new Array()创建的对象的原型就是Array.prototype,通过new Date()创建的对象的原型就是Date.prototype.像Object.prototype一样没有原型的对象为数不多.<p></p>
+<p></p><h4>Object.create()</h4><br>&emsp;&emsp;Object.create()方法创建新对象,第一个参数是对象的原型.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = <span class="built_in">Object</span>.create(&#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;);  <span class="comment">//o1继承属性x和y</span></span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o2 = <span class="built_in">Object</span>.create(<span class="literal">null</span>);  <span class="comment">//o2不继承任何属性和方法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o3 = <span class="built_in">Object</span>.create(<span class="built_in">Object</span>.prototype);  <span class="comment">//创建的一个空对象</span></span><br></pre></td></tr></table></figure>
+<p></p><h4>属性的查询和设置</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> author = book.author;  <span class="comment">//得到book的"author"属性</span></span><br><span class="line"><span class="keyword">var</span> name = author.surname;  <span class="comment">//得到获得author的"surname"属性</span></span><br><span class="line"><span class="keyword">var</span> title = book[<span class="string">"main title"</span>];  <span class="comment">//得到book的"main title"属性</span></span><br><span class="line">book.edition = <span class="number">6</span>;</span><br><span class="line">book[<span class="string">"main title"</span>] = <span class="string">"ECMAScript"</span>;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>作为关联数组的对象</h4><br>&emsp;&emsp;点运算符访问对象属性,属性名用一个标识符表示,标识符必须直接出现在JavaScript程序中,但它们不是数据类型,程序无法修改;当通过[]访问对象属性时,属性名通过字符串表示,字符串是JavaScript的数据类型,在程序运行时可以修改和创建它们.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addr = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i++) &#123;</span><br><span class="line">    addr += customer[<span class="string">"address"</span> + i] + <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>继承</h4><br>&emsp;&emsp;JavaScript对象具有”自有属性”,也有一些属性是从原型对象继承而来的.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;&#125;;  <span class="comment">//o从Object.prototype继承对象的方法</span></span><br><span class="line">o.x = <span class="number">1</span>;  <span class="comment">//给o定义一个属性x</span></span><br><span class="line"><span class="keyword">var</span> p = inherit(o);  <span class="comment">//p继承o和Object.prototype</span></span><br><span class="line">p.y = <span class="number">2</span>;  </span><br><span class="line"><span class="keyword">var</span> q = inherit(p);  <span class="comment">//q继承p,o和Object.prototype</span></span><br><span class="line">q.z = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> s = q.toString();  <span class="comment">//toString继承自Object.prototype</span></span><br><span class="line">q.x + q.y;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;如果o继承自一个只读属性x,那么赋值操作不允许.如果允许属性赋值操作,它也总是在原始对象上创建属性或对已有的属性赋值,而不会修改原型链.在JavaScript中,只有在查询属性时才会体会到继承的存在,设置属性和继承无关.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> unitcircle = &#123;<span class="attr">r</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> c = inherit(unitcircle);  <span class="comment">//c继承属性r</span></span><br><span class="line">c.x = <span class="number">1</span>;c.y = <span class="number">1</span>;  <span class="comment">//c定义两个属性</span></span><br><span class="line">c.r = <span class="number">2</span>;  <span class="comment">//c覆盖继承来的的属性</span></span><br><span class="line">unitcircle.r;  <span class="comment">//1:原型链未修改</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h4>删除属性</h4><br>&emsp;&emsp;delete运算符可以删除对象的属性.delete只是断开属性和宿主对象的联系,不会操作属性中的属性.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> book.author;  <span class="comment">//book不再有属性author</span></span><br><span class="line"><span class="keyword">delete</span> book[<span class="string">"main title"</span>];  <span class="comment">//book不再有属性"main title"</span></span><br></pre></td></tr></table></figure><p></p>
+<p>delete运算符只能删除自有属性,不能删除继承属性,只能从定义这个属性的原型对象上删除它.</p>
+<p></p><h4>检测属性</h4><br>&emsp;&emsp;in运算符的左侧是属性名(字符串),右侧是对象.如果对象的自有属性或继承属性包含这个属性返回true.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="string">"x"</span> <span class="keyword">in</span> o;  <span class="comment">//true</span></span><br><span class="line"><span class="string">"y"</span> <span class="keyword">in</span> o;  <span class="comment">//false</span></span><br><span class="line"><span class="string">"toString"</span> <span class="keyword">in</span> o;  <span class="comment">//true:o继承toString属性</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;对象的hasOwnProperty()方法用来检测给定的名字是否是对象的自有属性.继承属性返回false.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</span><br><span class="line">o.hasOwnProperty(<span class="string">"x"</span>);  <span class="comment">//true 自有属性</span></span><br><span class="line">o.hasOwnProperty(<span class="string">"y"</span>);  <span class="comment">//false 不存在</span></span><br><span class="line">o.hasOwnProperty(<span class="string">"toString"</span>);  <span class="comment">//false 继承属性</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;propertyIsEnumerable()方法检测到自有属性且可枚举才返回true.<br>&emsp;&emsp;可使用”!==”判断属性是否是undefined.，但是in可以区分不存在的属性但值为undefined的属性.</p>
+<p></p><h4>枚举属性</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>,<span class="attr">z</span>:<span class="number">3</span>&#125;;</span><br><span class="line">o.propertyIsEnumerable(<span class="string">"toString"</span>);  <span class="comment">//false:不可枚举</span></span><br><span class="line"><span class="keyword">for</span>(p <span class="keyword">in</span> o)  <span class="comment">//遍历属性</span></span><br><span class="line"><span class="built_in">console</span>.log(p);  <span class="comment">//输出x,y和z,不会输出tostring</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>属性getter和setter</h4><br>&emsp;&emsp;属性值可以用getter和setter方法替代.由getter和setter定义的属性称为”存取器属性”,不同于”数据属性”.<p></p>
+<p></p><h4>属性的特性</h4><br>configurable: 表示能否通过delete来删除属性从而重新定义属性，能够修改属性的特性,默认为true<br>enumberable: 表示是否能通过for-in循环返回属性。默认为true<br>writable: 是否可以修改属性, 默认为true<br>value: 包含这个属性的数据值。读取属性值时3,从这个属性读，写入属性时，把新值保存到这个位置。默认值为undefine.<br>getter: 在读取属性时，调用的函数<br>setter: 在写入属性时调用的函数<br>特别注意：一旦调用了Object.defineProperty方法之后，那些未定义的特性值除了configurable为false之外，其他都为undefined;<p></p>
+<p></p><h4>对象的原型属性</h4><br>&emsp;&emsp;在ECMAScript5中,将对象作为参数传入Object.getPrototypeOf()可以查询它的原型.<strong>通过对象直接量创建的对象使用Object.prototype作为它们的原型;通过new创建的对象使用构造函数的prototype属性作为原型;通过Object.create()创建的对象使用第一个参数(可以是null)作为原型.</strong><br>要想检测一个对象是否是另一个对象的原型,使用isPropertyOf()方法.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> o = <span class="built_in">Object</span>.create(p);</span><br><span class="line">p.isPropertyOf(o);  <span class="comment">//true:o继承自p</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.isPropertyOf(o);  <span class="comment">//true:p继承自Object.prototype</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>类属性</h4><br>&emsp;&emsp;对象的类属性是一个字符串,用以表示对象的类型信息.只有一种间接的方法可以查询它.默认的toString()方法(继承自Object.prototype)返回如下格式的字符串: [object class].<p></p>
+<p></p><h4>可扩展性</h4><br>&emsp;&emsp;对象的可扩展性用以表示是否可以给对象添加新属性.<p></p>
+<p></p><h4>序列化对象</h4><br>&emsp;&emsp;对象序列化是指将对象的状态转换为字符串,也可将字符串还原为对象.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">o = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:&#123;<span class="attr">z</span>:[<span class="literal">false</span>,<span class="literal">null</span>,<span class="string">""</span>]&#125;&#125;;</span><br><span class="line">s = <span class="built_in">JSON</span>.stringify(o);  <span class="comment">//"&#123;"x":1,"y":&#123;"z":[false,null,""]&#125;&#125;"</span></span><br><span class="line">p = <span class="built_in">JSON</span>.parse(s);  <span class="comment">//&#123;x: 1, y: &#123;…&#125;&#125; p是o的深拷贝</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>对象方法toString()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">1</span>&#125;.toString();  <span class="comment">//"[object Object]" 对象</span></span><br><span class="line">                                <span class="comment">//[object Array] 数组</span></span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjffc8is5001940v21ts4vuyr" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript权威指南3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjff1qq5x0015p8v2pvdl8nfn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjffc8is4001740v2nrlzc26g" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -153,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjff1qq5v0013p8v25irfyuih" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjffc8is0001240v2v2f7jrfg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -199,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjff1qq6i001xp8v2qjrpt692" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjffc8iss002040v2vp2ka1fm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -268,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjff1qq5t0010p8v2ea5pcxej" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjffc8is2001540v2iyg1lys0" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -307,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjff1qq4s0003p8v211fmozze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjffc8ir1000440v211jp310f" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -352,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjff1qq6e001sp8v2onlsv8cv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjffc8iso001v40v2ynnbhqzm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -419,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjff1qq4v0004p8v221hqwopi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjffc8iqt000140v22d0f6ks4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -461,7 +523,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjff1qq60001ap8v2katknmo4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjffc8isa001d40v2unaiopo5" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -528,64 +590,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjff1qq500007p8v27fjhlkda" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjffc8ir7000840v2di2oxmwj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bootstrap栅格" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/25/bootstrap栅格/" class="article-date">
-  <time datetime="2018-03-25T05:28:18.000Z" itemprop="datePublished">2018-03-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/25/bootstrap栅格/">bootstrap栅格</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h3>HTML5文档类型</h3><br>Bootstrap用到的某些HTML元素和CSS元素需要将页面设置为HTML5文档类型。格式如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span> = <span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-<p></p><h3>移动设备优先</h3><br>为了确定适当的绘制和触屏缩放，需要在 head 之间添加viewport元数据标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span> = <span class="string">"viewport"</span> <span class="attr">content</span> = <span class="string">"width = device-width, initial-scale = 1"</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-<p>在移动设备浏览器上设置meta属性为 user-scalable = no 可以禁用缩放功能。视情况而定。</p>
-<p></p><h3>布局容器</h3><br>Bootstrap需要为页面内容和栅格系统包裹一个 .container 容器。提供了两个作此用处的类。不能相互嵌套。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = "container"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt; //用于固定宽度并支持响应式布局的容器</span><br></pre></td></tr></table></figure><p></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = "container-fluid"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt; //用于100%宽度，占据全部viewport的容器</span><br></pre></td></tr></table></figure>
-<p></p><h3>栅格系统</h3><p></p>
-<ol>
-<li>row 必须包含在 .container 或 .container-fluid 中。内容放置于 column 内，只有 column 可以作为 row 的直接子元素。</li>
-<li>通过为 column 设置 padding 属性，创建列与列之间的间隔；通过为 row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding ,间接为 row 所包含的 column 抵消掉了 padding .</li>
-<li>如果一 row 包含的  column 大于12，多余的 column 所在元素将另起一行排列。</li>
-<li>在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备，并针对小屏幕设备覆盖栅格类。 .col-lg-</em>不存在，影响大屏幕设备。<br><h3>媒体查询</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 小屏幕（平板，大于等于 768px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-sm-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 中等屏幕（桌面显示器，大于等于 992px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-md-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 大屏幕（大桌面显示器，大于等于 1200px） */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width: @screen-lg-min) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p></p><h3>栅格参数</h3><br>超小屏幕: 类前缀 -col-xs ; 水平排列<br>小屏幕: 类前缀 -col-sm ;<br>中等屏幕: 类前缀 -col-md ;<br>大屏幕: 类前缀 -col-lg . //开始是堆叠在一起的，当大于这些阈值时将变为水平排列C。<p></p>
-<p></p><h3>堆叠到水平排列</h3><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8"</span>&gt;</span>.col-md-8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-<p></p><h3>移动设备和桌面屏幕</h3><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-12 col-md-8"</span>&gt;</span>.col-xs-12 .col-md-8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span>.col-xs-6 .col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6"</span>&gt;</span>.col-xs-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6"</span>&gt;</span>.col-xs-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjff1qq67001jp8v2goewcelb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
 
     </footer>
   </div>
@@ -598,7 +606,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -607,7 +615,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -636,7 +644,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -646,9 +654,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
@@ -664,10 +676,6 @@
         
           <li>
             <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/28/ECMAScript6/">ECMAScript6</a>
           </li>
         
       </ul>

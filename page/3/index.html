@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-脚本化文档" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/17/脚本化文档/" class="article-date">
+  <time datetime="2018-03-17T07:41:44.000Z" itemprop="datePublished">2018-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/17/脚本化文档/">脚本化文档</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过id选取元素：document.getElementsById() id属性必须唯一<br>通过名字选取元素：document.getElementsByName() name属性不必唯一，该方法定义在HTMLDocument类中，而不在Document类中，所以只针对HTML文档可用，在xml文档中不可用。返回nodeList集合，只在少数DOM元素中有效。<strong>在IE中该方法也返回id属性匹配指定值的元素。</strong><br>通过标签名选取元素：document.getElementsByTagName() 返回nodeList集合<br>e.g. 查找文档中第一个 p 元素里面的所有 span 元素<br>     var firstpara = document.getElementsByTagName(“p”)[0];<br>     var firstParaSpans = firstpara.getElementsByTagName(“span”);<br>e.g. 引用命名(或有ID的)表单<br>     document.form.shipping_address;<br>通过CSS类选取元素：document.getElementsByClassName()<br>返回nodeList集合，只能选取调用该方法的元素的后代元素。IE8及其以下版本的浏览器未实现。<br>通过CSS选择器选取元素：可以通过ID、名字、标签名、类名选取元素。document.querySelectorAll(“selector”) 返回值是nodeLIst集合 IE8及其以下版本的浏览器只支持CSS2标准的选择器语法。<br>document.all[]表示所有文档中的元素，除了Text节点。<br>////文档结构和遍历<br>parentNode 该节点的父节点 Document没有父节点<br>childNode 只读的类数组对象(NodeList对象)<br>firstChild、lastChild 该节点的第一个和最后一个，没有子节点则null<br>nextSibling、previoursSibling该节点的兄弟节点中的前一个和下一个。具有相同父节点的两个节点为兄弟节点。顺序反映了在文档中的出现顺序。<br>nodeType 节点类型。9代表Document节点，1代表Element节点，3代表Text节点，8代表Comment节点，11代表DocumentFragment节点。<br>nodeValue Text节点或Comment节点的文本内容<br>nodeName 元素的标签名，以大写形式表示。<br>////作为元素树的文档<br>API第一部分是Element对象的children属性。NodeList对象，但只包含Element对象。Text和Comment节点没有children属性，上述Node.parentNode属性不可能返回Text或Comment节点。<br>基于元素的文档遍历api第二部分是Element属性。<br>////属性<br>HTMLElement定义了通用的HTTP属性(id、标题lang和dir)属性，以及事件处理程序属性(onclick)。HTML属性名不区分大小写，从HTML属性名转到JavaScript属性名应小写。属性名不止一个单词则除首单词以外的单词首字母大写。HTML属性名在JavaScript中是保留字则在属性名前加html。<br>////设置和获取非标准的HTML属性<br>getAttribute()和setAttribute()方法，查询和设置非标准的HTML属性。Element属性还设置了hasAttribute()检测属性是否存在，removeAttribute()删除属性。<br>////元素的内容<br>查询纯文本形式的元素内容，或在文档中插入纯文本。作为纯文本的元素内容 Node的textContent属性<br>e.g. var para = document.getElementByTagName(“p”)[0];<br>     var text = para.textContent;<br>     para.textContent = “Hello World!”;<br>作为Text节点的元素内容<br>e.g. 查找元素的后代中节点的所有Text节点】】<br>    function textContent(e) {<br>    var child,type,s = “”;<br>    for(child = e.firstChild;child != null; child = child.nextSibling){<br>        type = child.nodeType;<br>        if(type === 3 || type === 4 )<br>        s += child.nodeValue;<br>        else if (type === 1)<br>        s += textConetent(child);<br>    }<br>    return s;<br>}<br>////创建、插入和删除节点<br>创建节点 text节点 var newnode = document.createTextNode(“text node content”);<br>每个节点有一个cloneNode()方法返回该节点的一个全新副本。参数true能递归的复制所有后代节点，false执行浅复制。<br>插入节点 appendChild()(插入的节点使其成为那个节点的最后一个子节点)或insertBefore()(接受两个参数 1待插入的节点2已存在的节点)<br>删除和替换节点 removeChild()从文档树删除一个节点，在其父节点上调用，并将需要删除的子节点作为方法参数传递(两个参数1新节点2需要代替的节点)。n.parentNode.removeChild(n);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjffc8isv002640v2lno5ph59" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-浏览器中的JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjff1qq6k0020p8v2b3fexffy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjffc8ist002340v2cler4wdt" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -127,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjff1qq5g000jp8v2pjrmxs8w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjffc8iro000l40v2976xqkvi" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -198,7 +237,7 @@ bar(10); //16:闭包
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjff1qq5d000gp8v2e9lynfgt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjffc8irl000i40v27gn82x92" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -246,7 +285,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjff1qq5a000fp8v22xx1kkmq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjffc8irh000g40v252z1afbd" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -285,7 +324,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjff1qq57000cp8v20vaqd1gu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjffc8ird000d40v28u54lf9t" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -324,7 +363,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjff1qq5r000yp8v2jgw32hbx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjffc8irz001040v2qi0fttl5" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -363,7 +402,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjff1qq5p000vp8v273ks4d11" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjffc8irw000x40v2il1f8cdu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -402,7 +441,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjff1qq5n000tp8v2wyjmubxw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjffc8irv000v40v250qhvrdx" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -441,46 +480,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjff1qq5l000qp8v24p67rhnw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript对象2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象2/" class="article-date">
-  <time datetime="2018-03-13T11:52:25.000Z" itemprop="datePublished">2018-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/13/JavaScript对象2/">JavaScript对象2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>属性的查询和设置：e.g. var author = book.author;<br>                     var title = book[“main title”]; //注意空格。ECMAScript3如果一个对象的属性名是保留字则必须用方括号的形式访问。ECMAScrit5放宽了限制，可以在点运算符后直接使用保留字。<br>作为关联数组的对象：object[“property”]通过字符串索引 -&gt; 关联数组<br>                  JavaScript对象都是关联数组。<br>                  当通过点运算符访问对象的属性时，属性名用一个标识符来表示。标识符必须直接出现在JavaScript程序中，它们不是数据类型，所以程序无法修改他们。<br>                  当通过[]来访问对象属性时，属性名通过字符串来显示。字符串是JavaScript的数据类型在程序运行时和修改和创建。<strong>字符串值是动态的。</strong><br>                  function getvalue(portfolio){<br>                  var total = 0.0;<br>                  for(stock in portfolio){ //遍历portfolio中的每只股票<br>                  var shares = portfolio[stock]; //得到每只股票的份额<br>                  var price = getquote(stock); //查找股票价格<br>                  total += shares * price;<br>                  }<br>                  return total;<br>                  }<br>继承：JavaScript对象具有自有属性，也有属性是从原型对象继承而来的。<br> e.g. var o = {}; //o从Object.prototype继承对象的方法<br>      o.x = 1; //给o定义一个熟悉x<br>      var p = inherit(0); //p继承o和Object.prototype<br>      p.y = 2; //给p定义一个熟悉y<br>      var q = inherit(p); //q继承p、o和Object.prototype<br>      q.z = 3; //给q定义一个熟悉z<br>      var s = q.toString(); //toString继承Object.prototype<br>      q.x + q.y; //=&gt;3:x和y分别继承自o和p<br>     如果o继承自一个只读属性x，那么赋值操作不允许。只有在查询属性时才会体验到继承的存在，设置属性和继承无关。<br>     var unitcircle = { r:1}; //一个用来继承的对象<br>     var c = inherit(unitcircle); //c继承属性r<br>     c.x = 1; c.y =1;  //c定义两个属性<br>     c.r = 2; //c覆盖继承来的属性<br>     unitcircle.r; //=&gt;,原型对象没有修改<br>     对象o设置属性p会失败：1 o的属性p是只读的：不能给只读属性重新赋值<br>                        2 o中的属性p是继承属性，且它是只读的<br>                        3 o中不存在的自有属性p<br>删除属性：delete运算符可以删除对象的属性。不会操作属性中的属性。<br>         <strong>只能删除自有属性，不能删除继承属性。</strong><br>         delete不能删除那些可配置性(意味着能修改属性的行为，让该对象的属性都是不可迭代的、不可修改的和不可配置的)为false的属性，某些内置对象的属性是不可配置的，比如通过变量声明和函数声明创建的全局对象的属性。<br>检测属性：判断某个属性是否存在于某个对象中。可通过in运算符、hasOwnProperty()和propertyIsEnumerable()方法来完成这个工作。<br>in运算符的左侧是属性名，右侧是对象。若对象的自有属性或继承属性包含这个属性则返回true。<br>e.g. var o = { x:1 };<br>     “x” in o; //true: “x”是o的属性<br>     “y” in o; //false： “y”不是o的属性<br>     “toString” in o; //true：o继承toString属性<br>hasOwnProperty()检测给定的名字是否是对象的自有属性。对于继承属性将返回false。<br>e.g. var 0 = { x:1 };<br>     o.hasOwnProperty(“x”); //true:o有一个自有属性x<br>     o.hasOwnProperty(“y”); //false:o中不存在属性y<br>     o.hasOwnProperty(“toString”); //false:toString是继承属性<br>propertyIsEnumerable()是hasOwnProperty()的增强版，只有检测到是自有属性且属性的可枚举性为true时才返回true。某些内置属性不可枚举。<br>!== 判断一个属性是否是undefined。<br>e.g. var o = { x:1 };<br>     o.x !== undefined; // true:o中有属性x<br>     o.y !== undefined; //false:o中没有属性y<br>     o.toString !== undefined; //true:o继承toString属性<br>有一种场景只能使用in运算符而不能使用上述属性访问的方式。in可以区分不存在的属性和存在但是值为undefined的属性。<br>e.g. var o = { x:undefined }; //属性被显式赋值为undefined<br>     o.x !== undefined; //false:属性存在，但值为undefined<br>     o.y !== undefined; //false:属性不存在<br>     “x” in o; //true:属性存在<br>     “y” in o; //false:属性不存在<br>     delete 0.x; //删除了属性x<br>     “x” in o; //false:属性不再存在</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjff1qq5k000op8v2xmhmhgwk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjffc8irt000s40v2ljtcjyxf" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -496,7 +496,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -505,7 +505,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -534,7 +534,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -544,9 +544,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
@@ -562,10 +566,6 @@ factorial[1] = 1;
         
           <li>
             <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/28/ECMAScript6/">ECMAScript6</a>
           </li>
         
       </ul>
