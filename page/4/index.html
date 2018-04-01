@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript对象3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/13/JavaScript对象3/" class="article-date">
+  <time datetime="2018-03-13T11:52:42.000Z" itemprop="datePublished">2018-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/13/JavaScript对象3/">JavaScript对象3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>枚举属性：e.g.var o = {x:1,y:2,z:3};<br>             o.propertyIsEnumerable(“toString”);<br>             for(p in o)<br>             console.log(p);<br>             // x<br>             // y<br>             // z 不会输出toString<br>    =&gt; 避免上述情况 过滤返回的属性<br>       for(p in o) {<br>           if(!o.hasOwnProperty(p)) continue; //跳过继承的属性<br>       }<br>       for(p in o) {<br>           if(typeof o[p] === “function”) continue; //跳过方法<br>       }<br>属性getter和setter：由getter和setter定义的属性称做“存取器属性”，不同于数据属性。不可写性。只有getter方法只读，只有setter属性只写，读取只写属性总是返回undefined。<br>属性的特征：数据属性特性：值、可写性、可枚举性、可配置性<br>           存取器属性不具有值和可写性，它们的可写性是由setter存在与否决定的。特性：读取、写入、可枚举性、可配置性。<br>对象的三个属性：原型、类、可扩展性。<br>原型属性：用来继承属性检测一个对象是否是另一个对象的原型，使用isProtptypeOf()方法。<br>可扩展性：表示是否可以给对象添加新属性。所有内置对象和自定义对象都是可扩展的，宿主对象的可扩展性是由JavaScript引擎决定的。<br>序列化对象：将对象的状态转换为字符串，也可将字符串还原为对象。ECMAScript5提供内置函数JSON.stringify()和JSON.parse()用来序列号和还原JavaScript对象。JSON JavaScript Object Notation JavaScript对象表示法。<br>对象方法： toString()方法返回表示调用这个方法的对象值的字符串<br>          e.g. var s = { x:1, y:1 }.toString();<br>               console.log(s);<br>               // [object Object]<br>          toLocaleString()方法返回这个对象的本地化字符串</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjfg4a1fz000rgwv2bjve5bez" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript对象2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjffc8irr000q40v2xt128i4w" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjfg4a1fy000pgwv2mv05t6tv" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -127,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjffc8irp000n40v21fgoq6wl" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjfg4a1fv000mgwv2c9lcj0w3" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -171,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjffc8ise001h40v2rjxuvbel" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjfg4a1gn001cgwv25oov6oxj" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -214,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjffc8is7001b40v29a1ais7x" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjfg4a1gl001agwv281fhwvao" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
@@ -257,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjffc8isg001j40v221zl7l8w" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjfg4a1gs001igwv215jnkfdf" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -304,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjffc8isk001p40v2laso96jy" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjfg4a1gy001qgwv2yaxd0ab3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -318,7 +357,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
 
 </section>
@@ -327,7 +366,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -337,7 +376,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
@@ -347,7 +386,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -356,9 +395,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -366,9 +405,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/01/JavaScript权威指南5/">JavaScript权威指南5</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
@@ -386,10 +429,6 @@
             <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
           </li>
         
-          <li>
-            <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -403,7 +442,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

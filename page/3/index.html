@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,46 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-jQuery类库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/18/jQuery类库/" class="article-date">
+  <time datetime="2018-03-18T07:18:54.000Z" itemprop="datePublished">2018-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/18/jQuery类库/">jQuery类库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>////jQuery基础<br>jQuery类库定义了一个全局函数:jQuery()，快捷别名$.<br>e.g. var divs = $(“div”); 返回的值表示零个或多个DOM元素，这就是jQuery对象。 jQuery()是工厂函数，不是构造函数，返回一个新创建的对象。<br>////jQuery()函数<br>1、传递CSS选择器(字符串)给$()方法。<br>2、传递一个Element、Document或Window对象给$()方法。被封装成jQuery对象并返回。<br>3、传递HTML文本字符串给$()方法。$()接受可选的第二参数，可以传递Document对象来指定与所创建元素相关联的文档。<br>4、传入一个函数给$()方法。传给jQuery()的函数在被调用时，this指向document对象，唯一的参数指向jQuery函数。<br>////查询与查询结果 $()的返回值是一个jQuery对象，是类数组。<br>e.g. $(“body”).length  //=&gt;1:文档只有唯一一个body元素<br>     $(“body”)[0]   //等于document.body<br>     selector属性是创建jQuery对象时的选择器字符串。context属性是上下文对象，是传递给$()方法的第二参数，默认Document对象。所有jQuery对象都有一个名为jQuery的属性。<br>////想要遍历jQuery对象中的元素时，可以调用each()方法来代替for()循环。但是如果回调函数在任一元素上返回false，遍历在该元素后中止。jQuery的map()方法和Array.prototype.map()方法很接近。元素作为this值和第二参数传入，元素的索引值作为第一参数传入。另一个基础方法是index()。接受一个元素作为参数，返回值是该元素在此jQuery对象中的索引值，找不到返回-1。is()方法接受一个选择器作为参数，如果选中元素中至少有一个匹配该选择器时返回true。<br>jQuery中的getter和setter<br>//获取和设置HTML属性 attr()方法是jQuery中用于HTML属性的setter和getter。处理浏览器的兼容性和一些特殊情况，还让HTML属性名和JavaScript属性名可以等同使用。removeAttr()可用来从所有选中元素中移除某个属性。<br>e.g. $(“form”).attr(“action”);  //获取第一个form元素的action属性<br>     $(“#icon”).attr(“src”,”icon.gif”);  //设置src属性<br>     $(“#banner”).attr({  //一次设置4个属性<br>         src: “banner.gif”,<br>         alt: “Advertisement”,<br>         width: 720, height: 64<br>     });<br>     $(“a”).attr(“target”,”_blank”);  //使所有链接在新窗口中打开<br>     $(“a”).attr(“target”,function() {  //使站内链接在本窗口中打开，并且让<br>         if(this.host == location.host)<br>         return “_self”<br>         else return “_blank”;  //非站内链接在新窗口打开<br>     });<br>     $(“a”).attr({target: function() {  //可以像这样传入函数<br>         …<br>     }});<br>     $(“a”).removeAttr(“target”);  //让所有链接在本窗口中打开<br>//获取和设置CSS属性 css()方法和attr()方法类似，只是css()方法作用于元素的CSS样式，非HTML属性。返回的值是元素的当前样式，不能获取复合样式的值。<br>e.g. $(“h1”).css(“font-weight”);  //获取第一个 h1 的字体重量<br>     $(“h1”).css(“fontWeight”);  //也可采用驼峰格式<br>     $(“h1”).css(“font”);  //错误，不可获取复合样式<br>     $(“h1”).css(“font-variant”,”smallcaps”);  //将样式设置在所有 h1 元素上<br>     $(“div.note”).css(“border”,”solid black 2px”);  //设置复合样式是OK的<br>     $(“h1”).css({<br>         backgroundColor: “black”,<br>         textColor: “white”,<br>         fontVariant: “small-caps”,<br>         padding: “10px 2px 4px 20px”,<br>         border: “dotted black 4px”<br>     });  //一次设置多个样式<br>     $(“h1”).css(“font-size”,function(i,curval) {<br>         return Math.round(1.25 * parseInt(curval));<br>     });  //让所有 h1 的字体大小增加 25%<br>//获取和设置CSS类 addClass()从选中元素添加类 removeClass()删除类 toggleClass()当元素没有某些类时，给元素添加类，反之则删除。hasClass()判断类是否存在，只能接受单个类名作为参数，并且不支持函数参数。<br>e.g. // 添加CSS类<br>     $(“h1”).addClass(“hilite”); //给所有 h1 元素添加一个类<br>     $(“h1+p”).addClass(“hilite first”); //给 h1 后面的 p 添加两个类<br>//获取和设置HTML表单值 val()方法来设置和获取HTML表单元素的value属性，还可用于获取和设置复选框、单选按钮以及 select 元素的选中状态。<br>e.g. $(“#surname”).val();  //获取surname文本域的值<br>     $(“input:radio[name=ship]:checked”).val();  //获取选中的单选按钮的值。<br>     $(“input:checkbox”).val([“opt1”,”opt2”]);  //选中带有这些名字或值的复选框<br>//设置和获取元素内容 text()和html()方法用来获取和设置元素的纯文本或HTML内容。不带参数调用时，text()返回所有匹配元素的所有子孙文本节点的纯文本内容，html()返回第一个匹配元素的HTML内容。传入字符串给text()或html()，该字符串会用作该元素的纯文本或格式化的HTML文本内容，替换掉所有存在的内容。<br>e.g. var title = $(“head title”).text();  //获取文档标题<br>     var headline = $(“h1”).html();  //获取第一个 h1 元素的html<br>     $(“h1”).text(function(n,current){  //给每个标题添加章节号<br>         return “#” + (n+1) + “: “ + current<br>     });</p>
+<p>/<br>/<br>/<br>/<br>////jQuery中的Ajax<br>//使用HTTP脚本按需加载数据，而不需要刷新整个页面。jQuery定义了一个高级工具方法和四个高级工具函数，这些工具都基于jQuery.ajax()。<br>//load()方法，向它传入一个url，它会异步加载该url的内容，然后将内容插入每一个选中元素中，替换掉已存在的任何内容。<br>e.g.  setInterval(function(){<br>    $(‘#status’).load(“status_report.html”);<br>},6000);<br>只想显示被加载文档的一部分，可以在URL后面添加一个空格和一个jQuery选择器。当URL加载完成后，jQuery会用指定的选择器来从加载好的html中选取需要显示的部分。<br>e.g.  $(‘#temp’).load(“wheater_report.html #temperature”);<br>除了必须的URL参数，load()方法接受两个可选参数。第一个可选参数表示的数据，可以追加到URL后面，或者与请求一起发送。传入的是字符串，则会追加到URL后面(放在”?”或”&amp;”后面)。传入对象，该对象会被转换成一个用”&amp;”分隔的键值对后与请求一起发送。通常情况下，load()方法发送HTTP GET请求，传入数据对象发送POST请求。<br>e.g.  $(‘#temp’).load(“us_weather_report.html”,”zipcode=01234”); //加载特定区号的天气预报<br>      $(‘#temp’).load(“us_weather_report.html”,{ zipcode: 01234,units: ‘f’});  //使用对象作为数据，并指定为华氏温度<br>load()方法的另一个可选参数是回调函数。当Ajax请求成功或未成功，以及(当请求成功时)URL加载完毕并插入选中元素时，会调用该回调函数。未指定任何数据下，回调函数作为第二个参数传入。否则必须是第三个参数。jQuery对象每一个元素上都会调用回调函数，并且每次调用都会调用都会传入三个参数：被加载URL的完整文本内容、状态码字符串，以及用来记载URL的XMLHttpRequest对象。状态码是jQuery的，类似”success”、”error”、”timeout”.<br>//Ajax工具函数 jQuery的其他Ajax高级工具是函数非方法，可通过jQuery或$直接调用。<br>1、jQuery.getScript() 第一个参数是JavaScript代码文件的URL。异步加载文档，加载完成后再全局作用域执行代码。适用于同源和跨源脚本。<br>e.g.  jQuery.getScript(“<a href="http://example.com/js/widget.js&quot;)" target="_blank" rel="noopener">http://example.com/js/widget.js&quot;)</a>;<br>可以传入回调函数作为第二参数，jQuery会在代码加载和执行完成后调用一次该回调函数。<br>e.g.  //加载一个类库，并在加载完成时立刻使用它<br>     jQuery.getScript(“js/jquery.my_plugin.js”,function() {<br>     $(‘div’).my_plugin();  //使用加载的类库<br>    });<br>jQuery.getScript()通常会使用XMLHttpRequest对象获取执行的脚本内容。跨域请求，jQuery使用 script 加载脚本。同源下，回调函数第一个参数是脚本的文本内容，第二参数是”success”状态码，第三参数是用来获取脚本内容的XMLHttpRequest对象，jquery.getScript()函数的返回值也是XMLHttpRequest对象。跨源，不存在XMLHttpRequest对象，无法获取脚本内容。回调函数第一参数和第三参数是undefined,jQuery.getScript()的返回值也是undefined.<br>传递给jQuery.getScript()回调函数在请求成功时才被调用。若需要在发生错误和成功时得到通知则需要底层jQuery.ajax()函数。<br>2、jQuery.getJSON() 获取文本特殊处理，调用指定的回调函数。jQuery.getJSON()获取到文本后解析为JSON。此方法在传入了回调函数时才有用。成功加载URL将内容成功解析成JSON后，解析结果会作为第一个参数传入回调函数中。与jquery.getScript()一样回调函数的第二个和第三个参数是”success”状态码和XMLHttpRequest对象。<br>e.g.  //假设data.json包含文本: ‘{“x”:1,”y”:2}’<br>      jQuery.getJSON(“data.json”,function(data){<br>          //data参数是对象{x:1,y:2}<br>})<br>该方法接受一可选的数据对象参数，和load()方法一样。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjfg4a1gw001ogwv22ptu3867" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-脚本化文档" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjffc8isv002640v2lno5ph59" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjfg4a1h50022gwv2ruy507q7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -127,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjffc8ist002340v2cler4wdt" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjfg4a1ha0027gwv2w8t38r0d" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -166,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjffc8iro000l40v2976xqkvi" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfg4a1ft000kgwv2jxue2ubj" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -237,7 +277,7 @@ bar(10); //16:闭包
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjffc8irl000i40v27gn82x92" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfg4a1fr000hgwv2gg8nf20i" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -285,7 +325,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjffc8irh000g40v252z1afbd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfg4a1fm000fgwv2fdm1pxnv" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -324,7 +364,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjffc8ird000d40v28u54lf9t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfg4a1fi000cgwv2vtg12uvp" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -363,7 +403,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjffc8irz001040v2qi0fttl5" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfg4a1g5000wgwv2i6dffujb" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -402,7 +442,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjffc8irw000x40v2il1f8cdu" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfg4a1g8000zgwv2v3a93nf8" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -441,46 +481,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjffc8irv000v40v250qhvrdx" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript对象3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/13/JavaScript对象3/" class="article-date">
-  <time datetime="2018-03-13T11:52:42.000Z" itemprop="datePublished">2018-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/13/JavaScript对象3/">JavaScript对象3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>枚举属性：e.g.var o = {x:1,y:2,z:3};<br>             o.propertyIsEnumerable(“toString”);<br>             for(p in o)<br>             console.log(p);<br>             // x<br>             // y<br>             // z 不会输出toString<br>    =&gt; 避免上述情况 过滤返回的属性<br>       for(p in o) {<br>           if(!o.hasOwnProperty(p)) continue; //跳过继承的属性<br>       }<br>       for(p in o) {<br>           if(typeof o[p] === “function”) continue; //跳过方法<br>       }<br>属性getter和setter：由getter和setter定义的属性称做“存取器属性”，不同于数据属性。不可写性。只有getter方法只读，只有setter属性只写，读取只写属性总是返回undefined。<br>属性的特征：数据属性特性：值、可写性、可枚举性、可配置性<br>           存取器属性不具有值和可写性，它们的可写性是由setter存在与否决定的。特性：读取、写入、可枚举性、可配置性。<br>对象的三个属性：原型、类、可扩展性。<br>原型属性：用来继承属性检测一个对象是否是另一个对象的原型，使用isProtptypeOf()方法。<br>可扩展性：表示是否可以给对象添加新属性。所有内置对象和自定义对象都是可扩展的，宿主对象的可扩展性是由JavaScript引擎决定的。<br>序列化对象：将对象的状态转换为字符串，也可将字符串还原为对象。ECMAScript5提供内置函数JSON.stringify()和JSON.parse()用来序列号和还原JavaScript对象。JSON JavaScript Object Notation JavaScript对象表示法。<br>对象方法： toString()方法返回表示调用这个方法的对象值的字符串<br>          e.g. var s = { x:1, y:1 }.toString();<br>               console.log(s);<br>               // [object Object]<br>          toLocaleString()方法返回这个对象的本地化字符串</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjffc8irt000s40v2ljtcjyxf" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjfg4a1g3000ugwv2p01f0bxg" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -496,7 +497,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Suivant &raquo;</a>
   </nav>
 
 </section>
@@ -505,7 +506,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -515,7 +516,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
@@ -525,7 +526,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -534,9 +535,9 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -544,9 +545,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/01/JavaScript权威指南5/">JavaScript权威指南5</a>
+          </li>
         
           <li>
             <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
@@ -564,10 +569,6 @@ factorial[1] = 1;
             <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
           </li>
         
-          <li>
-            <a href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -581,7 +582,7 @@ factorial[1] = 1;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

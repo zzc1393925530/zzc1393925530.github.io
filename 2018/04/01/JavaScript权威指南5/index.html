@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript权威指南5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组方法 join()123456var a = [1,2,3];a.join();  //&quot;1,2,3&quot;a.join(&quot; &quot;);  //&quot;1 2 3&quot;a.join(&quot;&quot;);  //&quot;123&quot;var b = new Array(10);b.join(&apos;-&apos;);  //&quot;---------&quot; Array.join()方法是String.split()方法的逆向操作. reverse()123var">
+<meta name="keywords" content="日志,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript权威指南5">
+<meta property="og:url" content="http://yoursite.com/2018/04/01/JavaScript权威指南5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组方法 join()123456var a = [1,2,3];a.join();  //&quot;1,2,3&quot;a.join(&quot; &quot;);  //&quot;1 2 3&quot;a.join(&quot;&quot;);  //&quot;123&quot;var b = new Array(10);b.join(&apos;-&apos;);  //&quot;---------&quot; Array.join()方法是String.split()方法的逆向操作. reverse()123var">
+<meta property="og:updated_time" content="2018-04-01T01:18:08.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript权威指南5">
+<meta name="twitter:description" content="数组方法 join()123456var a = [1,2,3];a.join();  //&quot;1,2,3&quot;a.join(&quot; &quot;);  //&quot;1 2 3&quot;a.join(&quot;&quot;);  //&quot;123&quot;var b = new Array(10);b.join(&apos;-&apos;);  //&quot;---------&quot; Array.join()方法是String.split()方法的逆向操作. reverse()123var">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript权威指南5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/01/JavaScript权威指南5/" class="article-date">
+  <time datetime="2018-04-01T00:31:39.000Z" itemprop="datePublished">2018-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript权威指南5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>数组方法<p></p>
+<p></p><h4>join()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.join();  <span class="comment">//"1,2,3"</span></span><br><span class="line">a.join(<span class="string">" "</span>);  <span class="comment">//"1 2 3"</span></span><br><span class="line">a.join(<span class="string">""</span>);  <span class="comment">//"123"</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br><span class="line">b.join(<span class="string">'-'</span>);  <span class="comment">//"---------"</span></span><br></pre></td></tr></table></figure><p></p>
+<p>Array.join()方法是String.split()方法的逆向操作.</p>
+<p></p><h4>reverse()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.reverse().join();  <span class="comment">//[3,2,1]</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[3,2,1]</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>sort()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"banana"</span>,<span class="string">"cherry"</span>,<span class="string">"apple"</span>);</span><br><span class="line">a.sort();</span><br><span class="line"><span class="keyword">var</span> s = a.join(<span class="string">","</span>);  <span class="comment">//["apple", "banana", "cherry"]</span></span><br></pre></td></tr></table></figure><p></p>
+<p>传入比较函数可以排序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">33</span>,<span class="number">4</span>,<span class="number">1111</span>,<span class="number">222</span>];</span><br><span class="line">a.sort();</span><br><span class="line">a.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);  <span class="comment">//[4, 33, 222, 1111]</span></span><br><span class="line">a.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b - a;</span><br><span class="line">&#125;);  <span class="comment">//[1111, 222, 33, 4]</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h4>concat()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.concat(<span class="number">4</span>,[<span class="number">5</span>,[<span class="number">6</span>,<span class="number">7</span>]]);  <span class="comment">//[1, 2, 3, 4, 5, Array(2)]</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>slice()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">a.slice(<span class="number">0</span>,<span class="number">3</span>);  <span class="comment">//[1,2,3]</span></span><br><span class="line">a.slice(<span class="number">-3</span>,<span class="number">-2</span>);  <span class="comment">//[3]</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>splice()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line">a.splice(<span class="number">4</span>);  <span class="comment">//[5,6,7,8] a [1,2,3,4]</span></span><br><span class="line">a.splice(<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//[2,3] a[1,4]</span></span><br><span class="line">a.splice(<span class="number">1</span>,<span class="number">1</span>);  <span class="comment">//[4] a[1]</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>push(),pop(),unshift,shift()</h4><br>push()方法在数组的尾部添加一个或多个元素,返回数组长度;unshift()方法在数组头部插入删除元素;pop()方法删除最后一个元素,减小数组长度并返回删除的值;shift()方法删除第一个元素并将其返回.<p></p>
+<p></p><h4>toString(),toLocaleString()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].toString();  <span class="comment">//"1,2,3"</span></span><br><span class="line">[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>].toString();  <span class="comment">//"a,b,c"</span></span><br><span class="line">[<span class="number">1</span>,[<span class="number">2</span>,<span class="string">'c'</span>]].toString();  <span class="comment">//"1,2,c"</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>forEach()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    sum += value;</span><br><span class="line">&#125;);</span><br><span class="line">sum;  <span class="comment">//15</span></span><br><span class="line">data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v,i,a</span>) </span>&#123;</span><br><span class="line">    a[i] = v + <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line">data;  <span class="comment">//[2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>filter()</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dense = sparse.filter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;);  <span class="comment">//压缩数组中的空缺</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>every(),some()</h4><br>&emsp;&emsp;逻辑判断,every()所有元素调用判断函数返回true,才返回true;some()只要存在返回true.<p></p>
+<p></p><h4>数组类型</h4><br>&emsp;&emsp;ECMAScript使用Array,isArray()函数判断是否是数组.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>,isArray([]);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(&#123;&#125;);  <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p></p>
+</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjfg4a1gj0018gwv27x2wignc" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/31/JavaScript权威指南4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">JavaScript权威指南4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/01/JavaScript权威指南5/">JavaScript权威指南5</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/JavaScript权威指南2/">JavaScript权威指南2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
