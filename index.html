@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,58 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript权威指南6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/01/JavaScript权威指南6/" class="article-date">
+  <time datetime="2018-04-01T01:20:33.000Z" itemprop="datePublished">2018-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/01/JavaScript权威指南6/">JavaScript权威指南6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h4>作为命名空间的函数</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//模块代码</span></span><br><span class="line">&#125;());  <span class="comment">//结束函数定义并立即调用</span></span><br></pre></td></tr></table></figure><p></p>
+<p>定义匿名函数并立即在单个表达式中调用它的写法已经称为惯用法了.<br>函数声明:function fnNamw() {…};<br>函数表达式: var fnName = function() {…};<br>匿名函数: function() {…};<br>&emsp;&emsp;函数声明和函数表达式不同之处在于:JavaScript引擎在解析JavaScript代码时会’函数声明提升’当前执行环境上的函数声明,而函数表达式必须等到JavaScript引擎执行到所在行时,才会从上而下解析函数表达式;函数表达式后面可以加括号立即调用该函数,函数声明不能.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fnName();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;  <span class="comment">//正常:提升了函数声明</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fnName();</span><br><span class="line"><span class="keyword">var</span> fnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;  <span class="comment">//报错:函数调用必须在函数表达式之后 Uncaught SyntaxError: Unexpected token &#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">"HELLO"</span>);</span><br><span class="line">&#125;();  <span class="comment">//alert: HELLO:立即调用</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">"HELLO"</span>);</span><br><span class="line">&#125;();  <span class="comment">//Uncaught SyntaxError: Unexpected token )</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"HELLO"</span>);</span><br><span class="line">&#125;();  <span class="comment">//Uncaught SyntaxError: Unexpected token (</span></span><br></pre></td></tr></table></figure>
+<p>要在函数体后面加括号就能立即调用,这个函数必须是函数表达式,不能是函数声明.</p>
+<p></p><h4>闭包</h4><br>&emsp;&emsp;<strong>闭包就是能够读取其他函数内部变量的函数.匿名函数的this通常指向全局window.当作为对象的方法调用时,这个函数里的this绑定到这个对象上面,当作为函数调用时,这个函数里的this绑定到全局对象上面.</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> scope&#125;</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope();  <span class="comment">//f() &#123; return scope&#125;</span></span><br><span class="line">checkscope()();  <span class="comment">// "local scope"</span></span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uniqueInteger = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> counter++;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;());</span><br><span class="line">uniqueInteger;  <span class="comment">/*ƒ () &#123;</span></span><br><span class="line"><span class="comment">                   return counter++;</span></span><br><span class="line"><span class="comment">                  &#125;*/</span></span><br></pre></td></tr></table></figure>
+<p></p><h4>length属性</h4><br>&emsp;&emsp;函数的length属性是只读属性,代表函数实参的数量(函数定义时给出的实参个数).<p></p>
+<p></p><h4>call(),apply(),bind()</h4><br>&emsp;&emsp;函数实例的call方法,可以指定该函数内部this的指向(即函数执行时所在的作用域),然后在所指定的作用域中,调用该函数.并且会立即执行该函数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> keith = &#123;</span><br><span class="line">        rascal: <span class="number">123</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> rascal = <span class="number">456</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.rascal);</span><br><span class="line">    &#125;</span><br><span class="line">    a(); <span class="comment">//456</span></span><br><span class="line">    a.call(); <span class="comment">//456</span></span><br><span class="line">    a.call(<span class="literal">null</span>); <span class="comment">//456</span></span><br><span class="line">    a.call(<span class="literal">undefined</span>); <span class="comment">//456</span></span><br><span class="line">    a.call(<span class="keyword">this</span>); <span class="comment">//456</span></span><br><span class="line">    a.call(keith); <span class="comment">//123</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;call()方法可以传递两个参数.第一个参数是指定函数内部中this的指向,也就是函数执行时所在的作用域),第二个参数是函数调用时需要传递的参数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">keith</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a + b);</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line">    keith.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;第一个参数是必须的,可以是null,undefined,this,但是不能为空.设置为null,undefined,this表明函数keith此时处于全局作用域.第二个参数中必须一个个添加.而在apply中必须以数组的形式添加.<br>&emsp;&emsp;apply方法的作用与call方法类似,也是改变this指向(函数执行时所在的作用域),然后在指定的作用域中,调用该函数.同时也会立即执行该函数.唯一的区别就是,它接收一个数组作为函数执行时的参数.<br>&emsp;&emsp;bind方法用于指定函数内部的this指向(执行时所在的作用域),然后返回一个新函数.bind方法并非立即执行一个函数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">100</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> f = keith.count.bind(obj);</span><br><span class="line">f(); <span class="comment">//100</span></span><br><span class="line">f(); <span class="comment">//101</span></span><br><span class="line">f(); <span class="comment">//102</span></span><br></pre></td></tr></table></figure></p>
+<p>总结一下call,apply,bind方法：<br>　　a：第一个参数都是指定函数内部中this的指向（函数执行时所在的作用域）,然后根据指定的作用域,调用该函数.<br>　　b：都可以在函数调用时传递参数.call,bind方法需要直接传入,而apply方法需要以数组的形式传入.<br>　　c：call,apply方法是在调用之后立即执行函数,而bind方法没有立即执行,需要将函数再执行一遍.有点闭包的味道。<br>　　d：改变this对象的指向问题不仅有call,apply,bind方法,也可以使用that变量来固定this的指向.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南6/" data-id="cjfgetcpv001c2kv2hhu68vk2" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript权威指南5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -102,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjfg4a1gj0018gwv27x2wignc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjfgetcpv001a2kv2blqtzu80" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -164,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjfg4a1gd0014gwv2q5wnfqwa" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjfgetcpf00182kv29rbbmtd6" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -207,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjfg4a1gb0011gwv2cbq9grfa" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjfgetcpf00162kv27bf1dwve" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -268,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjfg4a1hp003hgwv21n0zczka" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南2/" data-id="cjfgetcpf00142kv2k87dzq9n" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -314,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjfg4a1h4001zgwv2o9xkj8az" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/31/执行上下文与作用域/" data-id="cjfgetcqa00262kv21q2zfj7p" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -383,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjfg4a1gg0016gwv2igmnt5u9" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjfgetcpf00112kv2v1ezx3z6" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -422,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfg4a1f90005gwv2lcwsbcai" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfgetcok00042kv2kxqknmrh" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -467,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfg4a1h0001ugwv2d2j6sfg2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfgetcqa00202kv21epcx55f" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -534,52 +586,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfg4a1f40003gwv28ye6f3js" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfgetco400012kv2aoab5l9f" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript练习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/26/JavaScript练习/" class="article-date">
-  <time datetime="2018-03-26T06:34:06.000Z" itemprop="datePublished">2018-03-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/26/JavaScript练习/">JavaScript练习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>99乘法表<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">1</span>;j &lt;= <span class="number">10</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">var</span> a = i * j;</span><br><span class="line">        <span class="built_in">console</span>.log(i + <span class="string">" * "</span> + j + <span class="string">" = "</span> + a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>斐波那契数列<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">return</span> a(n<span class="number">-1</span>) + a(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(a(<span class="number">8</span>)); <span class="comment">//21</span></span><br></pre></td></tr></table></figure></p>
-<p>阶乘<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span>(n * <span class="built_in">arguments</span>.callee(n - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> anotherFactorial = factorial;</span><br><span class="line">factorial = <span class="literal">null</span>;</span><br><span class="line">alert(anotherFactorial(<span class="number">6</span>));</span><br></pre></td></tr></table></figure></p>
-<p>冒泡排序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt; arr.length;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>;j &lt;= arr.length - i;j++) &#123;</span><br><span class="line">            <span class="keyword">var</span> temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line">bubbleSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">8</span>,<span class="number">9</span>]); <span class="comment">//[4, 5, 8, 9, 12]</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjfg4a1gq001ggwv2v1hi14yy" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -592,7 +602,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Suivant &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -601,7 +611,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -611,7 +621,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
@@ -621,7 +631,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -630,7 +640,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -640,9 +650,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/01/JavaScript权威指南6/">JavaScript权威指南6</a>
+          </li>
         
           <li>
             <a href="/2018/04/01/JavaScript权威指南5/">JavaScript权威指南5</a>
@@ -660,10 +674,6 @@
             <a href="/2018/03/31/JavaScript权威指南2/">JavaScript权威指南2</a>
           </li>
         
-          <li>
-            <a href="/2018/03/31/执行上下文与作用域/">执行上下文与作用域</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -677,7 +687,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
