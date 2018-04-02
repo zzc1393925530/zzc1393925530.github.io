@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,58 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/23/闭包/" class="article-date">
+  <time datetime="2018-03-23T04:28:37.000Z" itemprop="datePublished">2018-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/23/闭包/">闭包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>闭包是指有权访问另一个函数作用域中的变量的函数</h2><br>&emsp;&emsp;创建闭包的常见方式，是在一个函数内部创建另一个函数。<p></p>
+<p></p><h2>作用域</h2><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i =0;i &lt; 10; i++) &#123;</span><br><span class="line">&#125;</span><br><span class="line">alert(i);  //10</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h3>作用域链</h3><br>&emsp;&emsp;1.声明变量：使用var声明的变量会自动被添加到最接近的环境中。；在with语句中，最接近的环境是函数环境。若初始化变量时没有使用var声明，该变量自动被添加到全局环境。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(num1,num2) &#123;</span><br><span class="line">var sum = num1 + num2;</span><br><span class="line">return sum;</span><br><span class="line">&#125;</span><br><span class="line">var result = add(10,20);</span><br><span class="line">alert(sum);  //Uncaught ReferenceError: sum is not defined 由于sum不是有效变量，会导致错误</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(num1,num2) &#123;</span><br><span class="line">sum = num1 + num2;</span><br><span class="line">return sum;</span><br><span class="line">&#125;</span><br><span class="line">var result = add(10,20);</span><br><span class="line">alert(sum); //30:当调用完add()之后，添加到全局环境的变量sum将继续存在；即使函数执行完毕，后面的代码依旧可以访问。</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;2.查询标识符：当在某个环境为了读取或写入而引用另一个标识符时，必须通过搜索来确定标识符世纪代表什么。搜索过程从作用域链的前端开始，向上逐级查询与给定名字匹配的标识符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &quot;blue&quot;;</span><br><span class="line">function getColor() &#123;</span><br><span class="line">return color;</span><br><span class="line">&#125;</span><br><span class="line">alert(getColor()); //blue</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var color = &quot;blue&quot;;</span><br><span class="line">function getColor() &#123;</span><br><span class="line">var color = &quot;red&quot;;</span><br><span class="line">return color;</span><br><span class="line">&#125;</span><br><span class="line">alert(getColor()); //red</span><br></pre></td></tr></table></figure>
+<p></p><h3>闭包与变量</h3><br>&emsp;&emsp;闭包只能取得包含函数中任何变量的最后一个值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function createFunctions() &#123;</span><br><span class="line">var result = new Array();</span><br><span class="line">for(var i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">result[i] = function() &#123;</span><br><span class="line">return i;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">return result;</span><br><span class="line">&#125;  //每个函数都返回10</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createFunctions() &#123;</span><br><span class="line">var result = new Array();</span><br><span class="line">for(var i = 0;i &lt; 10;i++)&#123;</span><br><span class="line">result[i] = function(num) &#123; //匿名函数强制闭包</span><br><span class="line">return function()&#123;</span><br><span class="line">return num;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;(i);</span><br><span class="line">&#125;</span><br><span class="line">return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p><h3>关于this对象</h3><br>&emsp;&emsp;this对象在运行时基于函数的执行环境绑定：全局函数中，this等于window，当函数被当作某个对象的方法调用时，this等于那个对象。匿名函数的执行环境具有全局性，因此this对象通常指向window。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;The Window&quot;;</span><br><span class="line">var object = &#123;</span><br><span class="line">name: &quot;My Object&quot;,</span><br><span class="line">getNameFunc:function() &#123;</span><br><span class="line">return function()&#123;</span><br><span class="line">return this.name;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">alert(object.getNameFunc()()); //&quot;The Window&quot;</span><br></pre></td></tr></table></figure><p></p>
+<p>getNameFunc()方法返回匿名函数，匿名函数返回this.name.由于getNameFunc()返回一个函数，因此调用object.getNameFunc()会立即调用它返回的函数，结果返回字符串。</p>
+<p></p><h3>内存泄漏</h3><br>&emsp;&emsp;如果闭包的作用域中<strong>保存</strong>着一个HTML元素，意味着该元素无法被销毁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function assignHandler() &#123;</span><br><span class="line">var element = document.getElementById(&quot;someElement&quot;);</span><br><span class="line">element.onclick = function() &#123;</span><br><span class="line">alert(element.id);</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function assignHandler() &#123;</span><br><span class="line">var element = document.getElementById(&quot;someElement&quot;);</span><br><span class="line">var id = element.id; //把element.id的一个副本保存在一个变量中，在闭包中引用该变量删除循环引用</span><br><span class="line">element.onclick = function() &#123;</span><br><span class="line">alert(id);</span><br><span class="line">&#125;;</span><br><span class="line">element = null;  //解除对DOM对象的引用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p><h3>私有变量</h3><br>&emsp;&emsp;任何在函数中定义的变量，都可以认为是私有变量，因为不能在函数的外部访问这些变量。有权访问私有变量和私有函数的公有方法称为特权方法。方法一在构造函数中定义特权方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function MyObject() &#123;</span><br><span class="line">    //私有变量和私有函数</span><br><span class="line">var privateVariable = 20;</span><br><span class="line">function privateFunction() &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">//特权方法</span><br><span class="line">this.publicMethod = function() &#123;</span><br><span class="line">privateVariable++;</span><br><span class="line">return privateFunction();</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;可以使用构造函数模式、原型模式来实现自定义的特权方法，也可以使用模块模式、增强的模块模式实现单例的特权方法。<br>&emsp;&emsp;过度使用闭包会占用大量内存。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjfhtkty9003ohkv2wt0vn8tz" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-递归" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -89,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjfgetcqa00292kv2nalqii1e" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjfhtktxu002chkv28aa1v4b1" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -129,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjfgetcqa001u2kv2p8rfwncu" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjfhtktxe001uhkv2je8v3mtc" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -168,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjfgetcqq002b2kv257nzvju5" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjfhtktxu002ehkv2w1pqmoon" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -207,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjfgetcqa00232kv2nbdtm32t" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjfhtktxu0028hkv2ielj5yif" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -246,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfgetcp0000k2kv24puy11vv" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfhtktw3000ihkv28n39q9yx" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -317,7 +369,7 @@ bar(10); //16:闭包
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfgetcp0000h2kv239qcg70o" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfhtktw3000lhkv2mvte8io2" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -365,7 +417,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfgetcp0000f2kv2p4zjqsjv" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfhtktw3000ghkv2o8uu8ofg" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -404,7 +456,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfgetcp0000c2kv2gstb68nr" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfhtktvz000bhkv2mml4lo2q" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -443,46 +495,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfgetcpf000z2kv2fpuzak0b" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript数组2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/14/JavaScript数组2/" class="article-date">
-  <time datetime="2018-03-14T11:04:32.000Z" itemprop="datePublished">2018-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/14/JavaScript数组2/">JavaScript数组2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数组方法： <br><br>////join()方法将数组中所有元素转换为字符串并连接在一起，返回最后生成的字符串。可以指定一个可选的字符串分割数组的各个元素。Array.join()方法是String.split()方法的逆向操作。<br>e.g. var a = [1,2,3];<br>     a.join(); //“1,2,3”<br>     a.join(“ “); //“1 2 3”<br>     a.join(“”); //“123”<br>     var b = new Array(10);<br>     b.join(‘-‘); //‘———‘<br>////reverse()方法将数组中的元素颠倒顺序返回逆序的数组。替换<br>e.g. var a = [1,2,3];<br>     a.reverse().join(); //=&gt;”3,2,1”,现在的a是[3,2,1]<br>////sort()方法将数组中的元素排列并返回排列后的数组,不带参数调用该方法时以字母表顺序排序<br>e.g. var a = new Array(“bananan”,”apple”,”cherry”);<br>     a.sort();<br>     var s = a.join(“, “);<br>     console.log(s); //apple, bananan, cherry若包含undefined元素会被排到数组尾部<br>     为了按照其他方法而非字母表顺序排列 ，sort()方法传递一个比较函数。第一个参数在前，比较函数返回值小于0.<br>////concat()方法创建并返回一个新数组，元素包括调用concat()的原始数组的元素和concat()的每个参数。<br>e.g. var a = [1,2,3];<br>     a.concat(4,5); //[1,2,3,4,5]<br>     a.concat([4,5]); //[1,2,3,4,5]<br>     a.concat([4,5],[6,7]); //[1,2,3,4,5,6,7]<br>     a.concat(4,[5,[6,7]]); //[1,2,3,4,5,[6,7]]<br>////slice()方法返回指定数组的一个片段或子数组。返回的数组包含第一个参数指定的位置和所有到但不含第二个参数指定的位置之间的所有数组元素。<br>e.g. var a = [1,2,3,4,5]<br>     a.slice(1,-1); //[2,3,4]负数表示倒数第几个元素<br>////splice()方法在数组中插入或删除元素的通用方法。会更改调用的数组。<br>第一个参数指定插入和（或）删除的起始位置。第二个参数指定了应该从数组中删除元素的个数。若被省略，从起始点到数组结尾的所有元素都被删除。返回被删除的元素。<br>e.g. var a = [1,2,3,4,5,6,7,8];<br>     a.splice(4); //返回[5,6,7,8],a是[1,2,3,4]<br>     a.splice(1,2); //返回[2,3],a是[1,4]<br>     a.splice(1,1); //返回[4],a是[1]<br>    前两个参数指定需要删除的数组元素，紧随其后的任意个数的参数指定插入到数组中的元素，从第一个参数指定的位置开始插入。<br>e.g. var a = [1,2,3,4,5];<br>     a.splice(2,0,’a’,’b’); //返回[];a是[1,2,’a’,’b’,3,4,5]<br>     a.splice(2,2,[1,2],3); //返回[‘a’,’b’];a是[1,2,[1,2],3,3,4,5]<br>toString()和toLocaleString()方法： <br><br>////toString()：每个元素转化为字符串，输出带逗号分隔的字符串列表，不包括分隔符。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfgetcpf000w2kv298d6jfny" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfhtktwj0010hkv2rgavbc34" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -498,7 +511,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Suivant &raquo;</a>
   </nav>
 
 </section>
@@ -507,7 +520,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -517,9 +530,9 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
   </div>
 
@@ -527,16 +540,16 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -546,9 +559,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/01/JavaScript权威指南7/">JavaScript权威指南7</a>
+          </li>
         
           <li>
             <a href="/2018/04/01/JavaScript权威指南6/">JavaScript权威指南6</a>
@@ -566,10 +583,6 @@ factorial[1] = 1;
             <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
           </li>
         
-          <li>
-            <a href="/2018/03/31/JavaScript权威指南2/">JavaScript权威指南2</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -583,7 +596,7 @@ factorial[1] = 1;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
