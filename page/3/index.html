@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JSON" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/23/JSON/" class="article-date">
+  <time datetime="2018-03-23T07:48:43.000Z" itemprop="datePublished">2018-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/23/JSON/">JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>JSON</h2><br>&emsp;&emsp;JSON，JavaScript Object Notation，JavaScript对象表示法。JSON直接被传给eval()，不必创建对象。<br>&emsp;&emsp;JSON的语法可以表示 简单值(字符串、数值、布尔值和null，不支持undefined)、对象、数组。JSON不支持变量、函数或对象实例。不局限于JavaScript的范畴。<p></p>
+<p></p><h2>解析与序列化</h2><br>&emsp;&emsp;JSON相比XML数据结构的解析更方便。<p></p>
+<p></p><h3>JSON对象</h3><br>&emsp;&emsp;JSON是JavaScript语法的子集，eval()函数可以解析JSON、解释并返回JavaScript对象和数组。对于不能原生支持JSON解析的浏览器，使用这个shim是最佳选择。JSON对象由两个方法，stringify()和parse()。这两个方法分别用于把JavaScript对象序列化为JSON字符串和把JSON字符串解析为原生JavaScript值。<br><figure class="highlight plain"><figcaption><span>e.g.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">title: &quot;Professional JavaScript&quot;,</span><br><span class="line">authors: [</span><br><span class="line">&quot;Nicholas C. Zakas&quot;</span><br><span class="line">],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book);</span><br><span class="line">console.log(jsonText);  //&#123;&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:[&quot;Nicholas C. Zakas&quot;],&quot;edition&quot;:3,&quot;year&quot;:2011&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;默认情况下，JSON.stringify()输出的JSON字符串不包含任何空格字符或缩进。序列化JavaScript对象时，所有函数及原型对象都会被有意忽略。值为undefined的任何属性也会被跳过。<br><figure class="highlight plain"><figcaption><span>e.g.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">title: &quot;Professional JavaScript&quot;,</span><br><span class="line">authors: [</span><br><span class="line">&quot;Nicholas C. Zakas&quot;</span><br><span class="line">],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book);</span><br><span class="line">var bookCopy = JSON.parse(jsonText);</span><br><span class="line">console.log(bookCopy);  //&#123;title: &quot;Professional JavaScript&quot;, authors: Array(1), edition: 3, year: 2011&#125;</span><br><span class="line">authors:[&quot;Nicholas C. Zakas&quot;]</span><br><span class="line">edition:3</span><br><span class="line">title:&quot;Professional JavaScript&quot;</span><br><span class="line">year:2011</span><br><span class="line">__proto__:Object</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;如果传给JSON.stringify()的字符串不是有效的JSON，该方法会报错。</p>
+<p></p><h3>序列化选项</h3><br>&emsp;&emsp;JSON.stringify()除了要序列化JavaScript对象外，还可以接收另外两个参数，这两个参数用于指定以不同的方式序列化JavaScript对象。第一个参数是过滤器，可以是一个数组，也可以是函数；第二个参数是选项，表示是否在JSON字符串中保留缩进。<br>1.过滤结果<br>&emsp;&emsp;如果过滤器参数是数组，JSON.stringify()结果中只包含数组中列出的属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nocjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book,[&quot;title&quot;,&quot;edition&quot;]);</span><br><span class="line">console.log(jsonText);  //&#123;&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;edition&quot;:3&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;如果第二个参数是函数，行为稍有不同。传入的函数接受两个参数，属性名和属性值。根据属性名可以知道如何处理要序列化的对象中的属性。属性名只能是字符串，而在值并非是键值对结构的值时，键名可以是空字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nicjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book,function(key,value)&#123;</span><br><span class="line">switch(key)&#123;</span><br><span class="line">    case &quot;authors&quot; :</span><br><span class="line">return value.join(&quot;,&quot;)</span><br><span class="line">    case &quot;year&quot; :</span><br><span class="line">return 5000;</span><br><span class="line">    case &quot;edition&quot; :</span><br><span class="line">return undefined;</span><br><span class="line">    default:</span><br><span class="line">return value;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(jsonText);  //&#123;&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:&quot;Nicjolas C. Zakas&quot;,&quot;year&quot;:5000&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;如果键为”authors”,就将数组连接为一个字符串；如果键为”year”,则将其值设为5000；如果键为”edition”,通过返回undefined删除该属性。<strong>最后，一定要提供default项，此时返回传入的值，以便其他值能正常出现在结果中。</strong>要序列化的对象中每一个对象都要经过过滤器，因此数组中的每个带有这些属性的对象经过过滤之后，每个对象都只会包含”title”,”authors”,”year”属性。<br>2.字符串缩进<br>&emsp;&emsp;JSON.stringify()方法的第三个参数用于控制结果中的缩进和空白符。若参数是一个数值，那它表示的是每个级别缩进的空格数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nicjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book,null,4);</span><br><span class="line">console.log(jsonText);  </span><br><span class="line">//</span><br><span class="line">&#123;</span><br><span class="line">    &quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicjolas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;edition&quot;: 3,</span><br><span class="line">    &quot;year&quot;: 2011</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nicjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book,null,&quot;--&quot;);</span><br><span class="line">console.log(jsonText);</span><br><span class="line">//</span><br><span class="line">&#123;</span><br><span class="line">--&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">--&quot;authors&quot;: [</span><br><span class="line">----&quot;Nicjolas C. Zakas&quot;</span><br><span class="line">--],</span><br><span class="line">--&quot;edition&quot;: 3,</span><br><span class="line">--&quot;year&quot;: 2011</span><br><span class="line">&#125;</span><br><span class="line">//缩进字符串最长不能超过10个字符串，长度超过10个，结果只出现前10个字符。</span><br></pre></td></tr></table></figure>
+<p>3.toJSON()方法<br>&emsp;&emsp;可以为任何对象添加toJSON()方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nicjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011,</span><br><span class="line">toJSON: function() &#123;</span><br><span class="line">return this.title;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book);</span><br><span class="line">console.log(jsonText);  //&quot;Professional JavaScript&quot;</span><br></pre></td></tr></table></figure></p>
+<p>假设把一个对象传入JSON.stringify()，序列化该对象的顺序如下。<br>(1) 如果存在toJSON()方法而且能通过它取得有效值，则调用该方法。否则按默认顺序序列化。<br>(2) 如果提供第二个参数，应用这个函数过滤器。<br>(3) 对第(2)步返回的每个值进行相应的序列化<br>(4) 如果提供了 第三个参数，执行相应的格式化。</p>
+<p></p><h3>解析选项</h3><br>&emsp;&emsp;JSON.parse()也可以接收另一个参数，参数是函数，将在每个键值对上调用。区别JSON.stringify()接收的替换函数，这个函数被称作还原函数，实际上签名相同。返回undefined，删除相应的键；返回其他值，将值插入到结果中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">&quot;title&quot;: &quot;Professional JavaScript&quot;,</span><br><span class="line">&quot;authors&quot;: [&quot;Nicjolas C. Zakas&quot;],</span><br><span class="line">edition: 3,</span><br><span class="line">year: 2011,</span><br><span class="line">releaseDate: new Date(2011,11,1)</span><br><span class="line">&#125;;</span><br><span class="line">var jsonText = JSON.stringify(book);</span><br><span class="line">var bookCopy = JSON.parse(jsonText,function(key,value) &#123;</span><br><span class="line">if(key == &quot;releaseDate&quot;) &#123;</span><br><span class="line">return new Date(value);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">return value;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">alert(bookCopy.releaseDate.getFullYear());  //2011</span><br></pre></td></tr></table></figure><p></p>
+<p>先为book对象新增了一个releaseDate属性，该属性保存着一个Date对象。经过序列化之后变成了有效的JSON字符串，然后经过解析又在bookCopy中还原为一个Date对象。还原函数遇到”releaseDate”键时，会基于相应的值创建一个新的Date对象。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/23/JSON/" data-id="cjfltmv7t000d8ov24n9pcceu" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -101,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjfhtkty9003ohkv2wt0vn8tz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/23/闭包/" data-id="cjfltmva3002b8ov20dwz078g" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -141,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjfhtktxu002chkv28aa1v4b1" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/23/递归/" data-id="cjfltmva5002e8ov2pu2jr5bn" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -181,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjfhtktxe001uhkv2je8v3mtc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/18/jQuery类库/" data-id="cjfltmv9o001y8ov27767r1bc" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -220,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjfhtktxu002ehkv2w1pqmoon" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/脚本化文档/" data-id="cjfltmvb0003s8ov2mf4svfx8" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -259,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjfhtktxu0028hkv2ielj5yif" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/浏览器中的JavaScript/" data-id="cjfltmva8002g8ov2deygn4le" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -298,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfhtktw3000ihkv28n39q9yx" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfltmv7k00088ov2i202msg2" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -369,7 +420,7 @@ bar(10); //16:闭包
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfhtktw3000lhkv2mvte8io2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfltmv7z000g8ov2bvsxv8vd" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -417,7 +468,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfhtktw3000ghkv2o8uu8ofg" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfltmv7h00078ov2wbqwbfbo" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -456,46 +507,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfhtktvz000bhkv2mml4lo2q" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript数组3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/14/JavaScript数组3/" class="article-date">
-  <time datetime="2018-03-14T11:04:49.000Z" itemprop="datePublished">2018-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/14/JavaScript数组3/">JavaScript数组3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ECMAScript5中的数组方法： <br><br>////forEach()从头到尾遍历数组没有break语句 提前终止需要将语句放到try块中，并抛出异常。<br>////map()将每个元素传递给制定函数返回<strong>新</strong>数组包含返回值。<br>e.g. a = [1,2,3];<br>     b = a.map(function(x){<br>         return x*x;<br>     }); // b [1,4,9]<br>////filter()调用数组的子集<br>e.g. a = [5,4,3,2,1];<br>    smallvalues = a.filter(function(x){<br>        return x &lt; 3;<br>    }); //[2,1]<br>    everyother = a.filter(function(x,i){ //x为数组元素，i是元素的索引<br>        return i%2 == 0;<br>    }); //[5,3,1]<br>////every()方法针对所有元素调用判定函数都返回true时返回true。<br>    some()方法存在即true。<br>////reduce()方法两个参数，第一个参数是执行化简的函数，第二个参数(可选)是传递给函数的初始值。<br>////reduceRight()方法工作原理与reduce()相同，不同的是按照数组索引从高到低处理。<br>////indexOf()搜索整个数组具有给定值返回找到的第一个元素的索引或没找到返回-1.indexOf()从头至尾，lastIndexOf()反向。不接收函数作为参数。<br>////Array.isArray([]); //=&gt; true</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfhtktwj0010hkv2rgavbc34" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfltmv83000i8ov2bk8gwjlv" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -511,7 +523,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Suivant &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -520,7 +532,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -530,7 +542,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
@@ -540,16 +552,16 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -559,9 +571,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/02/锋利的jQuery1/">锋利的jQuery</a>
+          </li>
         
           <li>
             <a href="/2018/04/01/JavaScript权威指南7/">JavaScript权威指南7</a>
@@ -579,10 +595,6 @@ factorial[1] = 1;
             <a href="/2018/03/31/JavaScript权威指南4/">JavaScript权威指南4</a>
           </li>
         
-          <li>
-            <a href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -596,7 +608,7 @@ factorial[1] = 1;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
