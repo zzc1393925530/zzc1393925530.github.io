@@ -61,6 +61,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript权威指南1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/JavaScript权威指南1/" class="article-date">
+  <time datetime="2018-03-30T04:40:49.000Z" itemprop="datePublished">2018-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/JavaScript权威指南1/">JavaScript权威指南1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>类型,值和变量</h3><br>&emsp;&emsp;JavaScript原始类型:number,string,boolean,null,undefined.对象类型:object.<p></p>
+<p></p><h4>算术运算</h4><br>&emsp;&emsp;JavaScript中的运算符在溢出,下溢或被0整除时不会报错.当数字运算结果超过JavaScript能表示的数字上限,结果是infinity值.下溢是当运算结果无限接近于0并比JavaScript能表示的最小值还小的情况,结果返回0.被0整除在JavaScript并不报错.只返回无穷大(infinity)或负无穷大(-infinity).例外是，0除以0没有意义,结果是非数字值,用NaN表示.不是数字或无法转换为数字的操作数一起使用时返回NaN.NaN与任何值都不相等.用x!=x判断.<p></p>
+<p></p><h4>二进制浮点和四舍五入错误</h4><br>&emsp;&emsp;二级制浮点数表示法并不能精确表示类似0.1这样简单的数字.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">.3</span> - <span class="number">.2</span>;</span><br><span class="line"><span class="keyword">var</span> y = <span class="number">.2</span> - <span class="number">.1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x == y);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(x == <span class="number">.1</span>);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(y == <span class="number">.1</span>);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>日期和时间</h4><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> then = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2018</span>,<span class="number">3</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">var</span> later = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2018</span>,<span class="number">3</span>,<span class="number">30</span>,<span class="number">17</span>,<span class="number">10</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> elapsed = now - then;</span><br><span class="line">later.getFullYear();</span><br><span class="line">later.getMonth();</span><br><span class="line">later.getDate();</span><br><span class="line">later.getDay();</span><br><span class="line">later.getHours();</span><br><span class="line">later.getUTCHours();</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>boolean</h4><br>&emsp;&emsp;布尔值指代真或假,开或关,是或否.保留字true和false.<p></p>
+<p></p><h4>null</h4><br>&emsp;&emsp;null是JavaScript的关键字.用来表述 “空值” .<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span>(<span class="literal">null</span>); <span class="comment">//object</span></span><br></pre></td></tr></table></figure><p></p>
+<p>null是一个特殊的对象值，含义是 “非对象” .<br>&emsp;&emsp;Boolean是变量的一种取值,表明变量未初始化，如果要查询对象属性或数组元素的值返回undefined则说明这个属性或元素不存在.函数没有返回值,则返回undefined.引用没有提供实参的函数形参的值也会得到undefined.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span>(<span class="literal">undefined</span>);  <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">undefined</span>);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> === <span class="literal">undefined</span>);  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p></p><h4>全局对象</h4><br>&emsp;&emsp;全局对象的属性是全局定义的符号,JavaScript程序可以直接使用.全局对象的初始属性:<br>全局属性:比如undefined,infinity,NaN<br>全局函数:比如isNaN(),parseInt(),eval()<br>构造函数:比如Date(),RegExp(),String(),Object(),Array()<br>全局对象:比如Math(),JSON<p></p>
+<p></p><h4>包装对象</h4><br>&emsp;&emsp;JavaScript对象是复合值:是属性或已命名值的集合.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"test"</span>;</span><br><span class="line">s.len = <span class="number">4</span>;  <span class="comment">//创建临时字符串对象,len属性赋值4，随机销毁</span></span><br><span class="line"><span class="keyword">var</span> t = s.len;  <span class="comment">//修改只是发生在临时对象身上,临时对象并未继续保留</span></span><br><span class="line"><span class="built_in">console</span>.log(t);  <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;存取字符串,数字或布尔值的属性时创建的临时对象叫包装对象.可通过String(),Number()或Boolean()构造函数显式创建包装对象.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"test"</span>,n = <span class="number">1</span>,b = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> S = <span class="keyword">new</span> <span class="built_in">String</span>(s);  <span class="comment">//字符串对象</span></span><br><span class="line"><span class="keyword">var</span> N = <span class="keyword">new</span> <span class="built_in">Number</span>(n);  <span class="comment">//数值对象</span></span><br><span class="line"><span class="keyword">var</span> B = <span class="keyword">new</span> <span class="built_in">Boolean</span>(b);  <span class="comment">//布尔对象</span></span><br></pre></td></tr></table></figure></p>
+<p>原始值和包装对象”==”, “===”全等运算符视为不等.</p>
+<p></p><h4>不可变的原始值和可变的对象引用</h4><br>&emsp;&emsp;<strong>字符串中的所有方法实际返回的是一个新的字符串值</strong>.如果比较两个单独的字符串,当且仅当它们的长度相等且每个索引的字符都相等时,JavaScript才认为它们相等.<br>&emsp;&emsp;对象的比较并非值的比较:即使两个对象包含同样的属性及相同的值,它们也不相等.各个索引元素完全相等的两个数组也不相等.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;,p = &#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</span><br><span class="line">o === p;  <span class="comment">//false:两个单独的对象永不相等</span></span><br><span class="line"><span class="keyword">var</span> a = [],b = [];</span><br><span class="line">a === b;  <span class="comment">//false:两个单独的数组永不相等</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;对象通常称为引用类型.对象值都是引用,对象的比较均是引用的比较:当且仅当引用同一个基对象时,它们才相等.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">a[<span class="number">0</span>];</span><br><span class="line">a === b; <span class="comment">//true:引用自同一数组</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;将对象(或数组)赋值给一个对象,仅仅是赋值的引用值:对象本身并没有被复制.如果想得到一个对象或数组的副本,则必须显式复制对象的每个属性或数组的每个元素.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">var</span> b = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; a.length;i++) &#123;</span><br><span class="line">    b[i] = a[i];  <span class="comment">//将元素值复制到b中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;比较两个单独的对象或者数组,则必须比较它们的属性或元素.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">equalArrays</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.length != b.length) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; a.length;i++) </span><br><span class="line">        <span class="keyword">if</span>(a[i] == b[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p></p><h4>转换和相等性</h4><br>&emsp;&emsp;”=”相等运算符灵活多变.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>;  <span class="comment">//true</span></span><br><span class="line"><span class="string">"0"</span> == <span class="number">0</span>;  <span class="comment">//true</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">false</span>;  <span class="comment">//true</span></span><br><span class="line"><span class="string">"0"</span> == <span class="literal">false</span>;  <span class="comment">//true</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;一个值转换为另一个值并不意味着两个值相等.</p>
+<p></p><h4>显式类型转换</h4><br>&emsp;&emsp;做显式转换最简单的方法是使用Boolean(),Number(),String()或Object()函数.当不通过new运算符调用这些函数时，它们会作为类型转换函数按照规则做类型转换.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="string">"3"</span>);  <span class="comment">//3 </span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">false</span>);  <span class="comment">//"false"</span></span><br><span class="line"><span class="built_in">Boolean</span>([]);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>(<span class="number">3</span>);  <span class="comment">//new Number(3)</span></span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;除了null或undefined之外的任何值都具有toString()方法,这个方法的执行结果通常和String()方法的返回结果一致.若试图把null或undefined转换为对象,则会抛出类型错误(TypeError).<br>&emsp;&emsp;JavaScript中的某些运算符会做隐式的类型转换，又是用于类型转换.如果”+”运算符的一个操作符是字符串是字符串,他会将另一个操作符转换为字符串.一元”+”运算符将其操作数转换为数字.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x + <span class="string">''</span>;  <span class="comment">//等价于String(x)</span></span><br><span class="line">+x;  <span class="comment">//等价于Number(x) </span></span><br><span class="line">!!x;  <span class="comment">//等价于Boolean(x),注意是双叹号</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;JavaScript中提供了专门的函数和方法用来做更加精确的数字到字符串(number-to-string)和字符串到数字(string-to-number)的转换.<br>NUmber类定义的toString()方法可以转进制,默认十进制.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">17</span>;</span><br><span class="line">binary_string = n.toString(<span class="number">2</span>);  <span class="comment">//10001</span></span><br><span class="line">octal_string = <span class="string">"0"</span> + n.toString(<span class="number">8</span>);  <span class="comment">//021</span></span><br><span class="line">hex_string = <span class="string">"0x"</span> + n.toString(<span class="number">16</span>);  <span class="comment">//0x11</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;toFixed()根据小数点后的指定位数将数字转换为字符串,不使用指数记数法.toExponential()使用指数计数法将数字转换为指数形式的字符串,其中小数点前只有一位,小数点后的位数由参数指定.toPrecision()根据指定的有效数字位数将数字转换成字符串.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">123456.789</span>;</span><br><span class="line">n.toFixed(<span class="number">0</span>);</span><br><span class="line">n.toFixed(<span class="number">2</span>);</span><br><span class="line">n.toFixed(<span class="number">5</span>);</span><br><span class="line">n.toExponential(<span class="number">1</span>);</span><br><span class="line">n.toExponential(<span class="number">3</span>);</span><br><span class="line">n.toPrecision(<span class="number">4</span>);</span><br><span class="line">n.toPrecision(<span class="number">7</span>);</span><br><span class="line">n.toPrecision(<span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;parseInt()只能解析整数,parseFloat()则可以解析整数和浮点数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"3 blind mice"</span>);  <span class="comment">//3</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"3.14 meter"</span>);  <span class="comment">//3.14</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0.1"</span>);  <span class="comment">//0</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">".1"</span>);  <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"$72.47"</span>);  <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;parseInt()第二个参数用于指定进制.</p>
+<p></p><h4>对象转换为原始值</h4><br>&emsp;&emsp;所有的对象都转换为true.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">typeof</span>(now + <span class="number">1</span>);  <span class="comment">//"string": "+"将日期转换为字符串</span></span><br><span class="line"><span class="keyword">typeof</span>(now - <span class="number">1</span>);  <span class="comment">//"number": "-"使用对象到数字的转换</span></span><br><span class="line">now == now.toString();  <span class="comment">//true:隐式的和显式的字符串转换</span></span><br><span class="line">now &gt; (now - <span class="number">1</span>);  <span class="comment">//true:日期转换为数字</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>变量作用域</h4><br>&emsp;&emsp;函数体内，局部变量的优先级高于同名的全局变量.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    scope = <span class="string">"local"</span>;</span><br><span class="line">    myscope = <span class="string">"local"</span>;</span><br><span class="line">    <span class="keyword">return</span> [scope,myscope];</span><br><span class="line">&#125;</span><br><span class="line">checkscope2();  <span class="comment">//["local","local"]</span></span><br><span class="line">scope;  <span class="comment">//local</span></span><br><span class="line">myscope;  <span class="comment">//local</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><h4>函数作用域和声明提前</h4><br>&emsp;&emsp;JavaScript使用函数作用域,没有块级作用域.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> o == <span class="string">"object"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span>  j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">0</span>;k &lt; <span class="number">10</span>;k++) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;JavaScript的函数作用域是指在函数内声明的所有变量在函数体内始终是可见的，并且变量在声明之前已经可用.JavaScript这个特性被非正式地称为声明提前,即JavaScript函数里声明的所有变量(但不涉及赋值)都被”提前”至函数体的顶部.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(scope);  <span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">"local"</span>;  <span class="comment">//变量在这里赋值,但变量本身在函数体内任何地方均有定义</span></span><br><span class="line">    <span class="built_in">console</span>.log(scope);  <span class="comment">//local</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>||<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope;</span><br><span class="line">    <span class="built_in">console</span>.log(scope);</span><br><span class="line">    scope = <span class="string">"local"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(scope);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p></p><h4>作为属性的变量</h4><br>&emsp;&emsp;使用var声明变量时,创建的这个属性是不可配置的,也就是说变量无法通过delete运算符删除.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> truevar = <span class="number">1</span>;  <span class="comment">//声明一个不可删除的全局变量</span></span><br><span class="line">fakevar = <span class="number">2</span>;  <span class="comment">//创建全局对象的一个可删除的属性</span></span><br><span class="line"><span class="keyword">this</span>.fakevar2 = <span class="number">3</span>;  <span class="comment">//同上</span></span><br><span class="line"><span class="keyword">delete</span> truevar;  <span class="comment">//false:变量并没有被删除</span></span><br><span class="line"><span class="keyword">delete</span> fakevar;  <span class="comment">//true:被删除</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">this</span>.fakevar2;  <span class="comment">//true:被删除</span></span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/JavaScript权威指南1/" data-id="cjfnij76n001a8kv2ni8nbgtp" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ECMAScript6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/28/ECMAScript6/" class="article-date">
@@ -88,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfm65jfy0004dcv2q0vd7ae2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/28/ECMAScript6/" data-id="cjfnij74x00018kv2mxmd0hvo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -133,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfm65jiz0020dcv2e8sokzhy" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/27/圣杯布局/" data-id="cjfnij77i00228kv2creql9df" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -200,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfm65jfy0005dcv2oibe5020" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/DOM进阶1/" data-id="cjfnij75c00058kv2fkblb7o8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -242,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjfm65ji4001ddcv2ix7eyeu6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/26/JavaScript练习/" data-id="cjfnij77i00288kv28nnubkaj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -309,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjfm65jgt000jdcv2rysfh455" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/HTML5/" data-id="cjfnij75c00048kv2jupnnk0e" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -363,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjfm65ji4001ndcv2k03qd854" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/25/bootstrap栅格/" data-id="cjfnij773001u8kv284qxsftc" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -406,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjfm65jge000adcv2zfio8b4t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/JavaScript事件/" data-id="cjfnij75s000l8kv2b3j7navp" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -462,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjfm65jka0041dcv2fb0y2ioj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/布局实例/" data-id="cjfnij77i001z8kv2ard25d3p" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -508,71 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjfm65jfy0003dcv2lg2vndm7" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DIV-CSS1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/24/DIV-CSS1/" class="article-date">
-  <time datetime="2018-03-24T07:34:48.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/DIV-CSS1/">DIV/CSS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>布局</h2><p></p>
-<p></p><h3>Display</h3><br>&emsp;&emsp;block(块级元素): p form,HTML5中新元素:header,footer,section.||inline(行内元素): span a.||none:特殊元素默认display值，如script.display:none被JavaScript用来在不删除元素的情况下隐藏或显示元素。visibility:hidden还会占据空间，而display:none不会占据应该显示的空间。display可以重写。<p></p>
-<p></p><h3>margin:auto</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#main &#123;</span><br><span class="line">    width: 600px;</span><br><span class="line">    margin 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>设置块级元素的width防止撑满容器，设置左右外边距auto使其水平居中。缺点是，浏览器窗口比元素宽度窄时，浏览器会显示水平滚动条容纳页面。</p>
-<p></p><h3>max-width</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#main &#123;</span><br><span class="line">    max-width: 600px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>max-width代替width可以使浏览器更好的处理小窗口。主流浏览器包括IE7+都支持。</p>
-<p></p><h3>盒模型之 box-sizing</h3><br>&emsp;&emsp;当设置一个元素为box-sizing: border-box;时，元素的内边距和边框不会增加宽度。使用-webkit-和-moz-前缀。<p></p>
-<p></p><h3>positon</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.static &#123;</span><br><span class="line">    positon: static;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>static是默认值。不会被特殊定位。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.relative1 &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.relative2 &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  top: -20px;</span><br><span class="line">  left: 20px;</span><br><span class="line">  background-color: white;</span><br><span class="line">  width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>relative和static一样，除非添加额外的属性。在一个相对定位的元素上设置top,right,bottom,left属性会让元素偏离正常位置。其他元素不会受影响。原本所占空间依旧保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.fixed &#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  width: 200px;</span><br><span class="line">  background-color: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>fixed定位会相对视窗定位。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.relative &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 600px;</span><br><span class="line">  height: 400px;</span><br><span class="line">&#125;</span><br><span class="line">.absolute &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 120px;</span><br><span class="line">  right: 0;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>absolute相对于最近的positioned祖先元素。如果绝对定位的元素没有positioned祖先元素，那么相对于文档的body元素，会随着页面的滚动而移动。一个positioned的元素指position值不是static的元素。元素不占据空间。</p>
-<p></p><h3>float</h3><br>float可用于实现文字环绕图片。clear属性用来控制浮动。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>...<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>section元素是在DIV之后的，div浮动到左边的，section中的文字围绕div。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"after-box"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.after-box</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用clear可以将section段落移动到浮动元素div下面。使用left才能清除元素的向左浮动。可以用right或both 清除向右或同时清除向左向右浮动。</p>
-<p></p><h3>清除浮动</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>浮动的元素比包含它的元素高，使用clearfix hack解决问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.clearfix &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p></p><h3>百分百宽度</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">article img &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>百分比可以用于布局，但需要更多的工作。</p>
-<p></p><h3>媒体查询(响应式布局)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width:600px) &#123;</span><br><span class="line">  nav &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 25%;</span><br><span class="line">  &#125;</span><br><span class="line">  section &#123;</span><br><span class="line">    margin-left: 25%;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@media screen and (max-width:599px) &#123;</span><br><span class="line">  nav li &#123;</span><br><span class="line">    display: inline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>使用百分比宽度布局。在浏览器变窄到无法容纳侧边栏的菜单时，布局显示成一列。</p>
-<p></p><h3>inline-block</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.box2 &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 1em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>vartical-align会影响inline-block元素；需要设置每一列宽度；HTML源码元素之间有空格，列与列会有空隙。</p>
-<p></p><h3>column</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.three-column &#123;</span><br><span class="line">  padding: 1em;</span><br><span class="line">  -moz-column-count: 3;</span><br><span class="line">  -moz-column-gap: 1em;</span><br><span class="line">  -webkit-column-count: 3;</span><br><span class="line">  -webkit-column-gap: 1em;</span><br><span class="line">  column-count: 3;</span><br><span class="line">  column-gap: 1em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/DIV-CSS1/" data-id="cjfm65jf30000dcv2gjmxpp6u" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/24/FLEX布局/" data-id="cjfnij75c00038kv2hroaopgl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -619,7 +624,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 15px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
   </div>
 
@@ -641,6 +646,10 @@
       <ul>
         
           <li>
+            <a href="/2018/04/05/锋利的jQuery3/">锋利的jQuery3</a>
+          </li>
+        
+          <li>
             <a href="/2018/04/05/锋利的jQuery2/">锋利的jQuery2</a>
           </li>
         
@@ -654,10 +663,6 @@
         
           <li>
             <a href="/2018/04/01/JavaScript权威指南6/">JavaScript权威指南6</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/01/JavaScript权威指南5/">JavaScript权威指南5</a>
           </li>
         
       </ul>
