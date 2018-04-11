@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript函数4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/17/JavaScript函数4/" class="article-date">
+  <time datetime="2018-03-17T02:28:09.000Z" itemprop="datePublished">2018-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/17/JavaScript函数4/">JavaScript函数4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>///函数属性、方法和构造函数<br>   length属性 arguments.length表示传入函数的实参的个数。函数的length属性只读，代表函数实参的数量，参数指的是形参而非实参，就是函数定义时给出的实参个数。<br>   prototype属性 每个函数都包含一个prototype属性，指向一个对象的引用，原型对象。将函数用作构造函数时，新创建的对象会从原型对象继承属性。<br>   call()和apply()方法 看作某个对象的方法，通过调用方法的形式间接调用。call()和apply()方法的第一个实参调用函数的母对象，调用上下文，在函数体内通过this获得对它的引用。继承自function.prototype<br>   e.g. f.call(o);<br>        f.apply(o); //以对象o的方法调用函数f()<br>    call() 第一个参数是指定函数内部中this的指向(函数执行时所在作用域)，第二个参数是函数调用时需要传递的参数。可以指定该函数内部this的指向，即函数执行时所在的作用域，然后在所指定的作用域中，调用该函数，并且会立即执行该函数。e.g. f.call(0,1,2)<br>    e.g. var keith = {<br>        rascal: 123<br>    };<br>         var rascal = 456;<br>         function a() {<br>             console.log(this.rascal);<br>         }<br>         a();  //456<br>         a.call(); //456<br>         a.call(null); //456<br>         a.call(undefined); //456<br>         a.call(this); //456:以上作用域均为a()函数<br>         a.call(keith); //123：作用域keith对象<br>    e.g. function keith(a,b) {<br>        console.log(a + b);<br>    }<br>    keith.call(null,1,2); //3:第一个参数为null，undefined，this表明函数此时处于全局作用域。apply必须以数组的形式添加。<br>bind()方法 用于指定函数内部的this指向(执行时所在的作用域)，然后返回一个新函数。传递参数时和call()方法相同。<br>toString()方法 返回字符串<br>Function()构造函数 该函数创建的函数并不是使用词法作用域，函数体代码的编译总是会在顶层函数执行。<br>e.g. var scope = “global”;<br>     function constructFunction() {<br>         var scope = “local”;<br>         return new Function (“return scope”); //无法捕获局部作用域<br>     }<br>     //因为通过Function()构造函数<br>     //所返回的函数使用的不是局部作用域<br>     constructFunction()(); //=&gt;”global”<br>可调用对象 RegExp对象<br>////函数式编程<br>高阶函数：接受一个或多个函数作为参数返回一个新函数。<br>不完全函数：把一次完整的函数调用拆成多次函数调用，每次传入的参数都是完整实参的一部分。<br>记忆：memorize()函数创建一个新对象，这个对象被当做缓存并赋值给一个局部变量。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数4/" data-id="cjfusxt38000dzov2rcdnh7q1" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript函数3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -120,7 +159,7 @@ bar(10); //16:闭包
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfnxbptx000h9gv25z3ynvez" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数3/" data-id="cjfusxt3n000gzov2fhxfvwvr" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -168,7 +207,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfnxbptx000f9gv2yqwxaxuu" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数2/" data-id="cjfusxt38000bzov2ypbg6xgu" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -207,7 +246,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfnxbptx000c9gv2hmpf3i0g" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/17/JavaScript函数1/" data-id="cjfusxt380004zov2b5oclxji" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -246,7 +285,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfnxbpud000z9gv2cfhgecv9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组3/" data-id="cjfusxt43000szov2s7ic9xeh" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -285,7 +324,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfnxbpud000w9gv2wi23oeve" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组2/" data-id="cjfusxt43000qzov2c5wvr9ld" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -324,7 +363,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjfnxbpud000u9gv2wmcc8xzh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/14/JavaScript数组1/" data-id="cjfusxt3n000nzov22fujpjh9" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -363,7 +402,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjfnxbpud000r9gv2m9kf3hzw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象3/" data-id="cjfusxt43000vzov2lamu60sj" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -402,7 +441,7 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjfnxbpud000p9gv2mkvhievb" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象2/" data-id="cjfusxt430015zov298zspedq" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -441,54 +480,10 @@ factorial[1] = 1;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjfnxbptx000k9gv2jkvxnq51" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/13/JavaScript对象1/" data-id="cjfusxt3n000lzov2qs23o94a" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript语句" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/12/JavaScript语句/" class="article-date">
-  <time datetime="2018-03-12T12:45:08.000Z" itemprop="datePublished">2018-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/12/JavaScript语句/">JavaScript语句</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。<br>声明语句：var用来声明一个或多个对象；<br>         function定义函数。<br>条件语句：if/else、else if(代码中有多条分支)<br>         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。<br>循环：while、do/while(关键字do标识循环开始，用while来标识循环的结尾并进入循环条件判断)、<br>    for、for/in(不会遍历对象的所有属性，只有“可枚举”的属性才会遍历到)。<br>跳转：break(跳转到循环或者其他语句的结束，达到break条件立即退出整个循环)<br>    continue(中止本次循环的执行并开始下一次循环的执行)<br>    return(解释器跳出函数体的执行，并提供调用的返回值)<br>    throw(触发或“抛出”一个异常)<br>标签语句：标识符和冒号组成 给一个语句加标签，在程序其他地方可以使用这个名字标记任何语句。<br>throw语句：抛出异常时立即停止当前正在执行的逻辑，跳转至就近的异常处理程序。<br>try/catch/finally语句：语句块都需要使用花括号，catch从句跟在try从句之后，try块内某处发生异常调用catch内的代码逻辑。catch从句后跟随finally块，后者中放置清理代码，不管try块中是否异常，finally内逻辑总是执行。<br>e.g function trycatch () {<br>    var array = [234],<br>        newdate = new Date(),<br>        fun = function(){},<br>        is = 12.22,<br>        call;<br>    try{<br>        throw array + ‘\n’ + newdate.toLocaleString() + ‘ \n’ + fun.prototype.constructor +<br>        ‘\n’ + (typeof is == ‘number’) +’ \n’ + call ; //小心local后面还有一个’e’<br>    }<br>    catch(e){<br>        console.log(e);<br>    }<br>    finally{<br>        console.log(‘err finally’);<br>    }<br>}<br>trycatch ()<br>//  输出：</p>
-<p>// 234</p>
-<p>// 2018/3/13 上午9:55:02 </p>
-<p>// function (){}</p>
-<p>// true </p>
-<p>// undefined</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjfnxbpv8001m9gv27ucnhpma" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
 
     </footer>
   </div>
@@ -501,7 +496,7 @@ factorial[1] = 1;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -510,7 +505,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -530,7 +525,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -539,7 +534,7 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -549,9 +544,13 @@ factorial[1] = 1;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/11/锋利的jQuery5/">锋利的jQuery5 -- jQueryMobile</a>
+          </li>
         
           <li>
             <a href="/2018/04/06/锋利的jQuery4/">锋利的jQuery4</a>
@@ -569,10 +568,6 @@ factorial[1] = 1;
             <a href="/2018/04/02/锋利的jQuery1/">锋利的jQuery</a>
           </li>
         
-          <li>
-            <a href="/2018/04/01/JavaScript权威指南7/">JavaScript权威指南7</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -586,7 +581,7 @@ factorial[1] = 1;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

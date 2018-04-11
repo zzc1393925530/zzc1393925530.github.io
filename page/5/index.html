@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,50 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript语句" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/12/JavaScript语句/" class="article-date">
+  <time datetime="2018-03-12T12:45:08.000Z" itemprop="datePublished">2018-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/JavaScript语句/">JavaScript语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。<br>声明语句：var用来声明一个或多个对象；<br>         function定义函数。<br>条件语句：if/else、else if(代码中有多条分支)<br>         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。<br>循环：while、do/while(关键字do标识循环开始，用while来标识循环的结尾并进入循环条件判断)、<br>    for、for/in(不会遍历对象的所有属性，只有“可枚举”的属性才会遍历到)。<br>跳转：break(跳转到循环或者其他语句的结束，达到break条件立即退出整个循环)<br>    continue(中止本次循环的执行并开始下一次循环的执行)<br>    return(解释器跳出函数体的执行，并提供调用的返回值)<br>    throw(触发或“抛出”一个异常)<br>标签语句：标识符和冒号组成 给一个语句加标签，在程序其他地方可以使用这个名字标记任何语句。<br>throw语句：抛出异常时立即停止当前正在执行的逻辑，跳转至就近的异常处理程序。<br>try/catch/finally语句：语句块都需要使用花括号，catch从句跟在try从句之后，try块内某处发生异常调用catch内的代码逻辑。catch从句后跟随finally块，后者中放置清理代码，不管try块中是否异常，finally内逻辑总是执行。<br>e.g function trycatch () {<br>    var array = [234],<br>        newdate = new Date(),<br>        fun = function(){},<br>        is = 12.22,<br>        call;<br>    try{<br>        throw array + ‘\n’ + newdate.toLocaleString() + ‘ \n’ + fun.prototype.constructor +<br>        ‘\n’ + (typeof is == ‘number’) +’ \n’ + call ; //小心local后面还有一个’e’<br>    }<br>    catch(e){<br>        console.log(e);<br>    }<br>    finally{<br>        console.log(‘err finally’);<br>    }<br>}<br>trycatch ()<br>//  输出：</p>
+<p>// 234</p>
+<p>// 2018/3/13 上午9:55:02 </p>
+<p>// function (){}</p>
+<p>// true </p>
+<p>// undefined</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript语句/" data-id="cjfusxt4y001yzov2y6lblqvy" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjfnxbpus001g9gv25r1ibhu1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/JavaScript简介/" data-id="cjfusxt4i001czov274yt8h5b" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简介/">简介</a></li></ul>
@@ -135,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjfnxbpv8001o9gv29vf84syk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/TEST/" data-id="cjfusxt4i001kzov2u6rrxs2y" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -182,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjfnxbpv8001u9gv2c9atwm3g" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/12/hello-world/" data-id="cjfusxt4y001wzov2h1k0uil6" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -196,7 +240,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
   </nav>
 
 </section>
@@ -205,7 +249,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -225,7 +269,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -234,7 +278,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -244,9 +288,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/11/锋利的jQuery5/">锋利的jQuery5 -- jQueryMobile</a>
+          </li>
         
           <li>
             <a href="/2018/04/06/锋利的jQuery4/">锋利的jQuery4</a>
@@ -264,10 +312,6 @@
             <a href="/2018/04/02/锋利的jQuery1/">锋利的jQuery</a>
           </li>
         
-          <li>
-            <a href="/2018/04/01/JavaScript权威指南7/">JavaScript权威指南7</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -281,7 +325,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
