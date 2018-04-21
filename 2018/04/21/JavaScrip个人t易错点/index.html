@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScrip个人易错点 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="值传递和引用传递JavaScript中所有函数的参数都是按值传递的.在向参数传递基本类型的值时,被传递的值会被复制给一个局部变量(即命名函数,或者用ECMAScript的概念来说,就是arguments对象中的一个元素).在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.12345678function addTen(num) &amp;#1">
+<meta name="keywords" content="日志,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScrip个人易错点">
+<meta property="og:url" content="http://yoursite.com/2018/04/21/JavaScrip个人t易错点/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="值传递和引用传递JavaScript中所有函数的参数都是按值传递的.在向参数传递基本类型的值时,被传递的值会被复制给一个局部变量(即命名函数,或者用ECMAScript的概念来说,就是arguments对象中的一个元素).在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.12345678function addTen(num) &amp;#1">
+<meta property="og:updated_time" content="2018-04-21T12:29:50.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScrip个人易错点">
+<meta name="twitter:description" content="值传递和引用传递JavaScript中所有函数的参数都是按值传递的.在向参数传递基本类型的值时,被传递的值会被复制给一个局部变量(即命名函数,或者用ECMAScript的概念来说,就是arguments对象中的一个元素).在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.12345678function addTen(num) &amp;#1">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScrip个人t易错点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/21/JavaScrip个人t易错点/" class="article-date">
+  <time datetime="2018-04-21T10:24:17.000Z" itemprop="datePublished">2018-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScrip个人易错点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>值传递和引用传递</h3><br>JavaScript中所有函数的参数都是按值传递的.在向参数传递基本类型的值时,被传递的值会被复制给一个局部变量(即命名函数,或者用ECMAScript的概念来说,就是arguments对象中的一个元素).在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> result = addTen(count);</span><br><span class="line">alert(count);  <span class="comment">//20:没有变化</span></span><br><span class="line">alert(result);  <span class="comment">//30</span></span><br></pre></td></tr></table></figure><p></p>
+<p>函数addTen()有一个参数num,参数实际上是函数的局部变量.在调用这个函数时,变量count作为参数被传递给函数,这个变量的值是20.数值20被复制给参数num以便在addTen()中使用.在函数内部,参数num的值被加上了10,但不影响函数外部的count变量.参数num与变量count互不相识.假如num是按引用传递的话,那么变量count的值将变成30,反映函数内部的更改.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    obj.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">    obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = <span class="string">"Greg"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);  <span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure></p>
+<p>在把person传递给setName()后,其name属性被设置为”Nicholas”.然后又将一个新对象赋给变量obj,同时将其name属性设置为”Greg”,如果person按引用传递,那么person就会自动被修改为指向其name属性值为”Greg”的新对象.但是访问person.name时,显示的值仍然是”Nicholas”.这说明即使在函数内部修改参数的值,但原始的引用保持不变.实际上,当在函数内部重写obj时,这个变量引用的就是一个局部变量.这个局部对象会在函数执行完毕后立即被销毁.<br>e.g.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.value = <span class="number">1</span>;</span><br><span class="line">b = a;</span><br><span class="line">b.value = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.value);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<p>当给把这个对象赋值给一个变量时，变量a仅仅是对这个对象的引用，而不是将该对象复制到了该变量中.即变量a中存储的是指向对象的地址.将a的值赋给b，也即将a中的地址赋给了变量b.这是变量a和b都指向同一个对象.所以b值得改变就会直接引起对象本身的改变，因为变量a也指向这个数组，所以a的值肯定也会发生变化.<strong>在引用类型进行直接赋值方式的拷贝完成后，两个变量是相互联系的，一个改变，另一个也会跟着改变.</strong></p>
+<p></p><h3>数组操作方法</h3><br>concat():基于当前数组所有项创建新数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.concat(<span class="string">"yellow"</span>,[<span class="string">"black"</span>,<span class="string">"brown"</span>]);</span><br><span class="line">alert(colors);  <span class="comment">//[ 'red', 'green', 'blue' ]</span></span><br><span class="line">alert(colors2);  <span class="comment">//[ 'red', 'green', 'blue', 'yellow', 'black', 'brown' ]</span></span><br></pre></td></tr></table></figure><p></p>
+<p>slice():基于当前数组中的一个或多个创建一个新数组.接收一个参数时:返回当前数组中从此参数位置开始到当前数组末尾间所有项.接收两个参数时：返回当前数组中两个参数位置间的所有项,但不返回第二个参数位置的项.<br>参数也可以为负数,表示从末尾算起,-1代表最后一个,使用方法和正数一样.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>,<span class="string">"yellow"</span>,<span class="string">"black"</span>,<span class="string">"brown"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.slice(<span class="number">2</span>);  </span><br><span class="line"><span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line"><span class="keyword">var</span> colors4 = colors.slice(<span class="number">2</span>,<span class="number">-2</span>);</span><br><span class="line"><span class="keyword">var</span> colors5 = colors.slice(<span class="number">-3</span>,<span class="number">-1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(colors2);  <span class="comment">//[ 'blue', 'yellow', 'black', 'brown' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors3);  <span class="comment">//[ 'green', 'blue', 'yellow' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors4);  <span class="comment">//[ 'blue', 'yellow' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors5);  <span class="comment">//[ 'yellow', 'black' ]</span></span><br></pre></td></tr></table></figure></p>
+<p>splice():splice()主要用途是向当前数组的中间插入项,可以进行删除,插入,替换操作.会返回一个数组,包含从原始项中删除的项(若果没有删除,返回一个空数组).<br>删除:两个参数,删除起始项的位置和删除的项数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,5]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);  <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure></p>
+<p>插入:在指定位置插入任意数量项,包括两个基本参数(即删除操作中的两个参数类型)和要插入项的参数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'5'</span>,<span class="string">'7'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[ 1, '5', '7', 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);  <span class="comment">//[]</span></span><br></pre></td></tr></table></figure></p>
+<p>替换:向指定位置插入任意数量的项同时删除任意数量的项,插入项数和删除项数可以不同.参数包括两个基本参数(即删除操作中的两个参数类型)和要插入项的参数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'5'</span>,<span class="string">'7'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//[ 1, '5', '7', 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);<span class="comment">//[ 2, 3 ]</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>字符串操作方法</h3><br>split():把一个字符串分割成字符串数组.参数一指定字符串或正则,参数二指定数组的最大长度.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"www.baidu.com/index.php?a=1&amp;b=2&amp;c=3"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">"?"</span>))[<span class="number">1</span>];  <span class="comment">//a=1&amp;b=2&amp;c=3</span></span><br></pre></td></tr></table></figure><p></p>
+<p>charAt():返回子字符串,index为字符串下表.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"012345"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>));  <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
+<p>indexOf():返回子字符串第一次出现的位置,从startIndex开始查找,找不到时返回-1.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello javascript"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"javascript"</span>));  <span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
+<p>Question:提取URL中的各个GET参数,并按键值对形式返回到一个对象中.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">"http://www.taobao.com/index.php?keya=00&amp;keyb=11&amp;keyc=22"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseQueryString</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = url.split(<span class="string">"?"</span>)[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> iterms = str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; iterms.length; i++) &#123;</span><br><span class="line">        result[iterms[i].split(<span class="string">"="</span>)[<span class="number">0</span>]] = iterms[i].split(<span class="string">"="</span>)[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = parseQueryString(url);</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//&#123; keya: '00', keyb: '11', keyc: '22' &#125;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/21/JavaScrip个人t易错点/" data-id="cjg9d30dv0018osv2cbm91abz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/11/锋利的jQuery5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">锋利的jQuery5 -- jQueryMobile</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/21/JavaScrip个人t易错点/">JavaScrip个人易错点</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/11/锋利的jQuery5/">锋利的jQuery5 -- jQueryMobile</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/06/锋利的jQuery4/">锋利的jQuery4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/05/锋利的jQuery3/">锋利的jQuery3</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/05/锋利的jQuery2/">锋利的jQuery2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScrip个人t易错点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/21/JavaScrip个人t易错点/" class="article-date">
+  <time datetime="2018-04-21T10:24:17.000Z" itemprop="datePublished">2018-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/21/JavaScrip个人t易错点/">JavaScrip个人易错点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>值传递和引用传递</h3><br>JavaScript中所有函数的参数都是按值传递的.在向参数传递基本类型的值时,被传递的值会被复制给一个局部变量(即命名函数,或者用ECMAScript的概念来说,就是arguments对象中的一个元素).在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> result = addTen(count);</span><br><span class="line">alert(count);  <span class="comment">//20:没有变化</span></span><br><span class="line">alert(result);  <span class="comment">//30</span></span><br></pre></td></tr></table></figure><p></p>
+<p>函数addTen()有一个参数num,参数实际上是函数的局部变量.在调用这个函数时,变量count作为参数被传递给函数,这个变量的值是20.数值20被复制给参数num以便在addTen()中使用.在函数内部,参数num的值被加上了10,但不影响函数外部的count变量.参数num与变量count互不相识.假如num是按引用传递的话,那么变量count的值将变成30,反映函数内部的更改.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    obj.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">    obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = <span class="string">"Greg"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);  <span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure></p>
+<p>在把person传递给setName()后,其name属性被设置为”Nicholas”.然后又将一个新对象赋给变量obj,同时将其name属性设置为”Greg”,如果person按引用传递,那么person就会自动被修改为指向其name属性值为”Greg”的新对象.但是访问person.name时,显示的值仍然是”Nicholas”.这说明即使在函数内部修改参数的值,但原始的引用保持不变.实际上,当在函数内部重写obj时,这个变量引用的就是一个局部变量.这个局部对象会在函数执行完毕后立即被销毁.<br>e.g.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.value = <span class="number">1</span>;</span><br><span class="line">b = a;</span><br><span class="line">b.value = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.value);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<p>当给把这个对象赋值给一个变量时，变量a仅仅是对这个对象的引用，而不是将该对象复制到了该变量中.即变量a中存储的是指向对象的地址.将a的值赋给b，也即将a中的地址赋给了变量b.这是变量a和b都指向同一个对象.所以b值得改变就会直接引起对象本身的改变，因为变量a也指向这个数组，所以a的值肯定也会发生变化.<strong>在引用类型进行直接赋值方式的拷贝完成后，两个变量是相互联系的，一个改变，另一个也会跟着改变.</strong></p>
+<p></p><h3>数组操作方法</h3><br>concat():基于当前数组所有项创建新数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.concat(<span class="string">"yellow"</span>,[<span class="string">"black"</span>,<span class="string">"brown"</span>]);</span><br><span class="line">alert(colors);  <span class="comment">//[ 'red', 'green', 'blue' ]</span></span><br><span class="line">alert(colors2);  <span class="comment">//[ 'red', 'green', 'blue', 'yellow', 'black', 'brown' ]</span></span><br></pre></td></tr></table></figure><p></p>
+<p>slice():基于当前数组中的一个或多个创建一个新数组.接收一个参数时:返回当前数组中从此参数位置开始到当前数组末尾间所有项.接收两个参数时：返回当前数组中两个参数位置间的所有项,但不返回第二个参数位置的项.<br>参数也可以为负数,表示从末尾算起,-1代表最后一个,使用方法和正数一样.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>,<span class="string">"yellow"</span>,<span class="string">"black"</span>,<span class="string">"brown"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.slice(<span class="number">2</span>);  </span><br><span class="line"><span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line"><span class="keyword">var</span> colors4 = colors.slice(<span class="number">2</span>,<span class="number">-2</span>);</span><br><span class="line"><span class="keyword">var</span> colors5 = colors.slice(<span class="number">-3</span>,<span class="number">-1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(colors2);  <span class="comment">//[ 'blue', 'yellow', 'black', 'brown' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors3);  <span class="comment">//[ 'green', 'blue', 'yellow' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors4);  <span class="comment">//[ 'blue', 'yellow' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(colors5);  <span class="comment">//[ 'yellow', 'black' ]</span></span><br></pre></td></tr></table></figure></p>
+<p>splice():splice()主要用途是向当前数组的中间插入项,可以进行删除,插入,替换操作.会返回一个数组,包含从原始项中删除的项(若果没有删除,返回一个空数组).<br>删除:两个参数,删除起始项的位置和删除的项数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[1,5]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);  <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure></p>
+<p>插入:在指定位置插入任意数量项,包括两个基本参数(即删除操作中的两个参数类型)和要插入项的参数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'5'</span>,<span class="string">'7'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//[ 1, '5', '7', 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);  <span class="comment">//[]</span></span><br></pre></td></tr></table></figure></p>
+<p>替换:向指定位置插入任意数量的项同时删除任意数量的项,插入项数和删除项数可以不同.参数包括两个基本参数(即删除操作中的两个参数类型)和要插入项的参数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> removed = a.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'5'</span>,<span class="string">'7'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//[ 1, '5', '7', 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);<span class="comment">//[ 2, 3 ]</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>字符串操作方法</h3><br>split():把一个字符串分割成字符串数组.参数一指定字符串或正则,参数二指定数组的最大长度.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"www.baidu.com/index.php?a=1&amp;b=2&amp;c=3"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">"?"</span>))[<span class="number">1</span>];  <span class="comment">//a=1&amp;b=2&amp;c=3</span></span><br></pre></td></tr></table></figure><p></p>
+<p>charAt():返回子字符串,index为字符串下表.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"012345"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>));  <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
+<p>indexOf():返回子字符串第一次出现的位置,从startIndex开始查找,找不到时返回-1.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello javascript"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"javascript"</span>));  <span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
+<p>Question:提取URL中的各个GET参数,并按键值对形式返回到一个对象中.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">"http://www.taobao.com/index.php?keya=00&amp;keyb=11&amp;keyc=22"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseQueryString</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = url.split(<span class="string">"?"</span>)[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> iterms = str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; iterms.length; i++) &#123;</span><br><span class="line">        result[iterms[i].split(<span class="string">"="</span>)[<span class="number">0</span>]] = iterms[i].split(<span class="string">"="</span>)[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = parseQueryString(url);</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//&#123; keya: '00', keyb: '11', keyc: '22' &#125;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/21/JavaScrip个人t易错点/" data-id="cjg9d30dv0018osv2cbm91abz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-锋利的jQuery5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -90,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/锋利的jQuery5/" data-id="cjfusxt4y002ezov2cykrlzic" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/11/锋利的jQuery5/" data-id="cjg9d30fv004bosv2r8nw4ler" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -178,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/06/锋利的jQuery4/" data-id="cjfusxt5t0043zov2pr70ogx4" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/06/锋利的jQuery4/" data-id="cjg9d30er002oosv2gbvop56w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -253,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery3/" data-id="cjfusxt5t0042zov2hn5wnoqw" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery3/" data-id="cjg9d30er002fosv2u37mysov" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -355,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery2/" data-id="cjfusxt5e002izov2p8buuprr" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery2/" data-id="cjg9d30er002mosv2rmbybwpq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -440,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/锋利的jQuery1/" data-id="cjfusxt5e002kzov28v0hfewg" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/02/锋利的jQuery1/" data-id="cjg9d30fv004aosv23zxuft3c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -516,7 +567,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南7/" data-id="cjfusxt4i001mzov2xni01nfz" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南7/" data-id="cjg9d30dg0015osv27lsfsrlr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -568,7 +619,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南6/" data-id="cjfusxt4i001qzov2dmqtkkgn" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南6/" data-id="cjg9d30dv001kosv2cwndaxgg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -621,7 +672,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjfusxt430017zov2kvamj5gh" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjg9d30dv001fosv27dzyyvv5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -683,50 +734,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjfusxt4i001azov2621yf8bz" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript权威指南3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/31/JavaScript权威指南3/" class="article-date">
-  <time datetime="2018-03-31T06:40:07.000Z" itemprop="datePublished">2018-03-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/31/JavaScript权威指南3/">JavaScript权威指南3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h3>跳转</h3><br>&emsp;&emsp;break语句是跳转到循环或者其他语句的结束;continue语句是中止本次循环的执行并开始下一次循环的执行;return语句让解释器跳出函数体的执行,并提供本次调用的返回值;throw语句触发或者”抛出”一个异常.<p></p>
-<p></p><h4>标签语句</h4><br>&emsp;&emsp;通过给语句定义标签,就可以在程序的任何地方通过标签名引用这条语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mainloop: <span class="keyword">while</span>(token != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">continue</span> mainloop;  <span class="comment">//跳转到下一次循环</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p></p><h4>break语句</h4><br>&emsp;&emsp;单独使用break语句的作用是立即退出最内层的循环或switch语句.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//6</span></span><br></pre></td></tr></table></figure><p></p>
-<p></p><h4>continue语句</h4><br>&emsp;&emsp;continue语句和break语句类似,但它不是退出循环,而是转而执行下一次循环.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//11</span></span><br></pre></td></tr></table></figure><p></p>
-<p>不赞成使用with语句.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南3/" data-id="cjfusxt430010zov2rllrzyqm" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjg9d30dv001dosv2ork03vfe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -742,7 +750,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -751,7 +759,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -771,7 +779,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -780,7 +788,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -790,9 +798,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/21/JavaScrip个人t易错点/">JavaScrip个人易错点</a>
+          </li>
         
           <li>
             <a href="/2018/04/11/锋利的jQuery5/">锋利的jQuery5 -- jQueryMobile</a>
@@ -810,10 +822,6 @@
             <a href="/2018/04/05/锋利的jQuery2/">锋利的jQuery2</a>
           </li>
         
-          <li>
-            <a href="/2018/04/02/锋利的jQuery1/">锋利的jQuery</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -827,7 +835,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
