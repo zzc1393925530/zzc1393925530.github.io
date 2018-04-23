@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -96,11 +96,20 @@
 <p>charAt():返回子字符串,index为字符串下表.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"012345"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>));  <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
 <p>indexOf():返回子字符串第一次出现的位置,从startIndex开始查找,找不到时返回-1.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello javascript"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"javascript"</span>));  <span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
 <p>Question:提取URL中的各个GET参数,并按键值对形式返回到一个对象中.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">"http://www.taobao.com/index.php?keya=00&amp;keyb=11&amp;keyc=22"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseQueryString</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = url.split(<span class="string">"?"</span>)[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> iterms = str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; iterms.length; i++) &#123;</span><br><span class="line">        result[iterms[i].split(<span class="string">"="</span>)[<span class="number">0</span>]] = iterms[i].split(<span class="string">"="</span>)[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = parseQueryString(url);</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//&#123; keya: '00', keyb: '11', keyc: '22' &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>JavaScript线程</h3><br><strong>JavaScript引擎是单线程运行的,浏览器无论在什么时候都只且只有一个线程在运行JavaScript程序.JS是一个单线程应用,也就是说,当某一段代码正在执行的时候,其他代码如果需要执行也必须等到这个线程结束后,才能执行.</strong><br>e.g.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">3</span>;i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;,<span class="number">0</span>);</span><br><span class="line">&#125;;  <span class="comment">//4 4 4</span></span><br></pre></td></tr></table></figure><p></p>
+<p>代码执行到for循环时,当for循环执行第一次,遇到第一个setTimeout时并不会触发,因为for循环还没有结束,现在的进程被for循环阻塞.setTimeout必须等到for循环的线程结束后,也就是线程空闲后,才能执行.这时候i已经变成4.<br>解决方法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt;= <span class="number">3</span>;i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;,<span class="number">0</span>);</span><br><span class="line">&#125;;  <span class="comment">//1 2 3</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>callee和caller的作用</h3><br>caller是返回一个对函数的引用,该函数调用当前函数;callee是返回正在被执行的function函数,也就是所指定的function对象的正文.<br>factorial函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> n * (<span class="built_in">arguments</span>.callee(n - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> anotherFactorial = factorial;</span><br><span class="line">factorial = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(anotherFactorial(<span class="number">6</span>));  <span class="comment">//720</span></span><br></pre></td></tr></table></figure><p></p>
+<p>如果一对兔子每月生一对兔子;一对新生兔,从第二个月起就开始生兔子;假定每对兔子都是一雌一雄,试问一对兔子,第n个月能繁殖成多少对兔子?<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(result[n]) &#123;</span><br><span class="line">            <span class="keyword">return</span> result[n];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result[n] = <span class="built_in">arguments</span>.callee(n - <span class="number">1</span>) + <span class="built_in">arguments</span>.calle(n - <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">return</span> result[n];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">6</span>);  <span class="comment">//8</span></span><br></pre></td></tr></table></figure></p>
+<p></p><h3>JavaScript类型及其转换</h3><br>JavaScript基本类型: null undefined boolean number string symbol(ES6)<br><br>引用类型: object<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;  <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>;  <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure><p></p>
+<p><strong>undefined</strong>表示尚未定义.被用作表示未初始化变量,未提供的函数参数,对象缺少属性的默认值.当函数没有返回值时也会默认返回undefined.<br><strong>null</strong>表示空值.可以被赋值给一个变量来表示”没有值”.<br>隐式类型转换:<br>String &amp; Number运算<br>“+” 运算符同时适用于数值运算和字符串连接.但是”*” “/“ “-“操作符都是数字运算专用的.当这些运算符与字符串一起使用时,会强制转换字符串为数字类型的值.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> + <span class="string">"2"</span>);  <span class="comment">//"12"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span> + <span class="number">5</span> + <span class="string">"px"</span>);  <span class="comment">//9px</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"4px"</span> - <span class="number">2</span>);  <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> + <span class="number">1</span>);  <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> + <span class="number">1</span>);  <span class="comment">//1</span></span><br></pre></td></tr></table></figure></p>
+<p>== 与 === :<br>==是比较强制类型转换之后的结果,===是直接比较.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span> == <span class="string">"2"</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span> === <span class="string">"2"</span>);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> == <span class="literal">null</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">undefined</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> === <span class="literal">null</span>);  <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"0"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(a));  <span class="comment">//true</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(b));  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a == b);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p></p><h3>赋值和引用</h3><br><strong>当从一个变量向另一个变量赋值引用类型的值时,同样也会将存储在变量中的对象的值复制一份放到为新变量分配的空间中.前面讲引用类型的时候提到,保存在变量中的是对象在堆内存中的地址,所以,与简单赋值不同,这个值的副本实际上是一个指针,而这个指针指向存储在堆内存的一个对象.那么赋值操作后,两个变量都保存了同一个对象地址,则这两个变量指向了同一个对象.因此,改变其中任何一个变量,都会相互影响.</strong><p></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/21/JavaScrip个人t易错点/" data-id="cjg9d30dv0018osv2cbm91abz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/21/JavaScrip个人t易错点/" data-id="cjgbllh2b001m44v2vssaoe96" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -141,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/锋利的jQuery5/" data-id="cjg9d30fv004bosv2r8nw4ler" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/锋利的jQuery5/" data-id="cjgbllh3m003144v28vbp9a2m" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -229,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/06/锋利的jQuery4/" data-id="cjg9d30er002oosv2gbvop56w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/06/锋利的jQuery4/" data-id="cjgbllh3m002z44v2x1n55shi" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -304,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery3/" data-id="cjg9d30er002fosv2u37mysov" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery3/" data-id="cjgbllh3m002u44v2l2gvqb17" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -406,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery2/" data-id="cjg9d30er002mosv2rmbybwpq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/05/锋利的jQuery2/" data-id="cjgbllh36002k44v2vuxj24t2" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -491,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/锋利的jQuery1/" data-id="cjg9d30fv004aosv23zxuft3c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/02/锋利的jQuery1/" data-id="cjgbllh3m002x44v2d4s06t1j" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -567,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南7/" data-id="cjg9d30dg0015osv27lsfsrlr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南7/" data-id="cjgbllh1v001f44v2t8k0rh77" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -619,7 +628,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南6/" data-id="cjg9d30dv001kosv2cwndaxgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南6/" data-id="cjgbllh2q002744v2rnl5uv2m" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -672,7 +681,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjg9d30dv001fosv27dzyyvv5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/01/JavaScript权威指南5/" data-id="cjgbllh2b001k44v2tgs5j8ye" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -734,7 +743,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjg9d30dv001dosv2ork03vfe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/JavaScript权威指南4/" data-id="cjgbllh2b001h44v20oq9al75" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
@@ -750,7 +759,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Suivant &raquo;</a>
   </nav>
 
 </section>
@@ -759,7 +768,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript笔记/">JavaScript笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a></li></ul>
     </div>
@@ -769,7 +778,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript笔记/">JavaScript笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简介/">简介</a></li></ul>
     </div>
@@ -779,7 +788,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/HTML-CSS/" style="font-size: 14px;">HTML/CSS</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/JavaScript笔记/" style="font-size: 10px;">JavaScript笔记</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 16px;">jQuery</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日志/" style="font-size: 20px;">日志</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a>
     </div>
@@ -798,7 +807,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -835,7 +844,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
