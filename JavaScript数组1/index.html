@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website for A-RSnippet Hexo Theme">
+    <meta name="author" content="Powered By Yingjie Hu">
+    <meta name="keyword" content="hexo, hexo theme, A-RSnippet, responsive, bootstrap">
+    <link rel="canonical" href="http://yoursite.com/JavaScript数组1/">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="ZhouZhiChen&#39;s Blog" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        JavaScript数组1｜ZhouZhiChen&#39;s Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/css/highlight.css">
+    
+
+    
+      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
+    
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- user customization -->
+    <link rel="stylesheet" href="/css/arsnippet.css">
+    <script src="/js/arsnippet.css.js"></script>
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/">
+            ZhouZhiChen's Blog
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/tutorial/">Tutorial</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-category/">LeetCode-category</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-tag/">LeetCode-tag</a>
+                </li>
+              
+                <li>
+                  <a href="/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/portfolio-slim/">projects</a>
+                </li>
+              
+                <li>
+                  <a href="/support/">support</a>
+                </li>
+              
+                <li>
+                  <a href="/atom.xml">RSS</a>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>JavaScript数组1</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">Author: Powered By Yingjie Hu</span>
+                               <span class="meta-item">Date: Mar 14, 2018</span>
+                               
+                                 <span class="meta-item">Updated On: Mar 14, 2018</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              Categories: 
+                          </div>
+                          <div class="tags text-center">
+                              Tags: 
+                              <a class="tag" href="/tags/#日志"
+                                 title="日志">日志</a>
+                              
+                              <a class="tag" href="/tags/#JavaScript"
+                                 title="JavaScript">JavaScript</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+            <div class="text-center"><div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5272bc2a7b3c1ddc" async = "async" ></script>
+</div>
+</div><hr>
+          
+          <div class="subscribe"><a href="http://eepurl.com/dh6iCD" target="_blank">Get Updated for Each Release!</a></div><p>
+          <p>数组元素的读写： <br><br>////可以使用附属或非整数来索引数组。此情况，数值转换为字符串，字符串作为属性名使用。只能被当作常规的对象属性，而非数组的索引。若凑巧使用了非负整数的字符串，当作数组索引非对象属性。<br>稀疏数组： <br><br>////<strong>包含从0开始的不连续索引的数组。此时length属性值大于元素的个数。</strong><br>e.g. a[1000] = 0; //赋值添加一个元素，但是设置length为1001<br><strong>注意</strong>当在数组直接量中省略值时不会创建稀疏数组。省略的元素在数组中是存在的，值是undefined。<br>e.g. var a1 = [,,,]; //数组是[udnefined,undefined,undefined]<br>     var a2 = new Array(3); //该数组根本没有元素<br>     o in a1; //true:a1在索引0处有一个元素<br>     o in a2; //false:a2在索引0处没有元素<br>数组长度： <br><br>////若为一个数组元素赋值，它的索引i大于或等于现有数组的长度时，length属性的值将设置为i+1;设置length的属性为一个小于当前长度的非负整数n时，当前数组中那些索引值大于或等于n的元素将删除。若数组元素不能配置则不能删除。<br>数组元素的添加和删除： <br><br>////push()方法在末尾添加一个或多个元素。返回数组新的长度。<br>e.g. a = []; //空数组<br>     a.push(“zero”); //a = [“zero”]<br>     a.push(“one”,”two”); a = [“zero”,”one”,”two”]<br>////delete运算符删除数组元素。<br>e.g. a = [1,2,3];<br>     delete a[1]; //删除索引为1的元素<br>     1 in a; //=&gt;false:数组索引1并未定义<br>     a.length; //3:delete操作不会影响数组长度<br>////unshift()方法在数组首部插入元素。返回数组长度<br>e.g. a = [1,2,3];<br>     a.unshift(“one”); //[one,1,2,3]<br>     a.unshift(“two”,”three”); //[“two”, “three”, “one”, 1, 2, 3]<br>////pop()方法使减少长度为1并返回被删除元素的值。<br>e.g. a = [1,2,3];<br>     a.pop(); //3:删除末尾的元素并返回被删除的元素3<br>////shift()方法从数组头部删除一个元素并将所有元素下移到比当前索引低1的地方。<br>e.g. a = [1,2,3];<br>     consolelog(a.shift()); //1:头部元素被删除<br>     console.log(a[1]); //3:所有元素的索引下移1<br>数组遍历： <br><br>////for循环<br>////forEach()方法 按照索引的顺序按个传递给定义的一个函数<br>e.g. var data = [1,2,3,4,5];<br>     var sumOfSquares = 0;<br>     data.forEach(<br>         function(x){ //把每个元素传递给此函数<br>             sumOfSquares += x<em>x;<br>         }<br>     );<br>     console.log(sumOfSquares);  //55<br>多维数组： <br><br>////e.g. var table = new Array(10);<br>         for(var i = 0; i &lt; table.length; i++)<br>         var table[i] = new Array(10);<br>         for(var row = 0; row &lt; table.length; row++){<br>             for(col = 0; col &lt; table[i].length; col++){<br>                 table[row][col] = row</em>col;<br>             }<br>         };<br>         var product = table[5][7];</p>
+
+          
+            <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4" alt="support my work at patron"></a> <a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a> <a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a>
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/JavaScript数组2/" data-toggle="tooltip" data-placement="left"
+                     title="JavaScript数组2">&larr; Previous Post</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/JavaScript对象3/" data-toggle="tooltip" data-placement="top"
+                     title="JavaScript对象3">Next Post&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+  <!-- disqus start -->
+  <div class="comment">
+    <div id="disqus_thread"  class="disqus-thread"></div>
+      <script>
+      var disqus_shortname = 'hexo-a-rsnippet';
+      
+      var disqus_url = 'http://yoursite.com/JavaScript数组1/';
+      
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <!-- disqus end -->
+  
+
+  
+  </div>
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        Table of Contents
+        
+          
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+              <li>
+                  <a href="/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://github.com/1393925530">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+            2015 - 2018
+            
+            
+              <i class="fa fa-heart"></i>
+            
+            Powered By Yingjie Hu
+        <br>
+          
+              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+          
+          
+            |
+          
+          
+              Theme - <a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank">A-RSnippet</a> v0.1.0
+          
+          
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>

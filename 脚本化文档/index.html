@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website for A-RSnippet Hexo Theme">
+    <meta name="author" content="Powered By Yingjie Hu">
+    <meta name="keyword" content="hexo, hexo theme, A-RSnippet, responsive, bootstrap">
+    <link rel="canonical" href="http://yoursite.com/脚本化文档/">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="ZhouZhiChen&#39;s Blog" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        脚本化文档｜ZhouZhiChen&#39;s Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/css/highlight.css">
+    
+
+    
+      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
+    
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- user customization -->
+    <link rel="stylesheet" href="/css/arsnippet.css">
+    <script src="/js/arsnippet.css.js"></script>
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/">
+            ZhouZhiChen's Blog
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/tutorial/">Tutorial</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-category/">LeetCode-category</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-tag/">LeetCode-tag</a>
+                </li>
+              
+                <li>
+                  <a href="/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/portfolio-slim/">projects</a>
+                </li>
+              
+                <li>
+                  <a href="/support/">support</a>
+                </li>
+              
+                <li>
+                  <a href="/atom.xml">RSS</a>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>脚本化文档</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">Author: Powered By Yingjie Hu</span>
+                               <span class="meta-item">Date: Mar 17, 2018</span>
+                               
+                                 <span class="meta-item">Updated On: Mar 18, 2018</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              Categories: 
+                          </div>
+                          <div class="tags text-center">
+                              Tags: 
+                              <a class="tag" href="/tags/#日志"
+                                 title="日志">日志</a>
+                              
+                              <a class="tag" href="/tags/#JavaScript"
+                                 title="JavaScript">JavaScript</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+            <div class="text-center"><div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5272bc2a7b3c1ddc" async = "async" ></script>
+</div>
+</div><hr>
+          
+          <div class="subscribe"><a href="http://eepurl.com/dh6iCD" target="_blank">Get Updated for Each Release!</a></div><p>
+          <p>通过id选取元素：document.getElementsById() id属性必须唯一<br>通过名字选取元素：document.getElementsByName() name属性不必唯一，该方法定义在HTMLDocument类中，而不在Document类中，所以只针对HTML文档可用，在xml文档中不可用。返回nodeList集合，只在少数DOM元素中有效。<strong>在IE中该方法也返回id属性匹配指定值的元素。</strong><br>通过标签名选取元素：document.getElementsByTagName() 返回nodeList集合<br>e.g. 查找文档中第一个 p 元素里面的所有 span 元素<br>     var firstpara = document.getElementsByTagName(“p”)[0];<br>     var firstParaSpans = firstpara.getElementsByTagName(“span”);<br>e.g. 引用命名(或有ID的)表单<br>     document.form.shipping_address;<br>通过CSS类选取元素：document.getElementsByClassName()<br>返回nodeList集合，只能选取调用该方法的元素的后代元素。IE8及其以下版本的浏览器未实现。<br>通过CSS选择器选取元素：可以通过ID、名字、标签名、类名选取元素。document.querySelectorAll(“selector”) 返回值是nodeLIst集合 IE8及其以下版本的浏览器只支持CSS2标准的选择器语法。<br>document.all[]表示所有文档中的元素，除了Text节点。<br>////文档结构和遍历<br>parentNode 该节点的父节点 Document没有父节点<br>childNode 只读的类数组对象(NodeList对象)<br>firstChild、lastChild 该节点的第一个和最后一个，没有子节点则null<br>nextSibling、previoursSibling该节点的兄弟节点中的前一个和下一个。具有相同父节点的两个节点为兄弟节点。顺序反映了在文档中的出现顺序。<br>nodeType 节点类型。9代表Document节点，1代表Element节点，3代表Text节点，8代表Comment节点，11代表DocumentFragment节点。<br>nodeValue Text节点或Comment节点的文本内容<br>nodeName 元素的标签名，以大写形式表示。<br>////作为元素树的文档<br>API第一部分是Element对象的children属性。NodeList对象，但只包含Element对象。Text和Comment节点没有children属性，上述Node.parentNode属性不可能返回Text或Comment节点。<br>基于元素的文档遍历api第二部分是Element属性。<br>////属性<br>HTMLElement定义了通用的HTTP属性(id、标题lang和dir)属性，以及事件处理程序属性(onclick)。HTML属性名不区分大小写，从HTML属性名转到JavaScript属性名应小写。属性名不止一个单词则除首单词以外的单词首字母大写。HTML属性名在JavaScript中是保留字则在属性名前加html。<br>////设置和获取非标准的HTML属性<br>getAttribute()和setAttribute()方法，查询和设置非标准的HTML属性。Element属性还设置了hasAttribute()检测属性是否存在，removeAttribute()删除属性。<br>////元素的内容<br>查询纯文本形式的元素内容，或在文档中插入纯文本。作为纯文本的元素内容 Node的textContent属性<br>e.g. var para = document.getElementByTagName(“p”)[0];<br>     var text = para.textContent;<br>     para.textContent = “Hello World!”;<br>作为Text节点的元素内容<br>e.g. 查找元素的后代中节点的所有Text节点】】<br>    function textContent(e) {<br>    var child,type,s = “”;<br>    for(child = e.firstChild;child != null; child = child.nextSibling){<br>        type = child.nodeType;<br>        if(type === 3 || type === 4 )<br>        s += child.nodeValue;<br>        else if (type === 1)<br>        s += textConetent(child);<br>    }<br>    return s;<br>}<br>////创建、插入和删除节点<br>创建节点 text节点 var newnode = document.createTextNode(“text node content”);<br>每个节点有一个cloneNode()方法返回该节点的一个全新副本。参数true能递归的复制所有后代节点，false执行浅复制。<br>插入节点 appendChild()(插入的节点使其成为那个节点的最后一个子节点)或insertBefore()(接受两个参数 1待插入的节点2已存在的节点)<br>删除和替换节点 removeChild()从文档树删除一个节点，在其父节点上调用，并将需要删除的子节点作为方法参数传递(两个参数1新节点2需要代替的节点)。n.parentNode.removeChild(n);</p>
+
+          
+            <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4" alt="support my work at patron"></a> <a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a> <a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a>
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/jQuery类库/" data-toggle="tooltip" data-placement="left"
+                     title="jQuery类库">&larr; Previous Post</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/浏览器中的JavaScript/" data-toggle="tooltip" data-placement="top"
+                     title="浏览器中的JavaScript">Next Post&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+  <!-- disqus start -->
+  <div class="comment">
+    <div id="disqus_thread"  class="disqus-thread"></div>
+      <script>
+      var disqus_shortname = 'hexo-a-rsnippet';
+      
+      var disqus_url = 'http://yoursite.com/脚本化文档/';
+      
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <!-- disqus end -->
+  
+
+  
+  </div>
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        Table of Contents
+        
+          
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+              <li>
+                  <a href="/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://github.com/1393925530">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+            2015 - 2018
+            
+            
+              <i class="fa fa-heart"></i>
+            
+            Powered By Yingjie Hu
+        <br>
+          
+              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+          
+          
+            |
+          
+          
+              Theme - <a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank">A-RSnippet</a> v0.1.0
+          
+          
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>

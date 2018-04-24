@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website for A-RSnippet Hexo Theme">
+    <meta name="author" content="Powered By Yingjie Hu">
+    <meta name="keyword" content="hexo, hexo theme, A-RSnippet, responsive, bootstrap">
+    <link rel="canonical" href="http://yoursite.com/AJAX/">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="ZhouZhiChen&#39;s Blog" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        AJAX｜ZhouZhiChen&#39;s Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/css/highlight.css">
+    
+
+    
+      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
+    
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- user customization -->
+    <link rel="stylesheet" href="/css/arsnippet.css">
+    <script src="/js/arsnippet.css.js"></script>
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/">
+            ZhouZhiChen's Blog
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/tutorial/">Tutorial</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-category/">LeetCode-category</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-tag/">LeetCode-tag</a>
+                </li>
+              
+                <li>
+                  <a href="/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/portfolio-slim/">projects</a>
+                </li>
+              
+                <li>
+                  <a href="/support/">support</a>
+                </li>
+              
+                <li>
+                  <a href="/atom.xml">RSS</a>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>AJAX</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">Author: Powered By Yingjie Hu</span>
+                               <span class="meta-item">Date: Mar 23, 2018</span>
+                               
+                                 <span class="meta-item">Updated On: Mar 24, 2018</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              Categories: 
+                          </div>
+                          <div class="tags text-center">
+                              Tags: 
+                              <a class="tag" href="/tags/#日志"
+                                 title="日志">日志</a>
+                              
+                              <a class="tag" href="/tags/#JavaScript"
+                                 title="JavaScript">JavaScript</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+            <div class="text-center"><div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5272bc2a7b3c1ddc" async = "async" ></script>
+</div>
+</div><hr>
+          
+          <div class="subscribe"><a href="http://eepurl.com/dh6iCD" target="_blank">Get Updated for Each Release!</a></div><p>
+          <p>&emsp;&emsp;AJAX, Asynchronous JavaScript and XML.异步JavaScript和XML。核心是XMLHttpRequest对象，能够以异步方式从服务器取得更多的信息，意味着用户单击后不必刷新页面也能取得数据。</p>
+<p></p><h2>XMLHttpRequest对象</h2><br>XHR的用法<br>&emsp;&emsp;使用XHR对象时，要调用的第一个方法是open(),接收三个参数：要发送的请求的类型(get、post等)、请求的URL和表示是否异步发送请求的布尔值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;get&quot;,&quot;example.php&quot;,false);</span><br></pre></td></tr></table></figure><p></p>
+<p>这行代码会启动一个针对example.php的GET请求。注意，URL相对于执行代码的当前页面；调用open()方法不会真正发送请求，而是启动一个请求准备发送。<br><figure class="highlight plain"><figcaption><span>必须调用send()方法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;get&quot;,&quot;example.php&quot;,false);</span><br><span class="line">xhr.send(null);</span><br></pre></td></tr></table></figure></p>
+<p>这里的send()方法接收一个参数，即要作为请求主体发送的数据。不需要通过请求主体发送数据，则必须传入null。由于请求是同步的，JavaScript代码会等到服务器响应之后再继续执行。收到响应后，响应的数据会自动填充XHR对象的属性，属性简介：<br>responseText:作为响应主体被返回的文本<br>responseXML:如果响应的内容类型是”text/xml”或”application/xml”，这个属性将保存包含着响应数据的XML DOM文档<br>status:响应的HTTP状态<br>statusText:HTTP状态的说明<br>接收到响应后，第一步是检查status属性，以确定响应已经成功返回。一般来说，可以将HTTP状态代码为200作为成功的标志。此时，responseText属性的内容已经就绪，在内容类型正确的情况下，responseXML也能访问了。状态码304表示请求的资源并没有被修改，可直接使用浏览器中缓存的部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;get&quot;,&quot;example.php&quot;,false);</span><br><span class="line">xhr.send(null);</span><br><span class="line">if((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) &#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">&#125;else &#123;</span><br><span class="line">    alert(&quot;Request was unsuccessful&quot; + xhr.status);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以检测XHR对象的readyState属性，该属性表示请求/响应过程的当前活动阶段。0：未初始化 1：启动，调用open()方法未调用send()方法 2：发送，已经调用send()方法未收到回应 3：接收，已经接收到部分响应数据 4：完成，已经收到全部响应数据，已经在客户端使用。readyState属性值变化都会触发readystatechange事件。<br>收到响应之前可以调用abort()方法取消异步请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.abort();</span><br></pre></td></tr></table></figure></p>
+<p>由于内存原因，不建议重用XHR对象。</p>
+<p></p><h3>HTTP头部信息</h3><br>&emsp;&emsp;每个HTTP请求和响应都会带有相应的头部信息。使用setRequestHeader()方法可以设置自定义的请求头部信息。方法接收两个参数：头部字段的名称和头部字段的值。要成功发送请求头部信息，必须在调用open()之后且调用send()方法之前调用setRequestHeader()。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;get&quot;,&quot;example.php&quot;,true);</span><br><span class="line">xhr.setRequestHeader(&quot;MyHeader&quot;,&quot;MyValue&quot;);</span><br><span class="line">xhr.send(null);</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;&emsp;调用XHR对象的getRequestHeader()方法并传入头部字段名称，可以取得相应的响应头部信息。调用getAllRequestHeaders()方法则可以取得一个包含所有包含所有头部信息的长字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myHader = xhr.getRequestHeader(&quot;MyHeader&quot;);</span><br><span class="line">var allHeaders xhr.getAllRequestHeaders();</span><br></pre></td></tr></table></figure></p>
+<p></p><h3>GET请求</h3><br>&emsp;&emsp;GET是最常见的请求类型，最常用于向服务器查询某些信息。必要时将查询字符串参数追加到URL末尾，以便将信息发给服务器。对XHR而言，位于传入open()方法的URL末尾的查询字符串须经过正确的编码。查询字符串中每个参数的名称和值必须使用encodeURIComponent()进行编码，然后放到URL末尾；所有键值对必须由和号 &amp;分隔。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;get&quot;,&quot;example.php?name1=value1&amp;name2=value2&quot;,true);</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function addURLParam(url,name,value) &#123;</span><br><span class="line">    url += (url.indexOf(&quot;?&quot;) == -1 ? &quot;?&quot; : &quot;&amp;&quot;);</span><br><span class="line">    url += encodeURIComponent(name) + &quot;=&quot; + encodeURIComponent(value);</span><br><span class="line">    return url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>addURLParam()函数三个参数：要添加的URL、参数的名称和参数的值。首先检查URL是否包含问号（以确定是否已经有参数存在）。若没有，添加一个问号；否则，添加和号。然后将参数名称和值进行编码，添加到URL末尾。最后返回添加参数之后的URL。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var url = &quot;example.php&quot;;</span><br><span class="line">//添加参数</span><br><span class="line">url = addURLParam(url,&quot;name&quot;,&quot;Nicholas&quot;);</span><br><span class="line">url = addURLParam(url,&quot;book&quot;,&quot;Professional JavaScript&quot;);</span><br><span class="line">//初始化请求</span><br><span class="line">xhr.open(&quot;get&quot;,url,false);</span><br></pre></td></tr></table></figure></p>
+<p></p><h3>POST请求</h3><br>&emsp;&emsp;通常向服务器发送应该被保存的数据。POST请求应该把数据作为请求的主体提交，GET请求传统上不是这样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&quot;post&quot;,&quot;example.php&quot;,true);</span><br></pre></td></tr></table></figure><p></p>
+<p>发送POST请求的第二步是向send()方法传入数据。</p>
+<p></p><h3>XMLHttpRequest2级  FormData</h3><br>&emsp;&emsp;FormData为序列化表单以及创建与表单格式相同的数据提供便利。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var data = new FormData();</span><br><span class="line">data.append(&quot;name&quot;,&quot;Nicholas&quot;);</span><br></pre></td></tr></table></figure><p></p>
+<p>append()接收两个参数：键和值，分别对应表单字段的名字和字段的值。通过向FormData构造函数中传入表单元素，可以用表单元素的数据预先向其中填入键值对。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var data = new FormData(document.form[0]);</span><br></pre></td></tr></table></figure></p>
+<p>创建FormData的实例后，将它直接传给XHR的send()方法。</p>
+
+          
+            <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4" alt="support my work at patron"></a> <a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a> <a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a>
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/DIV-CSS1/" data-toggle="tooltip" data-placement="left"
+                     title="DIV/CSS">&larr; Previous Post</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/JSON/" data-toggle="tooltip" data-placement="top"
+                     title="JSON">Next Post&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+  <!-- disqus start -->
+  <div class="comment">
+    <div id="disqus_thread"  class="disqus-thread"></div>
+      <script>
+      var disqus_shortname = 'hexo-a-rsnippet';
+      
+      var disqus_url = 'http://yoursite.com/AJAX/';
+      
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <!-- disqus end -->
+  
+
+  
+  </div>
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        Table of Contents
+        
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">XMLHttpRequest对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">HTTP头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">GET请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">POST请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">XMLHttpRequest2级  FormData</span></a></li></ol></li></ol>
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+              <li>
+                  <a href="/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://github.com/1393925530">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+            2015 - 2018
+            
+            
+              <i class="fa fa-heart"></i>
+            
+            Powered By Yingjie Hu
+        <br>
+          
+              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+          
+          
+            |
+          
+          
+              Theme - <a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank">A-RSnippet</a> v0.1.0
+          
+          
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>
