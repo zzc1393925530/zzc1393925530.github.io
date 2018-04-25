@@ -1,988 +1,862 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- layout.ejs-->
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A website for A-RSnippet Hexo Theme">
-    <meta name="author" content="Powered By Yingjie Hu">
-    <meta name="keyword" content="hexo, hexo theme, A-RSnippet, responsive, bootstrap">
-    <link rel="canonical" href="http://yoursite.com/archives/2018/04/">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="ZhouZhiChen&#39;s Blog" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-    <title>
-        
-        ZhouZhiChen&#39;s Blog
-        
-    </title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/css/main.css">
-
-    
-      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="/css/highlight.css">
-    
-
-    
-      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
-    
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
-    
-      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
-    
-
-    
-
-    
 
 
-    
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
-    
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-38355881-1', 'auto');
-    ga('send', 'pageview');
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZhouZhiChen&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2018/04/index.html">
+<meta property="og:site_name" content="ZhouZhiChen&#39;s Blog">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhouZhiChen&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
 
 
+  <link rel="canonical" href="http://yoursite.com/archives/2018/04/"/>
 
 
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <!-- user customization -->
-    <link rel="stylesheet" href="/css/arsnippet.css">
-    <script src="/js/arsnippet.css.js"></script>
+
+
+  <title>Archive | ZhouZhiChen's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a89c523ea878a5e8b461afad5b171de4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
 </head>
 
-<style>
-    header.intro-header {
-        background-image: url('')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<header>
-  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "false" data-istags="false" data-ishome = "false" >
-    <div class="container-fluid">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <span class="navbar-brand animated pulse">
-          <a class="brand-logo" href="/">
-            ZhouZhiChen's Blog
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-archive">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhouZhiChen's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
           </a>
-        </span>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
+      <span class="archive-page-counter">
+        
+        
+         
+        
+        OK! 46 posts in total. Keep on posting.
+      </span>
+
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/25/离线应用与客户端存储/" itemprop="url">
+              
+                <span itemprop="name">离线应用与客户端存储</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-25T09:04:36+08:00"
+              content="Apr 25, 2018" >
+          04-25
+        </time>
       </div>
 
-      <div class="collapse navbar-collapse" id="website_navbar">
-          <ul class="nav navbar-nav navbar-right">
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/21/JavaScrip个人t易错点/" itemprop="url">
               
-                <li>
-                  <a href="/">home</a>
-                </li>
+                <span itemprop="name">JavaScrip个人易错点</span>
               
-                <li>
-                  <a href="/tutorial/">Tutorial</a>
-                </li>
-              
-                <li>
-                  <a href="/leetcode-category/">LeetCode-category</a>
-                </li>
-              
-                <li>
-                  <a href="/leetcode-tag/">LeetCode-tag</a>
-                </li>
-              
-                <li>
-                  <a href="/archives/">archives</a>
-                </li>
-              
-                <li>
-                  <a href="/tags/">tags</a>
-                </li>
-              
-                <li>
-                  <a href="/portfolio-slim/">projects</a>
-                </li>
-              
-                <li>
-                  <a href="/support/">support</a>
-                </li>
-              
-                <li>
-                  <a href="/atom.xml">RSS</a>
-                </li>
-              
-          </ul>
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-21T18:24:17+08:00"
+              content="Apr 21, 2018" >
+          04-21
+        </time>
       </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/11/锋利的jQuery5/" itemprop="url">
+              
+                <span itemprop="name">锋利的jQuery5 -- jQueryMobile</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-11T15:39:47+08:00"
+              content="Apr 11, 2018" >
+          04-11
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/06/锋利的jQuery4/" itemprop="url">
+              
+                <span itemprop="name">锋利的jQuery4</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-06T13:34:21+08:00"
+              content="Apr 6, 2018" >
+          04-06
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/05/锋利的jQuery3/" itemprop="url">
+              
+                <span itemprop="name">锋利的jQuery3</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-05T14:59:40+08:00"
+              content="Apr 5, 2018" >
+          04-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/05/锋利的jQuery2/" itemprop="url">
+              
+                <span itemprop="name">锋利的jQuery2</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-05T09:10:12+08:00"
+              content="Apr 5, 2018" >
+          04-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/02/锋利的jQuery1/" itemprop="url">
+              
+                <span itemprop="name">锋利的jQuery</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-02T13:56:15+08:00"
+              content="Apr 2, 2018" >
+          04-02
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/01/JavaScript权威指南7/" itemprop="url">
+              
+                <span itemprop="name">JavaScript权威指南7</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-01T14:48:53+08:00"
+              content="Apr 1, 2018" >
+          04-01
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+    </div>
+  </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/04/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/04/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-</header>
-
-
-<!-- Main Content -->
-<style>
-  header.intro-header {
-      background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb');
-  }
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>Archives</h1>
-                    <span class="post-subtitle">Cool?</span>
-                </div>
-            </div>
-        </div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-</header>
+  </div>
 
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
+      
 
-<article class="container archive">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4"
+                alt="ZhouZhiChen" />
+            
+              <p class="site-author-name" itemprop="name">ZhouZhiChen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
           
-                
-                
-                
-                    
-                    
-                    <div data-date="2018">
-                      <span class="fa fa-heart"></span>
-                      <a href="/archives/2018" class="archive-year">2018</a>
-                    </div>
-                
 
-                
-                    
-                    <div class="archive-month" data-date="201804">
-                         04
-                    </div>
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-21</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScrip个人t易错点/" class="archive-post-item">JavaScrip个人易错点</a>
-                              </span>
-                          </h4>
-                          
-                </div>
           
-                
-                
-                
 
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-11</span>
-                              <span class="archive-post-title">
-                                <a href="/锋利的jQuery5/" class="archive-post-item">锋利的jQuery5 -- jQueryMobile</a>
-                              </span>
-                          </h4>
-                          
-                </div>
           
-                
-                
-                
+          
 
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-06</span>
-                              <span class="archive-post-title">
-                                <a href="/锋利的jQuery4/" class="archive-post-item">锋利的jQuery4</a>
-                              </span>
-                          </h4>
-                          
-                </div>
           
-                
-                
-                
+          
 
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-05</span>
-                              <span class="archive-post-title">
-                                <a href="/锋利的jQuery3/" class="archive-post-item">锋利的jQuery3</a>
-                              </span>
-                          </h4>
-                          
-                </div>
           
-                
-                
-                
 
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-05</span>
-                              <span class="archive-post-title">
-                                <a href="/锋利的jQuery2/" class="archive-post-item">锋利的jQuery2</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-02</span>
-                              <span class="archive-post-title">
-                                <a href="/锋利的jQuery1/" class="archive-post-item">锋利的jQuery</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-01</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南7/" class="archive-post-item">JavaScript权威指南7</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-01</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南6/" class="archive-post-item">JavaScript权威指南6</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">04-01</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南5/" class="archive-post-item">JavaScript权威指南5</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                    
-                    <div class="archive-month" data-date="201803">
-                         03
-                    </div>
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-31</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南4/" class="archive-post-item">JavaScript权威指南4</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-31</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南3/" class="archive-post-item">JavaScript权威指南3</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-31</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南2/" class="archive-post-item">JavaScript权威指南2</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-31</span>
-                              <span class="archive-post-title">
-                                <a href="/执行上下文与作用域/" class="archive-post-item">执行上下文与作用域</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-30</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript权威指南1/" class="archive-post-item">JavaScript权威指南1</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-28</span>
-                              <span class="archive-post-title">
-                                <a href="/ECMAScript6/" class="archive-post-item">ECMAScript6</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-27</span>
-                              <span class="archive-post-title">
-                                <a href="/圣杯布局/" class="archive-post-item">圣杯布局</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-26</span>
-                              <span class="archive-post-title">
-                                <a href="/DOM进阶1/" class="archive-post-item">DOM进阶1</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-26</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript练习/" class="archive-post-item">JavaScript练习</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-25</span>
-                              <span class="archive-post-title">
-                                <a href="/HTML5/" class="archive-post-item">HTML5</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-25</span>
-                              <span class="archive-post-title">
-                                <a href="/bootstrap栅格/" class="archive-post-item">bootstrap栅格</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-24</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript事件/" class="archive-post-item">JavaScript事件</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-24</span>
-                              <span class="archive-post-title">
-                                <a href="/布局实例/" class="archive-post-item">布局实例</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-24</span>
-                              <span class="archive-post-title">
-                                <a href="/FLEX布局/" class="archive-post-item">FLEX布局</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-24</span>
-                              <span class="archive-post-title">
-                                <a href="/DIV-CSS1/" class="archive-post-item">DIV/CSS</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-23</span>
-                              <span class="archive-post-title">
-                                <a href="/AJAX/" class="archive-post-item">AJAX</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-23</span>
-                              <span class="archive-post-title">
-                                <a href="/JSON/" class="archive-post-item">JSON</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-23</span>
-                              <span class="archive-post-title">
-                                <a href="/闭包/" class="archive-post-item">闭包</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-23</span>
-                              <span class="archive-post-title">
-                                <a href="/递归/" class="archive-post-item">递归</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-18</span>
-                              <span class="archive-post-title">
-                                <a href="/jQuery类库/" class="archive-post-item">jQuery类库</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/脚本化文档/" class="archive-post-item">脚本化文档</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/浏览器中的JavaScript/" class="archive-post-item">浏览器中的JavaScript</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript函数4/" class="archive-post-item">JavaScript函数4</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript函数3/" class="archive-post-item">JavaScript函数3</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript函数2/" class="archive-post-item">JavaScript函数2</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-17</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript函数1/" class="archive-post-item">JavaScript函数1</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-14</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript数组3/" class="archive-post-item">JavaScript数组3</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-14</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript数组2/" class="archive-post-item">JavaScript数组2</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-14</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript数组1/" class="archive-post-item">JavaScript数组1</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-13</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript对象3/" class="archive-post-item">JavaScript对象3</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-13</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript对象2/" class="archive-post-item">JavaScript对象2</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-13</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript对象1/" class="archive-post-item">JavaScript对象1</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-12</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript语句/" class="archive-post-item">JavaScript语句</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-12</span>
-                              <span class="archive-post-title">
-                                <a href="/JavaScript简介/" class="archive-post-item">JavaScript简介</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-12</span>
-                              <span class="archive-post-title">
-                                <a href="/TEST/" class="archive-post-item">TEST</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
-                
-                
-                
-
-                
-                <div>
-                          <h4>
-                              <span class="archive-post-time">03-12</span>
-                              <span class="archive-post-title">
-                                <a href="/hello-world/" class="archive-post-item">Hello World</a>
-                              </span>
-                          </h4>
-                          
-                </div>
-          
         </div>
+      </section>
+
+      
+
+      
+
     </div>
-</article>
+  </aside>
 
-<!-- Footer -->
-<!-- footer.ejs -->
-<footer>
-    <div class="text-center">
-      <ul class="list-inline">
-          
-              <li>
-                  <a href="/atom.xml" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-          
-              <li>
-                  <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-          
 
-          
-
-          
-
-          
-              <li>
-                  <a target="_blank"  href="https://github.com/1393925530">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-
-          
-
-          
-
-      </ul>
-     <div class="text-muted copyright">
-            &copy;
-            
-            2015 - 2018
-            
-            
-              <i class="fa fa-heart"></i>
-            
-            Powered By Yingjie Hu
-        <br>
-          
-              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
-          
-          
-            |
-          
-          
-              Theme - <a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank">A-RSnippet</a> v0.1.0
-          
-          
+        
       </div>
-    </div>
-</footer>
+    </main>
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/main.js"></script>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhouZhiChen</span>
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
 
 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
-
 </html>

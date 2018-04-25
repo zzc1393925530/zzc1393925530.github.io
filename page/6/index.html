@@ -1,476 +1,1318 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- layout.ejs-->
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A website for A-RSnippet Hexo Theme">
-    <meta name="author" content="Powered By Yingjie Hu">
-    <meta name="keyword" content="hexo, hexo theme, A-RSnippet, responsive, bootstrap">
-    <link rel="canonical" href="http://yoursite.com/page/6/">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="ZhouZhiChen&#39;s Blog" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-    <title>
-        
-        ZhouZhiChen&#39;s Blog
-        
-    </title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/css/main.css">
-
-    
-      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="/css/highlight.css">
-    
-
-    
-      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
-    
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
-    
-      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
-    
-
-    
-
-    
 
 
-    
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
-    
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-38355881-1', 'auto');
-    ga('send', 'pageview');
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZhouZhiChen&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:site_name" content="ZhouZhiChen&#39;s Blog">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhouZhiChen&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
 
 
+  <link rel="canonical" href="http://yoursite.com/page/6/"/>
 
 
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <!-- user customization -->
-    <link rel="stylesheet" href="/css/arsnippet.css">
-    <script src="/js/arsnippet.css.js"></script>
+
+
+  <title>ZhouZhiChen's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a89c523ea878a5e8b461afad5b171de4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
 </head>
 
-<style>
-    header.intro-header {
-        background-image: url('')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<header>
-  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "false" data-istags="false" data-ishome = "true" >
-    <div class="container-fluid">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <span class="navbar-brand animated pulse">
-          <a class="brand-logo" href="/">
-            ZhouZhiChen's Blog
-          </a>
-        </span>
-      </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-      <div class="collapse navbar-collapse" id="website_navbar">
-          <ul class="nav navbar-nav navbar-right">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhouZhiChen's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/JavaScript对象2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/13/JavaScript对象2/" itemprop="url">JavaScript对象2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-                <li>
-                  <a href="/">home</a>
-                </li>
+                <span class="post-meta-item-text">Posted on</span>
               
-                <li>
-                  <a href="/tutorial/">Tutorial</a>
-                </li>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-13T19:52:25+08:00">
+                Mar 13, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>属性的查询和设置：e.g. var author = book.author;<br>                     var title = book[“main title”]; //注意空格。ECMAScript3如果一个对象的属性名是保留字则必须用方括号的形式访问。ECMAScrit5放宽了限制，可以在点运算符后直接使用保留字。<br>作为关联数组的对象：object[“property”]通过字符串索引 -&gt; 关联数组<br>                  JavaScript对象都是关联数组。<br>                  当通过点运算符访问对象的属性时，属性名用一个标识符来表示。标识符必须直接出现在JavaScript程序中，它们不是数据类型，所以程序无法修改他们。<br>                  当通过[]来访问对象属性时，属性名通过字符串来显示。字符串是JavaScript的数据类型在程序运行时和修改和创建。<strong>字符串值是动态的。</strong><br>                  function getvalue(portfolio){<br>                  var total = 0.0;<br>                  for(stock in portfolio){ //遍历portfolio中的每只股票<br>                  var shares = portfolio[stock]; //得到每只股票的份额<br>                  var price = getquote(stock); //查找股票价格<br>                  total += shares * price;<br>                  }<br>                  return total;<br>                  }<br>继承：JavaScript对象具有自有属性，也有属性是从原型对象继承而来的。<br> e.g. var o = {}; //o从Object.prototype继承对象的方法<br>      o.x = 1; //给o定义一个熟悉x<br>      var p = inherit(0); //p继承o和Object.prototype<br>      p.y = 2; //给p定义一个熟悉y<br>      var q = inherit(p); //q继承p、o和Object.prototype<br>      q.z = 3; //给q定义一个熟悉z<br>      var s = q.toString(); //toString继承Object.prototype<br>      q.x + q.y; //=&gt;3:x和y分别继承自o和p<br>     如果o继承自一个只读属性x，那么赋值操作不允许。只有在查询属性时才会体验到继承的存在，设置属性和继承无关。<br>     var unitcircle = { r:1}; //一个用来继承的对象<br>     var c = inherit(unitcircle); //c继承属性r<br>     c.x = 1; c.y =1;  //c定义两个属性<br>     c.r = 2; //c覆盖继承来的属性<br>     unitcircle.r; //=&gt;,原型对象没有修改<br>     对象o设置属性p会失败：1 o的属性p是只读的：不能给只读属性重新赋值<br>                        2 o中的属性p是继承属性，且它是只读的<br>                        3 o中不存在的自有属性p<br>删除属性：delete运算符可以删除对象的属性。不会操作属性中的属性。<br>         <strong>只能删除自有属性，不能删除继承属性。</strong><br>         delete不能删除那些可配置性(意味着能修改属性的行为，让该对象的属性都是不可迭代的、不可修改的和不可配置的)为false的属性，某些内置对象的属性是不可配置的，比如通过变量声明和函数声明创建的全局对象的属性。<br>检测属性：判断某个属性是否存在于某个对象中。可通过in运算符、hasOwnProperty()和propertyIsEnumerable()方法来完成这个工作。<br>in运算符的左侧是属性名，右侧是对象。若对象的自有属性或继承属性包含这个属性则返回true。<br>e.g. var o = { x:1 };<br>     “x” in o; //true: “x”是o的属性<br>     “y” in o; //false： “y”不是o的属性<br>     “toString” in o; //true：o继承toString属性<br>hasOwnProperty()检测给定的名字是否是对象的自有属性。对于继承属性将返回false。<br>e.g. var 0 = { x:1 };<br>     o.hasOwnProperty(“x”); //true:o有一个自有属性x<br>     o.hasOwnProperty(“y”); //false:o中不存在属性y<br>     o.hasOwnProperty(“toString”); //false:toString是继承属性<br>propertyIsEnumerable()是hasOwnProperty()的增强版，只有检测到是自有属性且属性的可枚举性为true时才返回true。某些内置属性不可枚举。<br>!== 判断一个属性是否是undefined。<br>e.g. var o = { x:1 };<br>     o.x !== undefined; // true:o中有属性x<br>     o.y !== undefined; //false:o中没有属性y<br>     o.toString !== undefined; //true:o继承toString属性<br>有一种场景只能使用in运算符而不能使用上述属性访问的方式。in可以区分不存在的属性和存在但是值为undefined的属性。<br>e.g. var o = { x:undefined }; //属性被显式赋值为undefined<br>     o.x !== undefined; //false:属性存在，但值为undefined<br>     o.y !== undefined; //false:属性不存在<br>     “x” in o; //true:属性存在<br>     “y” in o; //false:属性不存在<br>     delete 0.x; //删除了属性x<br>     “x” in o; //false:属性不再存在</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/JavaScript对象1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/13/JavaScript对象1/" itemprop="url">JavaScript对象1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-                <li>
-                  <a href="/leetcode-category/">LeetCode-category</a>
-                </li>
+                <span class="post-meta-item-text">Posted on</span>
               
-                <li>
-                  <a href="/leetcode-tag/">LeetCode-tag</a>
-                </li>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-13T19:50:38+08:00">
+                Mar 13, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。<br>宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对象，也可当成内置对象。<br>自定义对象：由运行中的JavaScript代码创建的对象。<br>自有属性：直接在对象中定义的属性。<br>继承属性：在对象的原型对象中定义的属性。<br>所有通过对象直接量创建的对象都具有同一个原型对象，并可通过JavaScript代码Object.prototype获得对原型对象的引用。通过关键字new和构造函数调用创建的对象的原型就是构造函数的prototype属性的值(第一个参数是这个对象的原型)。<br>e.g. var o1 = Object.create({x:1,y:2}); //对象o1继承属性x和y<br>     var o2 = Object.create(null); //对象o2没有原型<br>** Object.create() ：是静态函数，不是提供给某个对象调用的方法。<br>     var o3 = Object.create(Object.prototype); //o3和new Object()一样，创建普通空对象传入Object.prototype可通过任意原型创建新对象，可使任意对象继承。<br>     function inherit(p){<br>        if(p == null) throw TypeError();<br>        if(Object.create)<br>        return Object.create(p);<br>        var t = typeof p;<br>        if(t !== “object” &amp;&amp; t !== “function”) throw TypeError();<br>        function f() {};<br>        f.prototype = p;<br>        return new f();<br>     }<br>     inherit()函数不能通过传入null原型来创建对象(Object.create()可创建没有原型的新对象)，且不能接受可选的第二个参数。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际读取的是继承来的值。给继承对象赋值不会影响原始对象。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/JavaScript语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/JavaScript语句/" itemprop="url">JavaScript语句</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-                <li>
-                  <a href="/archives/">archives</a>
-                </li>
+                <span class="post-meta-item-text">Posted on</span>
               
-                <li>
-                  <a href="/tags/">tags</a>
-                </li>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T20:45:08+08:00">
+                Mar 12, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。<br>声明语句：var用来声明一个或多个对象；<br>         function定义函数。<br>条件语句：if/else、else if(代码中有多条分支)<br>         switch(所有分支依赖于同一个表达式) break跳出switch语句或循环语句。<br>循环：while、do/while(关键字do标识循环开始，用while来标识循环的结尾并进入循环条件判断)、<br>    for、for/in(不会遍历对象的所有属性，只有“可枚举”的属性才会遍历到)。<br>跳转：break(跳转到循环或者其他语句的结束，达到break条件立即退出整个循环)<br>    continue(中止本次循环的执行并开始下一次循环的执行)<br>    return(解释器跳出函数体的执行，并提供调用的返回值)<br>    throw(触发或“抛出”一个异常)<br>标签语句：标识符和冒号组成 给一个语句加标签，在程序其他地方可以使用这个名字标记任何语句。<br>throw语句：抛出异常时立即停止当前正在执行的逻辑，跳转至就近的异常处理程序。<br>try/catch/finally语句：语句块都需要使用花括号，catch从句跟在try从句之后，try块内某处发生异常调用catch内的代码逻辑。catch从句后跟随finally块，后者中放置清理代码，不管try块中是否异常，finally内逻辑总是执行。<br>e.g function trycatch () {<br>    var array = [234],<br>        newdate = new Date(),<br>        fun = function(){},<br>        is = 12.22,<br>        call;<br>    try{<br>        throw array + ‘\n’ + newdate.toLocaleString() + ‘ \n’ + fun.prototype.constructor +<br>        ‘\n’ + (typeof is == ‘number’) +’ \n’ + call ; //小心local后面还有一个’e’<br>    }<br>    catch(e){<br>        console.log(e);<br>    }<br>    finally{<br>        console.log(‘err finally’);<br>    }<br>}<br>trycatch ()<br>//  输出：</p>
+<p>// 234</p>
+<p>// 2018/3/13 上午9:55:02 </p>
+<p>// function (){}</p>
+<p>// true </p>
+<p>// undefined</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/JavaScript简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/JavaScript简介/" itemprop="url">JavaScript简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-                <li>
-                  <a href="/portfolio-slim/">projects</a>
-                </li>
+                <span class="post-meta-item-text">Posted on</span>
               
-                <li>
-                  <a href="/support/">support</a>
-                </li>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T18:32:30+08:00">
+                Mar 12, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <li>
-                  <a href="/atom.xml">RSS</a>
-                </li>
+                <span class="post-meta-item-text">In</span>
               
-          </ul>
-      </div>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JavaScript发明者布兰登 艾奇(Brendan Eich)<br>JavaScript组成：核心(ECMAscript) 提供核心语言功能<br>                文档对象模型(DOM) 提供访问和操作网页内容的方法和接口<br>                浏览器对象模(BOM) 提供与浏览器交互的方法和接口<br>在HTML用 script 元素插入JavaScript<br>所有 script 元素都会按照先后顺序依此被解析。(在不使用 defer 和 async 的情况下)<br>async：可选 立即下载脚本，不妨碍页面中的操作。只对外部脚本文件有效。<br>charset：可选 src属性指定的代码的字符集。<br>defer：可选 脚本可延迟到文档完全被解析和显示之后再执行。只对外部文件有效。IE7及更早版本对嵌入脚本也支持这个属性。<br>src：可选 执行代码的外部文件。<br>type： text/JavaScript<br>现代WEB应用程序一般把全部JavaScript引入放在 body 元素中的内容后面。<br>延迟脚本：延迟脚本会按照出现顺序执行，最好只包含一个脚本。放在页面底部最佳。<br>异步脚本：不保证按照指定它们的顺序执行。<br>嵌入文件与外部文件：尽可能使用外部文件。可维护性、可缓存、适应未来。<br>noscript 元素：浏览器不支持脚本/支持脚本被禁用。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/TEST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/TEST/" itemprop="url">TEST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T12:40:27+08:00">
+                Mar 12, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hello World ! HEXO !</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T12:14:30+08:00">
+                Mar 12, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-</header>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-
-<!-- Main Content -->
-<!-- index.ejs -->
-<article class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+  <aside id="sidebar" class="sidebar">
     
-        <div class="row">
-            <header class="intro-header">
-                <div class="container">
-                    <div class="site-heading text-center">
-                        <div class="about-me">
-                            <!--Sidebar about me: mobile header-->
-                            
-                                <img src="https://avatars1.githubusercontent.com/u/17507451?s=460&amp;v=4" class="avatar">
-                            
-                            <h5>Powered By Yingjie Hu</h5>
-                            <p>salty-fish front-end</p>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-        
-</article>
-<div class="container homepage">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-          
-            <div class="post-preview "
-     style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/JavaScript对象1/">
-        <h2 class="post-title">
-            JavaScript对象1
-        </h2>
-        
-        <div class="post-meta">
-          <span>Mar 13, 2018</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                内置对象：由ECMAScript规范定义的对象或类。数组、函数、日期和正则表达式都是内置对象。宿主对象：由JavaScript解释器所嵌入的宿主环境（如WEB浏览器）定义的。客户端JavaScript中表示网页结构的额HTMLElement对象均是宿主对象。可当成普通的JavaScript函数对..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+    <div class="sidebar-inner">
 
-          
-            <div class="post-preview "
-     style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/JavaScript语句/">
-        <h2 class="post-title">
-            JavaScript语句
-        </h2>
-        
-        <div class="post-meta">
-          <span>Mar 12, 2018</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                复合语句：结尾不需要分号，块中原始语句必须以分号结束，语句块不需要；注意整齐。声明语句：var用来声明一个或多个对象；         function定义函数。条件语句：if/else、else if(代码中有多条分支)         switch(所有分支依赖于同一个表达式) break跳..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+      
 
-          
-            <div class="post-preview "
-     style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/JavaScript简介/">
-        <h2 class="post-title">
-            JavaScript简介
-        </h2>
-        
-        <div class="post-meta">
-          <span>Mar 12, 2018</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                JavaScript发明者布兰登 艾奇(Brendan Eich)JavaScript组成：核心(ECMAscript) 提供核心语言功能                文档对象模型(DOM) 提供访问和操作网页内容的方法和接口                浏览器对象模(BOM) 提供与浏览器..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+      
 
-          
-            <div class="post-preview "
-     style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/TEST/">
-        <h2 class="post-title">
-            TEST
-        </h2>
-        
-        <div class="post-meta">
-          <span>Mar 12, 2018</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                Hello World ! HEXO !
-
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
-
-          
-            <div class="post-preview "
-     style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-        <div class="post-meta">
-          <span>Mar 12, 2018</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
-
-          
-          <ul class="pager">
-    
-        <li class="previous"><a href="/page/5/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
-
-        </div>
-        <!-- sidebar-profile.ejs -->
-<div class="
-        col-lg-3 col-lg-offset-0
-        col-md-3 col-md-offset-0
-        col-sm-12
-        col-xs-12
-        sidebar-container
-    ">
-    <section class="visible-md visible-lg" style="padding: 0 18px">
-        <div class="short-about">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-                <img src="https://avatars1.githubusercontent.com/u/17507451?s=460&amp;v=4" class="avatar">
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4"
+                alt="ZhouZhiChen" />
             
-            <h3>Powered By Yingjie Hu</h3>
+              <p class="site-author-name" itemprop="name">ZhouZhiChen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
             
-                <p>salty-fish front-end</p>
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
             
-            <hr>
-            <ul class="list-inline">
-                
-                <li>
-                    <a href="/atom.xml" target="
-                      ">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                </span>
-                    </a>
-                </li>
-                
-                
-                <li>
-                    <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                    </a>
-                </li>
-                
-                
 
-                
-
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://github.com/1393925530">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                    </a>
-                </li>
-                
-
-                
-
-                
-
-            </ul>
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-    </section>
-</div>
+      </section>
+
+      
+
+      
 
     </div>
-</div>
+  </aside>
 
-<!-- Footer -->
-<!-- footer.ejs -->
-<footer>
-    <div class="text-center">
-      <ul class="list-inline">
-          
-              <li>
-                  <a href="/atom.xml" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-          
-              <li>
-                  <a target="_blank" href="https://twitter.com/ZhouZhiCh3n">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-          
 
-          
-
-          
-
-          
-              <li>
-                  <a target="_blank"  href="https://github.com/1393925530">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          
-
-          
-
-          
-
-      </ul>
-     <div class="text-muted copyright">
-            &copy;
-            
-            2015 - 2018
-            
-            
-              <i class="fa fa-heart"></i>
-            
-            Powered By Yingjie Hu
-        <br>
-          
-              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
-          
-          
-            |
-          
-          
-              Theme - <a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank">A-RSnippet</a> v0.1.0
-          
-          
+        
       </div>
-    </div>
-</footer>
+    </main>
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/main.js"></script>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhouZhiChen</span>
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
 
 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
-
 </html>
