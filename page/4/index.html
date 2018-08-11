@@ -249,6 +249,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/FLEX布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouZhiChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouZhiChen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/FLEX布局/" itemprop="url">FLEX布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-24T17:53:44+08:00">
+                Mar 24, 2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;flex是flexible box的缩写，意为弹性布局，用来为盒模型提供最大的灵活性。webkit内核的浏览器，必须加上-webkit前缀。设为flex布局后，子元素的float,clear和vertical-align将失效。<br>容器默认两根轴.水平的主轴(main axis)和垂直的交叉轴(cross axis).单个项目占据的主轴空间叫main size,占据的交叉轴空间叫cross size.</p>
+<p></p><h3>flex属性</h3><br>flex-direction:决定主轴的方向，即项目的排列方向。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-direction: row | row-reverse | column | column reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<p>&emsp;row: 水平方向，起点左端；<br>&emsp;row-reverse:水平方向，起点右端；<br>&emsp;column:垂直方向，起点上沿；<br>&emsp;column-reverse:垂直方向，起点下沿。<br>flex-wrap:定义若一条轴线排不下，如何换行。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;nowrap: 默认，不换行;<br>&emsp;wrap:换行，第一行在上方;<br>&emsp;wrap-reverse:换行，第一行在下方。<br>flex-flow:是flex-direction和flex-wrap属性的简写形式。默认值是row nowrap.<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>justify-content:定义了项目在主轴上的对齐方式。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start:左对齐；<br>&emsp;flex-end:右对齐；<br>&emsp;center:居中；<br>&emsp;space-between:两端对齐，项目之间间隔相等；<br>&emsp;space-around:每个项目两侧的间隔相等，所以，项目之间的间隔比项目与边框的间隔大一倍。<br>align-items:定义项目在交叉轴如何对齐。<br>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;flex-start：交叉轴的起点对齐;<br>&emsp;flex-end：交叉轴的终点对齐;<br>&emsp;center：交叉轴的中点对齐;<br>&emsp;baseline: 项目的第一行文字的基线对齐;<br>&emsp;stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。<br>具体详见<a href="http://static.vgee.cn/static/index.html" target="_blank" rel="noopener">FLEX布局实例</a></p>
+<p></p><h3>如何通过flex实现垂直居中</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;display:flex;justify-content:center;align-items:center;&#125;</span><br><span class="line">作者： GD_SeHun </span><br><span class="line">链接：https://www.imooc.com/article/2235</span><br><span class="line">来源：慕课网</span><br></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/DIV-CSS1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1143,126 +1270,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/浏览器中的JavaScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhouZhiChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/17507451?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhouZhiChen's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/17/浏览器中的JavaScript/" itemprop="url">浏览器中的JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-17T10:34:53+08:00">
-                Mar 17, 2018
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>////Window、Document和Element对象事件处理程序相关。在脚本中绑定函数，事件发生时异步调用。事件处理程序属性名以单词’on’开始。<br>////WEB文档里的JavaScript 内容、呈现和行为的组合，叫做动态HTML或DHTML。文档里应少量食用JavaScript。<br>////WEB应用里的JavaScript WEB应用从服务器获取新信息，不用重新载入界面称为AJAXA应用。代码和文档来自不同的源 有重要的安全隐患。<br>////javascript:URL能识别的资源是转换成字符串的执行代码的返回值。alert返回undefined.JavaScript:URL在文档之外确实有重要角色，但应该避免在HTML中使用。<br>/////JavaScript:URL应用:书签<br>////客户端JavaScript线程模型：严格的单线程，HTML5定义了一个并发控制方式WEB WORKER：执行计算密集任务而不冻结用户界面的后台线程。<br>。<br>////兼容性和互用性<br>/////检测渲染模式document.compatMode,值为”CSS1Compat”标准模式，值为”BackCompat”或undefined则为怪异模式。<br>////IE里的条件注释<br>/////   /<em>@cc_on<br>          @</em>/<br>////可访问性<br>/////应该尽可能支持独立于设备的事件<br>////安全性<br>/////JavaScript不支持某些功能。例如不能删除数据或植入病毒。<br>/////在自己支持的某些功能上施加限制。<br>////同源策略 脚本只能读取和所属文档来源相同的窗口和文档的属性，文档的来源包括协议、主机，以及载入文档的URL端口。<br>////不严格的同源策略<br>/////1.document.domain属性设置为一个源<br>/////2.跨域资源共享：允许服务器用头信息显式地列出源，或使用通配符匹配所有源并允许由任何地址请求文件。<br>/////3.跨文档消息：允许来自一个文档的脚本可以传递文本消息到另一个文档里的脚本。调用Window对象上的postMessage()方法，可以异步传递消息事件到窗口的文档里。<br>////跨站脚本<br>/////防止XSS攻击的方式是，在使用任何不可信的数据来动态的创建文档内容之前，从中移除HTML标签。<br>     e.g. name = name.replace(/&lt;/g,”&lt;”).replace(/&gt;/g,”&gt;”);<br>     html5为iframe元素定义了sandbox属性，在实现之后，允许显示不可信内容并自动禁用脚本。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1317,7 +1324,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1339,7 +1346,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
